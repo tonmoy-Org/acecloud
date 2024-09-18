@@ -14,7 +14,7 @@ interface FormValues {
     message: string;
 }
 
-const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+const WEB3FORMS_ACCESS_KEY = '0d47a070-74ba-485e-abc6-c36651c4f115';
 
 export default function Contact() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();

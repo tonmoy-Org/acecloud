@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import logo from '@/public/logo/a-minimalist-logo-for-acecloud-a-website-and-digit-Z5PbTxWZTmqOsVGnPwg4lA-rkkGkEoFRaGFriGCaxCVmg.jpeg-removebg-preview.png';
 import { Link as ScrollLink } from 'react-scroll';
 
-const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+const WEB3FORMS_ACCESS_KEY = '0d47a070-74ba-485e-abc6-c36651c4f115';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
