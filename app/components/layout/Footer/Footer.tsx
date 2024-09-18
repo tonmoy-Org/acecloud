@@ -59,10 +59,11 @@ const Footer = () => {
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.4 }}
                 >
                     <Grid container spacing={4}>
                         {/* Logo and Social Media */}
-                        <Grid item xs={12} md={3}>
+                        <Grid item xs={12} md={4}>
                             <Box display="flex" alignItems="center" mb={2}>
                                 <div className='w-40'>
                                     <Image
@@ -78,7 +79,7 @@ const Footer = () => {
                         </Grid>
 
                         {/* Company Section */}
-                        <Grid item xs={12} md={2}>
+                        {/* <Grid item xs={12} md={2}>
                             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                                 COMPANY
                             </Typography>
@@ -95,7 +96,7 @@ const Footer = () => {
                             <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
                                 News & Updates
                             </Link>
-                        </Grid>
+                        </Grid> */}
 
                         {/* Information Section */}
                         <Grid item xs={12} md={2}>
@@ -104,14 +105,14 @@ const Footer = () => {
                             </Typography>
                             <Box component="div" sx={{ borderBottom: "2px solid #00BCD4", width: "40px", mb: 1 }} />
                             <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
-                                Our Blog
+                                About Us
                             </Link>
                             <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
-                                Careers
+                                Blog
                             </Link>
-                            {/* <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
-                                Privacy & Policy
-                            </Link> */}
+                            <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
+                                Support
+                            </Link>
                             <Link href="/termsAndConditions" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
                                 Terms & Condition
                             </Link>
@@ -129,12 +130,12 @@ const Footer = () => {
                             </Box>
                             <Box display="flex" alignItems="center" mb={1}>
                                 <LocationOn sx={{ color: "#00BCD4", mr: 1 }} />
-                                <Typography variant="body2">12/56 Grand Avenue, Sydney, Australia</Typography>
+                                <Typography variant="body2">Toronto, Ontario, Canada</Typography>
                             </Box>
                         </Grid>
 
                         {/* Newsletter Subscription */}
-                        <Grid item xs={12} md={3}>
+                        <Grid item xs={12} md={4}>
                             <Box>
                                 <Typography variant="h6" sx={{ fontWeight: "bold" }}>
                                     SUBSCRIBE TO OUR NEWSLETTER
@@ -183,8 +184,8 @@ const Footer = () => {
                             flexDirection: { xs: 'column', md: 'row' },
                         }}
                     >
-                        <Typography variant="body2" color="#aaa" sx={{ mb: { xs: 2, md: 0 } }}>
-                            Designed and Developed by Md. Tanvir Hasan Tonmoy
+                        <Typography color="#aaa" sx={{ mb: { xs: 2, md: 0 } }}>
+                            <span className='text-[13px]'>Designed and Developed by Md. Tanvir Hasan Tonmoy</span>
                         </Typography>
                         <Box>
                             <ScrollLink to="home" smooth={true} duration={1700}>

@@ -4,7 +4,6 @@ import React from 'react';
 import { Box, Typography, Card, CardContent, Grid, Container, IconButton } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import ceo from '@/public/team/CEO.png';
 import t1 from '@/public/team/T1.jpg';
 import t2 from '@/public/team/T2.png';
 import t3 from '@/public/team/T3.png';
@@ -16,12 +15,6 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 // Team data with social links
 const team = [
-    {
-        name: 'Mahian',
-        position: 'Founder & CEO',
-        image: ceo,
-        social: { facebook: '#', linkedin: '#', twitter: '#' },
-    },
     {
         name: 'Razib Khan',
         position: 'DevOps & Automation Engineer',
@@ -78,7 +71,7 @@ export default function TeamSection() {
                     >
                         Meet Our Team
                     </Typography>
-                    <Box sx={{ maxWidth: '700px', margin: 'auto', marginBottom: 6 }}>
+                    <Box sx={{ maxWidth: '700px', margin: 'auto', marginBottom: 3 }}>
                         <Typography
                             variant="body1"
                             color="#BABABA"
@@ -97,6 +90,7 @@ export default function TeamSection() {
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.4, ease: "easeOut" }}
+                                viewport={{ once: true, amount: 0.4 }}
                                 whileHover={{
                                     scale: 1.05,
                                     rotateY: 0,
@@ -180,7 +174,7 @@ export default function TeamSection() {
                                                 left: '50%',
                                                 transform: 'translateX(-50%)',
                                                 width: '100%',
-                                                px:2
+                                                px: 2
                                             }}
                                         >
                                             {member.position}

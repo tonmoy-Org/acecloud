@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, Typography, Box, Avatar, Container } from '@mui/material';
+import { Card, Typography, Box, Avatar, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -38,27 +38,32 @@ const staggerItem = {
 export default function Testimonials() {
     const testimonials = [
         {
+            company: 'ECOBUILD',
             feedback: "Working with Ace Cloud was a game-changer for our business. Our website went from outdated to modern and user-friendly. They really listened to our needs, and the final result was exactly what we wanted.",
             avatar: c1.src,
             rating: 5,
         },
         {
-            feedback: "The team at Ace Cloud was fantastic to work with. They were able to take our vague ideas and turn them into something polished and professional. The branding and web design they created perfectly reflect our company, and we’ve received so many compliments!",
+            company: 'LiquidWave',
+            feedback: "The team at Ace Cloud was fantastic to work with. They were able to take our vague ideas and turn them into something polished and professional.",
             avatar: c2.src,
             rating: 4,
         },
         {
-            feedback: "The team at Ace Cloud was professional and knowledgeable, and they delivered on most of what we asked for. However, there were a few delays, and we had to go back and forth on some design elements. In the end, the site is great, but it felt like it took longer to get there than it should have.",
+            company: 'GlobeConnect',
+            feedback: "The team was professional, but we had a few delays. In the end, the site is great, but it took longer than expected.",
             avatar: c3.src,
             rating: 3,
         },
         {
-            feedback: "I had a very positive experience working with Ace Cloud. Their cybersecurity and SQL services have been invaluable to our business. There were a few technical challenges along the way, but they worked hard to resolve them. I’d recommend them without hesitation!",
+            company: 'QuickBooks',
+            feedback: "I had a positive experience working with Ace Cloud. Their cybersecurity services were invaluable. I'd recommend them!",
             avatar: c4.src,
             rating: 4,
         },
         {
-            feedback: "Ace Cloud is the real deal. They took our outdated site and made it modern, fast, and easy to navigate. Their web design and SEO expertise has already started driving more traffic. We’ll definitely be partnering with them again in the future!",
+            company: 'JAVAHAVEN',
+            feedback: "Ace Cloud made our site fast and easy to navigate. Their design and SEO expertise have started driving more traffic.",
             avatar: c5.src,
             rating: 5,
         },
@@ -73,7 +78,7 @@ export default function Testimonials() {
                     transition={{ duration: 0.4, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.4 }}
                 >
-                    <Box sx={{ textAlign: 'center', pb: 10 }}>
+                    <Box sx={{ textAlign: 'center', pb: 3 }}>
                         <Typography color='#0DCCD7' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px' }}>
                             Testimonials
                         </Typography>
@@ -86,42 +91,35 @@ export default function Testimonials() {
                         </Typography>
                     </Box>
                 </motion.div>
-
-                <Carousel
-                    responsive={responsive}
-                    infinite
-                    autoPlay
-                    autoPlaySpeed={3000}
-                    transitionDuration={500}
-                    additionalTransfrom={0}
-                    arrows={false}
-                    centerMode={false}
-                    dotListClass=""
-                    draggable
-                    focusOnSelect={false}
-                    keyBoardControl
-                    minimumTouchDrag={80}
-                    pauseOnHover
-                    renderArrowsWhenDisabled={false}
-                    renderButtonGroupOutside={false}
-                    renderDotsOutside={false}
-                    containerClass="carousel-container"
-                    itemClass="carousel-item-padding"
+                <motion.div
+                    variants={staggerItem}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.4 }}
                 >
-                    {testimonials.map((testimonial, index) => (
-                        <motion.div
-                            key={index}
-                            variants={staggerItem}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true, amount: 0.4 }}
-                        >
+                    <Carousel
+                        responsive={responsive}
+                        infinite
+                        autoPlay
+                        autoPlaySpeed={3000}
+                        transitionDuration={500}
+                        additionalTransfrom={0}
+                        arrows={false}
+                        centerMode={false}
+                        draggable
+                        keyBoardControl
+                        pauseOnHover
+                        containerClass="carousel-container"
+                        itemClass="carousel-item-padding"
+                    >
+                        {testimonials.map((testimonial, index) => (
                             <Card
+                                key={index}
                                 sx={{
                                     bgcolor: '#14151B',
                                     color: 'white',
-                                    padding: 1,
-                                    height: '380px', // Same height for all cards
+                                    padding: 2,
+                                    height: '360px', // Adjusted height for all cards
                                     margin: '0 10px', // Gap between cards
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -129,37 +127,42 @@ export default function Testimonials() {
                                     textAlign: 'center',
                                 }}
                             >
-                                <CardContent>
-                                    <Avatar
-                                        alt={testimonial.feedback}
-                                        src={testimonial.avatar}
-                                        sx={{
-                                            width: 80,
-                                            height: 80,
-                                            margin: '0 auto',
-                                            border: '2px solid #0DCCD7',
-                                        }}
-                                    />
-                                    <Typography variant="body2" sx={{ color: '#BABABA', mt: 2 }}>
-                                        "{testimonial.feedback}"
-                                    </Typography>
-                                    <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center' }}>
-                                        {[...Array(5)].map((_, i) => (
-                                            <StarIcon
-                                                key={i}
-                                                sx={{
-                                                    color: i < testimonial.rating ? '#ffd700' : '#444',
-                                                    fontSize: 20,
-                                                }}
-                                            />
-                                        ))}
-                                    </Box>
-                                </CardContent>
+                                <Avatar
+                                    alt={testimonial.company}
+                                    src={testimonial.avatar}
+                                    sx={{
+                                        width: 80,
+                                        height: 80,
+                                        margin: '0 auto',
+                                        border: '2px solid #0DCCD7',
+                                    }}
+                                />
+                                <Typography variant="h6" sx={{ color: '#0DCCD7', mt: 2, fontWeight: 700 }}>
+                                    {testimonial.company}
+                                </Typography>
+
+                                {/* Rating stars */}
+                                <Box sx={{ mt: 1, display: 'flex', justifyContent: 'center' }}>
+                                    {[...Array(5)].map((_, i) => (
+                                        <StarIcon
+                                            key={i}
+                                            sx={{
+                                                color: i < testimonial.rating ? '#ffd700' : '#444',
+                                                fontSize: 20,
+                                            }}
+                                        />
+                                    ))}
+                                </Box>
+
+                                {/* Feedback description */}
+                                <Typography variant="body2" sx={{ color: '#BABABA', mt: 2 }}>
+                                    "{testimonial.feedback}"
+                                </Typography>
                             </Card>
-                        </motion.div>
-                    ))}
-                </Carousel>
+                        ))}
+                    </Carousel>
+                </motion.div>
             </Container>
-        </Box>
+        </Box >
     );
 }

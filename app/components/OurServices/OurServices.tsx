@@ -1,13 +1,13 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, Typography, Grid, Box, Container, Button } from '@mui/material';
+import { Card, CardContent, Typography, Grid, Box, Container } from '@mui/material';
 import WebIcon from '@mui/icons-material/Web';
 import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
 import CodeIcon from '@mui/icons-material/Code';
 import WebhookIcon from '@mui/icons-material/Webhook';
 import SecurityIcon from '@mui/icons-material/Security';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+// import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ApiIcon from '@mui/icons-material/Api';
 import { motion } from 'framer-motion';
 
@@ -143,7 +143,7 @@ export default function OurServices() {
                                                 <Typography variant="body2" sx={{ color: '#BABABA', mb: 2 }}>
                                                     {service.description}
                                                 </Typography>
-                                                <Button
+                                                {/* <Button
                                                     className="viewMore"
                                                     sx={{
                                                         transform: { xs: 'translateY(0%) translateY(175%)', md: 'translateX(0) translateY(180%)' },
@@ -156,7 +156,7 @@ export default function OurServices() {
                                                     endIcon={<ArrowRightAltIcon fontSize='large' />}
                                                 >
                                                     View More
-                                                </Button>
+                                                </Button> */}
                                             </CardContent>
                                         </Card>
                                     </motion.div>

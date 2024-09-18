@@ -1,18 +1,21 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
 import { Box, Grid, Typography } from '@mui/material';
 import CountUp from 'react-countup';
 import banner from '@/public/banner/01.png';
-import './HeroSection.css'
+import './HeroSection.css';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function HeroSection() {
+  const [isScrolling, setIsScrolling] = useState(false);
+
   const stats = [
     { value: 286, label: 'Satisfied Customers' },
     { value: 209, label: 'Projects Done' },
-    { value: 467, label: 'Consultants' }
+    { value: 467, label: 'Consultants' },
   ];
 
   // Variants for staggered animations
@@ -36,6 +39,30 @@ export default function HeroSection() {
       transition: { duration: 0.6, ease: 'easeInOut' },
     },
   };
+
+  // Handle scroll and set state for fading in/out social icons
+  useEffect(() => {
+    let timeout: NodeJS.Timeout;
+
+    const handleScroll = () => {
+      setIsScrolling(true);
+
+      // Clear the timeout if there's a new scroll event
+      clearTimeout(timeout);
+
+      // Set the timeout to hide the icons after 1 second of no scrolling
+      timeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 1000);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(timeout);
+    };
+  }, []);
 
   return (
     <Box
@@ -63,22 +90,21 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
-        <motion.div
-          className="relative flex flex-col justify-center items-center h-screen pt-96 lg:pt-0 px-8 overflow-hidden"
-        >
-          <motion.div
-            className="lg:text-center text-white"
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1
-              className="outlined-text"  // Apply the outlined class here
-              variants={textAnimation}
-              custom={0}
-            >
-              Digital dreams, Real results
-            </motion.h1>
+        <motion.div className="relative flex flex-col justify-center items-center lg:h-screen py-10 lg:pt-28 px-8 overflow-hidden">
+          <motion.div className="lg:text-center text-white" initial="hidden" animate="visible">
+            <motion.h1 className="outlined-text" variants={textAnimation} custom={0}>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: '2.4rem',
+                    lg: '3rem',
+                  }
+                }}
+              >
+                Digital dreams<br /> Real results
+              </Typography>
 
+            </motion.h1>
 
             <motion.p
               className="text-sm md:text-xl mb-8 tracking-wide leading-relaxed max-w-2xl mx-auto text-[#BABABA]"
@@ -89,26 +115,26 @@ export default function HeroSection() {
             </motion.p>
 
             {/* Animated More Button */}
-            <motion.div
-              className="text-sm mt-12 flex justify-center"
-              variants={textAnimation}
-              custom={2}
-            >
-              <div className="relative h-14 w-14 rounded-full flex items-center justify-center">
-                <div className="absolute h-14 w-14 rounded-full border-2 border-white flex items-center justify-center">
-                  <motion.div
-                    className="absolute inset-0 border-2 border-[#0DCCD7] rounded-full"
-                    animate={{ scale: [1, 1.4, 1] }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      repeatType: 'reverse',
-                    }}
-                  />
-                  <span className="relative text-xs uppercase tracking-widest text-gray-400">More</span>
+            <ScrollLink to="about" smooth={true} duration={1500}>
+              <motion.div className="text-sm mt-12 flex justify-center" variants={textAnimation} custom={2}>
+                <div className="relative h-14 w-14 rounded-full flex items-center justify-center">
+                  <div className="absolute h-14 w-14 rounded-full border-2 border-white flex items-center justify-center">
+                    <motion.div
+                      className="absolute inset-0 border-2 border-[#0DCCD7] rounded-full"
+                      animate={{ scale: [1, 1.4, 1] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        repeatType: 'reverse',
+                      }}
+                    />
+                    <button type="button" className="relative text-xs uppercase tracking-widest text-gray-400">
+                      More
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </ScrollLink>
 
             {/* Stats Section */}
             <Box sx={{ width: { lg: '1200px' }, mx: { lg: 'auto' }, py: 5 }}>
@@ -121,10 +147,7 @@ export default function HeroSection() {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: index * 0.3, duration: 0.8 }}
                       >
-                        <Typography
-                          variant="h3"
-                          sx={{ color: '#0DCCD7', fontWeight: 'bold' }}
-                        >
+                        <Typography variant="h3" sx={{ color: '#0DCCD7', fontWeight: 'bold' }}>
                           <CountUp start={0} end={stat.value} duration={2} />
                         </Typography>
                         <Typography variant="h6" sx={{ color: 'white', marginTop: '10px' }}>
@@ -149,7 +172,13 @@ export default function HeroSection() {
 
           {/* Social Media Icons with Rotation Hover Effect */}
           <div>
-            <div className="hidden lg:flex fixed top-1/2 lg:right-20 right-0 transform -translate-y-1/2 flex-col items-center space-y-4 mr-2">
+            <div
+              className="hidden lg:flex fixed top-1/2 lg:right-20 right-0 transform -translate-y-1/2 flex-col items-center space-y-4 mr-2"
+              style={{
+                opacity: isScrolling ? 0.2 : 1,
+                transition: 'opacity 0.5s ease-in-out',
+              }}
+            >
               <motion.a
                 href="https://www.facebook.com/profile.php?id=61565758503116"
                 target="_blank"

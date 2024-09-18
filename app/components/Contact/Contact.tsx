@@ -96,6 +96,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.7, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.4 }}
                                 >
                                     <TextField
                                         label="Name"
@@ -126,6 +127,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.7, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.4 }}
                                 >
                                     <TextField
                                         label="Email"
@@ -162,6 +164,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.7, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.4 }}
                                 >
                                     <TextField
                                         label="Message"
@@ -194,6 +197,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.7, ease: "easeOut" }}
+                                    viewport={{ once: true, amount: 0.4 }}
                                 >
                                     <Button
                                         variant="contained"
@@ -223,6 +227,7 @@ export default function Contact() {
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.7, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.4 }}
                         >
                             <Box p={4} color="white">
                                 <Typography
@@ -242,7 +247,7 @@ export default function Contact() {
                                 </Typography>
                                 <Typography variant="body1">
                                     <LocationOn sx={{ verticalAlign: 'middle', mr: 1 }} />
-                                    Ace Cloud, New York, NY
+                                    Toronto, Ontario, Canada
                                 </Typography>
                             </Box>
                         </motion.div>
