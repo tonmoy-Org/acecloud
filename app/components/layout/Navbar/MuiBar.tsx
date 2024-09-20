@@ -16,7 +16,7 @@ import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
-import logo from '@/public/logo/a-minimalist-logo-for-acecloud-a-website-and-digit-Z5PbTxWZTmqOsVGnPwg4lA-rkkGkEoFRaGFriGCaxCVmg.jpeg-removebg-preview.png'
+import logo from '@/public/logo/acecloud.png'
 import Image from 'next/image';
 
 const drawerWidth = 240;

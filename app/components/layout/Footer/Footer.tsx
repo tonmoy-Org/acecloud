@@ -5,8 +5,9 @@ import { Box, Container, Grid, Typography, Link, TextField, Button } from "@mui/
 import { Email, LocationOn, ArrowUpward } from "@mui/icons-material";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import logo from '@/public/logo/a-minimalist-logo-for-acecloud-a-website-and-digit-Z5PbTxWZTmqOsVGnPwg4lA-rkkGkEoFRaGFriGCaxCVmg.jpeg-removebg-preview.png';
+import logo from '@/public/logo/acecloud.png';
 import { Link as ScrollLink } from 'react-scroll';
+
 
 const WEB3FORMS_ACCESS_KEY = '0d47a070-74ba-485e-abc6-c36651c4f115';
 
@@ -110,8 +111,8 @@ const Footer = () => {
                             <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
                                 Blog
                             </Link>
-                            <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
-                                Support
+                            <Link href="/unsubscribe" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
+                                Unsubscribe
                             </Link>
                             <Link href="/termsAndConditions" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
                                 Terms & Condition

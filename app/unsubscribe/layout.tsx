@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Terms & Conditions | AceCloud',
+    title: 'Unsubscribe | AceCloud',
     description: "AceCloud | Elevating digital experiences through innovation and expertise.",
 }
 

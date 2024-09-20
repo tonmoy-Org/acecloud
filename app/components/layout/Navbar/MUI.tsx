@@ -16,7 +16,7 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import logo from '@/public/logo/a-minimalist-logo-for-acecloud-a-website-and-digit-Z5PbTxWZTmqOsVGnPwg4lA-rkkGkEoFRaGFriGCaxCVmg.jpeg-removebg-preview.png';
+import logo from '@/public/logo/acecloud.png';
 
 const drawerWidth = 340;
 
