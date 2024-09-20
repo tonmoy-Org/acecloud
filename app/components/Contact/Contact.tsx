@@ -14,7 +14,7 @@ interface FormValues {
     message: string;
 }
 
-const WEB3FORMS_ACCESS_KEY = '0d47a070-74ba-485e-abc6-c36651c4f115';
+const WEB3FORMS_ACCESS_KEY = '7be54b28-f65a-4886-86ba-a34f68e2a37f';
 
 export default function Contact() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();
@@ -243,11 +243,11 @@ export default function Contact() {
                                 <Divider sx={{ my: 2 }} />
                                 <Typography variant="body1" gutterBottom>
                                     <Email sx={{ verticalAlign: 'middle', mr: 1 }} />
-                                    contact@acecloud.com
+                                    contact@acecloud.ca
                                 </Typography>
                                 <Typography variant="body1">
                                     <LocationOn sx={{ verticalAlign: 'middle', mr: 1 }} />
-                                    Toronto, Ontario, Canada
+                                    Toronto, Canada
                                 </Typography>
                             </Box>
                         </motion.div>

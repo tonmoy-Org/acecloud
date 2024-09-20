@@ -70,7 +70,7 @@ const staggerItem = {
 
 const BlogSection: React.FC = () => {
     return (
-        <Container>
+        <Container id='blog'>
             <motion.div
                 initial="hidden"
                 whileInView="show"

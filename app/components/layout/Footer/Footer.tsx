@@ -9,7 +9,7 @@ import logo from '@/public/logo/acecloud.png';
 import { Link as ScrollLink } from 'react-scroll';
 
 
-const WEB3FORMS_ACCESS_KEY = '0d47a070-74ba-485e-abc6-c36651c4f115';
+const WEB3FORMS_ACCESS_KEY = '9d818505-7ca6-4f44-8b21-5fae7a9a2c1d';
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -53,7 +53,7 @@ const Footer = () => {
 
 
     return (
-        <Box component="footer" sx={{ backgroundColor: "#121212", color: "#fff", py: 6 }}>
+        <Box component="footer" sx={{ backgroundColor: "#121212", color: "#fff", pt: 6, pb: 3 }}>
             <Container>
                 {/* Footer Content */}
                 <motion.div
@@ -105,15 +105,19 @@ const Footer = () => {
                                 INFORMATION
                             </Typography>
                             <Box component="div" sx={{ borderBottom: "2px solid #00BCD4", width: "40px", mb: 1 }} />
-                            <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
-                                About Us
-                            </Link>
-                            <Link href="#" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
-                                Blog
-                            </Link>
-                            <Link href="/unsubscribe" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
+                            <Typography sx={{ display: "block", mb: 1 }}>
+                                <ScrollLink to="about" smooth={true} duration={1700} style={{ color: "inherit", textDecoration: "none" }}>
+                                    <button>About Us</button>
+                                </ScrollLink>
+                            </Typography>
+                            <Typography sx={{ display: "block", mb: 1 }}>
+                                <ScrollLink to="blog" smooth={true} duration={1700} style={{ color: "inherit", textDecoration: "none" }}>
+                                    <button>Blog</button>
+                                </ScrollLink>
+                            </Typography>
+                            {/* <Link href="/unsubscribe" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
                                 Unsubscribe
-                            </Link>
+                            </Link> */}
                             <Link href="/termsAndConditions" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>
                                 Terms & Condition
                             </Link>
@@ -127,11 +131,11 @@ const Footer = () => {
                             <Box component="div" sx={{ borderBottom: "2px solid #00BCD4", width: "40px", mb: 1 }} />
                             <Box display="flex" alignItems="center" mb={1}>
                                 <Email sx={{ color: "#00BCD4", mr: 1 }} />
-                                <Typography variant="body2">hello@rameo.website</Typography>
+                                <Typography variant="body2">contact@acecloud.ca</Typography>
                             </Box>
                             <Box display="flex" alignItems="center" mb={1}>
                                 <LocationOn sx={{ color: "#00BCD4", mr: 1 }} />
-                                <Typography variant="body2">Toronto, Ontario, Canada</Typography>
+                                <Typography variant="body2">Toronto, Canada</Typography>
                             </Box>
                         </Grid>
 
@@ -186,7 +190,7 @@ const Footer = () => {
                         }}
                     >
                         <Typography color="#aaa" sx={{ mb: { xs: 2, md: 0 } }}>
-                            <span className='text-[13px]'>Designed and Developed by Md. Tanvir Hasan Tonmoy</span>
+                            {/* <span className='text-[13px]'>Designed and Developed by Md. Tanvir Hasan Tonmoy</span> */}
                         </Typography>
                         <Box>
                             <ScrollLink to="home" smooth={true} duration={1700}>
@@ -219,7 +223,7 @@ const Footer = () => {
                     </Box>
                 </motion.div>
             </Container>
-            <Box sx={{ py: 2, mt: 4 }}>
+            <Box sx={{ py: 0, mt: 2 }}>
                 <Container>
                     <Typography variant="body2" align="center" color="#aaa">
                         &copy; {new Date().getFullYear()} AceCloud. All Rights Reserved.
