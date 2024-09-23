@@ -13,7 +13,6 @@ import HistoryIcon from '@mui/icons-material/History';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
-import { Link as ScrollLink } from 'react-scroll';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import logo from '@/public/logo/acecloud.png';
@@ -38,6 +37,38 @@ const ResponsiveAppBar = () => {
             setMobileOpen(!mobileOpen);
         }
     };
+
+    // Smoother scrolling function with custom duration
+    const handleScroll = (id: string, duration: number = 1000) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+            const startPosition = window.scrollY;
+            const distance = targetPosition - startPosition;
+            let startTime: number | null = null;
+
+            const easeInOutQuad = (time: number, start: number, distance: number, duration: number) => {
+                time /= duration / 2;
+                if (time < 1) return (distance / 2) * time * time + start;
+                time--;
+                return (-distance / 2) * (time * (time - 2) - 1) + start;
+            };
+
+            const animation = (currentTime: number) => {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const scroll = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, scroll);
+
+                if (timeElapsed < duration) {
+                    window.requestAnimationFrame(animation);
+                }
+            };
+
+            window.requestAnimationFrame(animation);
+        }
+    };
+
 
     const drawer = (
         <Box sx={{ bgcolor: 'black', color: 'white', height: '100%', p: 2 }}>
@@ -92,7 +123,7 @@ const ResponsiveAppBar = () => {
             className="lg:text-center text-white"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.5 }}
         >
             <AppBar
                 id="home"
@@ -102,15 +133,12 @@ const ResponsiveAppBar = () => {
                 <Container maxWidth="xl">
                     <Toolbar>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
-                            <Button sx={{ my: 2, color: 'white' }}>
-                                <ScrollLink href='/' to="home" smooth={true} duration={1700}  offset={-70} >
-                                    Home
-                                </ScrollLink>
+                            {/* OnClick for manual scrolling */}
+                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('home', 1400)}>
+                                <Link href='/#home'>Home</Link>
                             </Button>
-                            <Button sx={{ my: 2, color: 'white' }}>
-                                <ScrollLink to="about" smooth={true} duration={1500}>
-                                    About
-                                </ScrollLink>
+                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('about', 1400)}>
+                                <Link href='/#about'>About</Link>
                             </Button>
                         </Box>
                         <Typography
@@ -172,15 +200,11 @@ const ResponsiveAppBar = () => {
                             </Drawer>
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            <Button sx={{ my: 2, color: 'white' }}>
-                                <ScrollLink to="project" smooth={true} duration={1700}>
-                                    Projects
-                                </ScrollLink>
+                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('project', 1400)}>
+                                <Link href='/#project'>Projects</Link>
                             </Button>
-                            <Button sx={{ my: 2, color: 'white' }}>
-                                <ScrollLink to="contact" smooth={true} duration={1700}>
-                                    Contact
-                                </ScrollLink>
+                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('contact', 1400)}>
+                                <Link href='/#contact'>Contact</Link>
                             </Button>
                         </Box>
                     </Toolbar>

@@ -63,8 +63,7 @@ export default function Contact() {
     };
 
     return (
-        <Box id="contact" sx={{ pt: 10 }}>
-            {/* Section Header */}
+        <Box id="contact" sx={{ pt: 14 }}>
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}

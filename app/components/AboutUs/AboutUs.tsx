@@ -29,7 +29,7 @@ const responsive = {
 
 const AboutUs: React.FC = () => {
     return (
-        <Box id="about" sx={{ pt: 2 }}>
+        <Box id="about" sx={{ pt: 5 }}>
             <Box
                 sx={{
                     backgroundColor: '#202020',

@@ -15,7 +15,6 @@ import InfoIcon from '@mui/icons-material/Info';
 import WorkIcon from '@mui/icons-material/Work';
 import ContactMailIcon from '@mui/icons-material/ContactMail';
 import Link from 'next/link';
-import { Link as ScrollLink } from 'react-scroll';
 import logo from '@/public/logo/acecloud.png'
 import Image from 'next/image';
 
@@ -37,6 +36,37 @@ const MuiBar: React.FC = () => {
     const handleDrawerToggle = () => {
         if (!isClosing) {
             setMobileOpen(!mobileOpen);
+        }
+    };
+
+    // Smoother scrolling function with custom duration
+    const handleScroll = (id: string, duration: number = 1000) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const targetPosition = element.getBoundingClientRect().top + window.scrollY;
+            const startPosition = window.scrollY;
+            const distance = targetPosition - startPosition;
+            let startTime: number | null = null;
+
+            const easeInOutQuad = (time: number, start: number, distance: number, duration: number) => {
+                time /= duration / 2;
+                if (time < 1) return (distance / 2) * time * time + start;
+                time--;
+                return (-distance / 2) * (time * (time - 2) - 1) + start;
+            };
+
+            const animation = (currentTime: number) => {
+                if (startTime === null) startTime = currentTime;
+                const timeElapsed = currentTime - startTime;
+                const scroll = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+                window.scrollTo(0, scroll);
+
+                if (timeElapsed < duration) {
+                    window.requestAnimationFrame(animation);
+                }
+            };
+
+            window.requestAnimationFrame(animation);
         }
     };
 
@@ -102,7 +132,6 @@ const MuiBar: React.FC = () => {
                 backgroundColor: 'hsla(0, 0%, 100%, 0.6)',
                 backdropFilter: 'blur(9.8px)',
                 color: 'black',
-                py: { xs: 0, md: '2px' },
                 boxShadow: '0px 4px 30px rgba(0, 0, 0, 0.1)',
                 transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
                 zIndex: 1110,
@@ -118,15 +147,11 @@ const MuiBar: React.FC = () => {
                     }}
                 >
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
-                        <Button sx={{ my: 2, color: 'black' }}>
-                            <ScrollLink to="home" smooth={true} duration={1500}>
-                                Home
-                            </ScrollLink>
+                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('home', 1400)}>
+                            <Link href='/#home'>Home</Link>
                         </Button>
-                        <Button sx={{ my: 2, color: 'black' }}>
-                            <ScrollLink to="about" smooth={true} duration={1500}>
-                                About
-                            </ScrollLink>
+                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('about', 1400)}>
+                            <Link href='/#about'>About</Link>
                         </Button>
                     </Box>
                     <Typography
@@ -194,15 +219,11 @@ const MuiBar: React.FC = () => {
                         </Drawer>
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button sx={{ my: 2, color: 'black' }}>
-                            <ScrollLink to="project" smooth={true} duration={1500}>
-                                Projects
-                            </ScrollLink>
+                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('project', 1400)}>
+                            <Link href='/#project'>Projects</Link>
                         </Button>
-                        <Button sx={{ my: 2, color: 'black' }}>
-                            <ScrollLink to="contact" smooth={true} duration={1500}>
-                                Contact
-                            </ScrollLink>
+                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('contact', 1400)}>
+                            <Link href='/#contact'>Contact</Link>
                         </Button>
                     </Box>
                 </Toolbar>

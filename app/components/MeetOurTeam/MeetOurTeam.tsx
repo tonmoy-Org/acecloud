@@ -49,7 +49,7 @@ const team = [
 
 export default function TeamSection() {
     return (
-        <Box>
+        <Box sx={{ pt: 5 }}>
             <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
