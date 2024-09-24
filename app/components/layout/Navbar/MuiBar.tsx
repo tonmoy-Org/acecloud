@@ -18,7 +18,7 @@ import Link from 'next/link';
 import logo from '@/public/logo/acecloud.png'
 import Image from 'next/image';
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const MuiBar: React.FC = () => {
     const [mobileOpen, setMobileOpen] = React.useState<boolean>(false);
@@ -201,6 +201,7 @@ const MuiBar: React.FC = () => {
                             <MenuIcon />
                         </IconButton>
                         <Drawer
+                            anchor='right'
                             variant="temporary"
                             open={mobileOpen}
                             onTransitionEnd={handleDrawerTransitionEnd}
@@ -211,10 +212,6 @@ const MuiBar: React.FC = () => {
                                 '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
                             }}
                         >
-                            <Box sx={{ m: 2, textAlign: 'center' }}>
-                                <Typography variant="h6">AceCloud</Typography>
-                            </Box>
-                            <Divider sx={{ backgroundColor: 'black' }} />
                             {drawer}
                         </Drawer>
                     </Box>

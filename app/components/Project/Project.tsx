@@ -62,6 +62,8 @@ export default function Projects() {
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
     };
 
+
+
     return (
         <Box id="project">
             <Box sx={{ pt: 15, mb: 8 }}>
@@ -89,12 +91,17 @@ export default function Projects() {
                         variants={staggerContainer}
                         initial="hidden"
                         whileInView="show"
-                        viewport={{ once: true, amount: 0.4 }}
+                        viewport={{ once: true, amount: 0.2 }}
                     >
                         <Grid container spacing={3}>
                             {projects.map((project, index) => (
                                 <Grid item xs={12} sm={6} md={4} key={index}>
-                                    <motion.div variants={staggerItem}>
+                                    <motion.div
+                                        variants={staggerItem}
+                                        initial="hidden"
+                                        whileInView="show"
+                                        viewport={{ once: true, amount: 0.2 }}
+                                    >
                                         <Card
                                             sx={{
                                                 bgcolor: '#1E1E1E',
