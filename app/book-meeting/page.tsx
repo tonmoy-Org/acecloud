@@ -94,7 +94,7 @@ const BookMeeting: React.FC = () => {
                         >
                             <div
                                 className="calendly-inline-widget"
-                                data-url="https://calendly.com/info-tonmoyorg/acecloud?background_color=1a1a1a&text_color=ffffff"
+                                data-url="https://calendly.com/info-tonmoyorg/acecloud?background_color=1E1E1E&text_color=ffffff"
                                 style={{ minWidth: '100%', height: '700px' }}
                             ></div>
                         </Box>

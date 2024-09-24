@@ -66,6 +66,7 @@ export default function HeroSection() {
 
   return (
     <Box
+      id='home'
       sx={{
         position: 'relative',
         background: `url(${banner.src})`,
@@ -90,7 +91,7 @@ export default function HeroSection() {
 
       {/* Main Content */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
-        <motion.div className="relative flex flex-col justify-center items-center lg:h-screen py-10 lg:pt-28 px-8 overflow-hidden">
+        <motion.div className="relative flex flex-col justify-center items-center lg:h-screen pb-10 lg:pt-40 pt-24 px-8 overflow-hidden">
           <motion.div className="lg:text-center text-white" initial="hidden" animate="visible">
             <motion.h1 className="outlined-text" variants={textAnimation} custom={0}>
               <Typography

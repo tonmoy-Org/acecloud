@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Card, Typography, Box, Avatar, Container } from '@mui/material';
+import { Card, Typography, Box, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -12,6 +12,7 @@ import c3 from '@/public/client/c3.jpg';
 import c4 from '@/public/client/c4.jpg';
 import c5 from '@/public/client/c5.jpg';
 import cm from '@/public/client/Cm.jpg'
+import Image from 'next/image';
 
 const responsive = {
     desktop: {
@@ -143,15 +144,11 @@ export default function Testimonials() {
                                     textAlign: 'center',
                                 }}
                             >
-                                <Avatar
+                                <Image
                                     alt={testimonial.company}
                                     src={testimonial.avatar}
-                                    sx={{
-                                        width: 80,
-                                        height: 80,
-                                        margin: '0 auto',
-                                        border: '2px solid #0DCCD7',
-                                    }}
+                                    width={80}
+                                    height={10}
                                 />
                                 <Typography variant="h6" sx={{ color: '#0DCCD7', mt: 2, fontWeight: 700 }}>
                                     {testimonial.company}
