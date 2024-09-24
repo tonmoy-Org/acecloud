@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Box, Typography, Card, CardContent, Grid, Container, IconButton } from '@mui/material';
+import { Box, Typography, Card, CardContent, Grid, Container } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import t1 from '@/public/team/T1.jpg';
@@ -9,41 +9,33 @@ import t2 from '@/public/team/T2.png';
 import t3 from '@/public/team/T3.png';
 import t4 from '@/public/team/T4.png';
 import t5 from '@/public/team/T5.png';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
-// Team data with social links
+// Team data without social links
 const team = [
     {
         name: 'Razib Khan',
         position: 'DevOps & Automation Engineer',
         image: t1,
-        social: { facebook: '#', linkedin: '#', twitter: '#' },
     },
     {
         name: 'Md. Tanvir Hasan Tonmoy',
         position: 'Full Stack Developer | MERN | Redux | Next.js',
         image: t2,
-        social: { facebook: '#', linkedin: '#', twitter: '#' },
     },
     {
         name: 'Kazi Khalid Hasan Tamim',
         position: 'Software Quality Assurance Engineer',
         image: t3,
-        social: { facebook: '#', linkedin: '#', twitter: '#' },
     },
     {
         name: 'Badrul Alam',
         position: 'DevSecops',
         image: t4,
-        social: { facebook: '#', linkedin: '#', twitter: '#' },
     },
     {
         name: 'Naim Hossen',
         position: 'Front-End Developer',
         image: t5,
-        social: { facebook: '#', linkedin: '#', twitter: '#' },
     },
 ];
 
@@ -83,7 +75,7 @@ export default function TeamSection() {
                     </Box>
                 </motion.div>
                 {/* Team Grid */}
-                <Grid container spacing={5} >
+                <Grid container spacing={5}>
                     {team.map((member, index) => (
                         <Grid item xs={12} sm={6} md={3} key={index}>
                             <motion.div
@@ -117,14 +109,6 @@ export default function TeamSection() {
                                         backgroundColor: '#222',
                                         color: '#fff',
                                         position: 'relative',
-                                        '&:hover .member-position': {
-                                            opacity: 0,
-                                            transition: 'opacity 0.5s ease-out',
-                                        },
-                                        '&:hover .social-icons': {
-                                            opacity: 1,
-                                            transition: 'opacity 0.5s ease-in',
-                                        },
                                     }}
                                 >
                                     {/* Team Member Image with Glow Effect */}
@@ -166,71 +150,19 @@ export default function TeamSection() {
                                         </Typography>
                                         <Typography
                                             variant="body2"
-                                            className="member-position"
                                             sx={{
                                                 color: '#0DCCD7',
                                                 marginTop: '4px',
-                                                position: 'absolute',
-                                                left: '50%',
-                                                transform: 'translateX(-50%)',
-                                                width: '100%',
-                                                px: 2
                                             }}
                                         >
                                             {member.position}
                                         </Typography>
                                     </CardContent>
-                                    {/* Social Icons */}
-                                    <Box
-                                        className="social-icons"
-                                        sx={{
-                                            position: 'absolute',
-                                            bottom: 10,
-                                            left: '50%',
-                                            transform: 'translateX(-50%)',
-                                            display: 'flex',
-                                            gap: 1,
-                                            opacity: 0,
-                                            transition: 'opacity 0.5s ease-in-out',
-                                        }}
-                                    >
-                                        {member.social.facebook && (
-                                            <IconButton
-                                                href={member.social.facebook}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                sx={{ color: '#0DCCD7' }}
-                                            >
-                                                <FacebookIcon />
-                                            </IconButton>
-                                        )}
-                                        {member.social.linkedin && (
-                                            <IconButton
-                                                href={member.social.linkedin}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                sx={{ color: '#0DCCD7' }}
-                                            >
-                                                <LinkedInIcon />
-                                            </IconButton>
-                                        )}
-                                        {member.social.twitter && (
-                                            <IconButton
-                                                href={member.social.twitter}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                sx={{ color: '#0DCCD7' }}
-                                            >
-                                                <TwitterIcon />
-                                            </IconButton>
-                                        )}
-                                    </Box>
                                 </Card>
                             </motion.div>
                         </Grid>
                     ))}
                 </Grid>
-
             </Container>
         </Box>
     );

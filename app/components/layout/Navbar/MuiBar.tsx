@@ -147,11 +147,11 @@ const MuiBar: React.FC = () => {
                     }}
                 >
                     <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
-                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('home', 1400)}>
+                        <Button sx={{ my: 2, color: 'black' }} onClick={() => handleScroll('home', 1400)}>
                             <Link href='/#home'>Home</Link>
                         </Button>
-                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('about', 1400)}>
-                            <Link href='/#about'>About</Link>
+                        <Button sx={{ my: 2, color: 'black' }} onClick={() => handleScroll('project', 1400)}>
+                            <Link href='/#project'>Projects</Link>
                         </Button>
                     </Box>
                     <Typography
@@ -159,7 +159,7 @@ const MuiBar: React.FC = () => {
                         noWrap
                         sx={{
                             display: { xs: 'none', md: 'flex' },
-                            flexGrow: 0.87,
+                            flexGrow: 0.74,
                             textAlign: 'center',
                             alignItems: 'center'
                         }}
@@ -214,16 +214,27 @@ const MuiBar: React.FC = () => {
                             <Box sx={{ m: 2, textAlign: 'center' }}>
                                 <Typography variant="h6">AceCloud</Typography>
                             </Box>
-                            <Divider sx={{ backgroundColor: 'white' }} />
+                            <Divider sx={{ backgroundColor: 'black' }} />
                             {drawer}
                         </Drawer>
                     </Box>
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('project', 1400)}>
-                            <Link href='/#project'>Projects</Link>
-                        </Button>
-                        <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('contact', 1400)}>
+                        <Button sx={{ my: 2, color: 'black' }} onClick={() => handleScroll('contact', 1400)}>
                             <Link href='/#contact'>Contact</Link>
+                        </Button>
+                        <Button
+                            variant="outlined"
+                            sx={{
+                                my: 2,
+                                color: 'black',
+                                borderColor: 'black',
+                                transition: 'transform 0.3s ease, background-color 0.3s ease',
+                                borderRadius: '20px',
+                            }}
+                        >
+                            <Link href='/book-meeting' style={{ textDecoration: 'none', color: '#0DCCD7' }}>
+                                Book Meeting
+                            </Link>
                         </Button>
                     </Box>
                 </Toolbar>

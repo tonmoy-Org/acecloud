@@ -64,7 +64,7 @@ export default function Projects() {
 
     return (
         <Box id="project">
-            <Box sx={{ pt: 15, mb: 8 }} >
+            <Box sx={{ pt: 15, mb: 8 }}>
                 <Container>
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}
@@ -76,7 +76,6 @@ export default function Projects() {
                             <Typography color='#0DCCD7' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px' }}>
                                 Projects
                             </Typography>
-
                             <Typography variant="h4" component="h2" sx={{ color: '#E0E0E0', fontWeight: 900 }}>
                                 Recent Work
                             </Typography>
@@ -104,16 +103,18 @@ export default function Projects() {
                                                 position: 'relative',
                                                 overflow: 'visible',
                                                 height: { xs: '100%', md: 390 },
-                                                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                                                border: '2px solid transparent',
+                                                transition: 'transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
                                                 '&:hover': {
                                                     transform: 'translateY(-10px)',
                                                     boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.3)',
+                                                    borderColor: '#0DCCD7',
                                                 },
                                             }}
                                         >
                                             <motion.div
                                                 initial={{ scale: 1 }}
-                                                whileHover={{ scale: 1.05 }}
+                                                whileHover={{ scale: 1.1 }}
                                                 transition={{ duration: 0.3, ease: "easeInOut" }}
                                             >
                                                 <Box sx={{ width: '100%', height: 180, mb: 2, position: 'relative' }}>

@@ -11,6 +11,7 @@ import c2 from '@/public/client/c2.jpg';
 import c3 from '@/public/client/c3.jpg';
 import c4 from '@/public/client/c4.jpg';
 import c5 from '@/public/client/c5.jpg';
+import cm from '@/public/client/Cm.jpg'
 
 const responsive = {
     desktop: {
@@ -35,8 +36,23 @@ const staggerItem = {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
+const starVariants = {
+    hover: {
+        scale: 1.2,
+        transition: {
+            duration: 0.2,
+        },
+    },
+};
+
 export default function Testimonials() {
     const testimonials = [
+        {
+            company: 'NUTRIMERCHANT',
+            feedback: "Working with Ace Cloud was a game-changer for our business. Our website went from outdated to modern and user-friendly. They really listened to our needs, and the final result was exactly what we wanted.",
+            avatar: cm.src,
+            rating: 5,
+        },
         {
             company: 'ECOBUILD',
             feedback: "Working with Ace Cloud was a game-changer for our business. Our website went from outdated to modern and user-friendly. They really listened to our needs, and the final result was exactly what we wanted.",
@@ -119,8 +135,8 @@ export default function Testimonials() {
                                     bgcolor: '#14151B',
                                     color: 'white',
                                     padding: 2,
-                                    height: '360px', // Adjusted height for all cards
-                                    margin: '0 10px', // Gap between cards
+                                    height: '360px',
+                                    margin: '0 10px',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
@@ -144,13 +160,18 @@ export default function Testimonials() {
                                 {/* Rating stars */}
                                 <Box sx={{ mt: 1, display: 'flex', justifyContent: 'center' }}>
                                     {[...Array(5)].map((_, i) => (
-                                        <StarIcon
+                                        <motion.div
                                             key={i}
-                                            sx={{
-                                                color: i < testimonial.rating ? '#ffd700' : '#444',
-                                                fontSize: 20,
-                                            }}
-                                        />
+                                            variants={starVariants}
+                                            whileHover="hover"
+                                        >
+                                            <StarIcon
+                                                sx={{
+                                                    color: i < testimonial.rating ? '#ffd700' : '#444',
+                                                    fontSize: 20,
+                                                }}
+                                            />
+                                        </motion.div>
                                     ))}
                                 </Box>
 
@@ -163,6 +184,6 @@ export default function Testimonials() {
                     </Carousel>
                 </motion.div>
             </Container>
-        </Box >
+        </Box>
     );
 }

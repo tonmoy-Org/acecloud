@@ -69,7 +69,6 @@ const ResponsiveAppBar = () => {
         }
     };
 
-
     const drawer = (
         <Box sx={{ bgcolor: 'black', color: 'white', height: '100%', p: 2 }}>
             <Box display="flex" justifyContent="space-between">
@@ -134,11 +133,33 @@ const ResponsiveAppBar = () => {
                     <Toolbar>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1 }}>
                             {/* OnClick for manual scrolling */}
-                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('home', 1400)}>
-                                <Link href='/#home'>Home</Link>
+                            <Button
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    '&:hover': {
+                                        color: '#0DCCD7', // Change text color on hover
+                                    },
+                                }}
+                                onClick={() => handleScroll('home', 1400)}
+                            >
+                                <Link href='/#home' style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    Home
+                                </Link>
                             </Button>
-                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('about', 1400)}>
-                                <Link href='/#about'>About</Link>
+                            <Button
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    '&:hover': {
+                                        color: '#0DCCD7', // Change text color on hover
+                                    },
+                                }}
+                                onClick={() => handleScroll('project', 1400)}
+                            >
+                                <Link href='/#project' style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    Projects
+                                </Link>
                             </Button>
                         </Box>
                         <Typography
@@ -146,7 +167,7 @@ const ResponsiveAppBar = () => {
                             noWrap
                             sx={{
                                 display: { xs: 'none', md: 'flex' },
-                                flexGrow: 0.87,
+                                flexGrow: 0.74,
                                 textAlign: 'center',
                                 alignItems: 'center'
                             }}
@@ -200,11 +221,34 @@ const ResponsiveAppBar = () => {
                             </Drawer>
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('project', 1400)}>
-                                <Link href='/#project'>Projects</Link>
+                            <Button
+                                sx={{
+                                    my: 2,
+                                    color: 'white',
+                                    mr: 2,
+                                    '&:hover': {
+                                        color: '#0DCCD7', // Change text color on hover
+                                    },
+                                }}
+                                onClick={() => handleScroll('contact', 1400)}
+                            >
+                                <Link href='/#contact' style={{ textDecoration: 'none', color: 'inherit' }}>
+                                    Contact
+                                </Link>
                             </Button>
-                            <Button sx={{ my: 2, color: 'white' }} onClick={() => handleScroll('contact', 1400)}>
-                                <Link href='/#contact'>Contact</Link>
+                            <Button
+                                variant="outlined"
+                                sx={{
+                                    my: 2,
+                                    color: '#0DCCD7',
+                                    borderColor: '#0DCCD7',
+                                    transition: 'transform 0.3s ease, background-color 0.3s ease',
+                                    borderRadius: '20px',
+                                }}
+                            >
+                                <Link href='/book-meeting' style={{ textDecoration: 'none' }}>
+                                    Book Meeting
+                                </Link>
                             </Button>
                         </Box>
                     </Toolbar>
