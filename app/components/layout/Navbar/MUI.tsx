@@ -265,8 +265,8 @@ const ResponsiveAppBar = () => {
                                 '&:hover': {
                                     color: '#0DCCD7',
                                 },
-                            }} onClick={() => handleScroll('contact', 1400)}>
-                                <Link href='/#contact'>Contact</Link>
+                            }}>
+                                <Link href='/about-us'>About Us</Link>
                             </Button>
                             <Button
                                 variant="outlined"

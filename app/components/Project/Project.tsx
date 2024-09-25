@@ -66,7 +66,7 @@ export default function Projects() {
 
     return (
         <Box id="project">
-            <Box sx={{ pt: 15, mb: 8 }}>
+            <Box sx={{ pt: 10, mb: 8 }}>
                 <Container>
                     <motion.div
                         initial={{ opacity: 0, y: 100 }}

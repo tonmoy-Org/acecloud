@@ -4,32 +4,22 @@ import React from 'react';
 import { Grid, Card, CardContent, Typography, Button, Box, CardActions } from '@mui/material';
 import { Container, styled } from '@mui/system';
 import { motion } from 'framer-motion';
-import blog1 from '@/public/blog/blog1.png';
-import blog2 from '@/public/blog/blog2.png';
-import blog3 from '@/public/blog/blog3.webp';
-import Image from 'next/image';
 
 const blogData = [
     {
         title: "Branding for Package with Modern Style Design",
         description:
             "Lorem ipsum dolor sit amet consec tetur. Phasel lus elei fend duis rhoncus peil lean tesque. Vulpu tatera augue lobortis...",
-        imageUrl: blog1,
-        alt: "Package Design",
     },
     {
         title: "The Power of Branding: Building Your Business Identity",
         description:
             "Lorem ipsum dolor sit amet consec tetur. Phasel lus elei fend duis rhoncus peil lean tesque. Vulpu tatera augue lobortis...",
-        imageUrl: blog2,
-        alt: "Business Identity",
     },
     {
         title: "Unleashing Brand Potential: Strategies for Success",
         description:
             "Lorem ipsum dolor sit amet consec tetur. Phasel lus elei fend duis rhoncus peil lean tesque. Vulpu tatera augue lobortis...",
-        imageUrl: blog3,
-        alt: "Brand Potential",
     },
 ];
 
@@ -57,7 +47,7 @@ const staggerContainer = {
         opacity: 1,
         y: 0,
         transition: {
-            staggerChildren: 0.3, // Delay between each card animation
+            staggerChildren: 0.3,
             duration: 0.5,
         },
     },
@@ -111,13 +101,15 @@ const BlogSection: React.FC = () => {
                             >
                                 <CardWrapper>
                                     <Box sx={{ position: 'relative', height: 180 }}>
-                                        <Image
-                                            src={blog.imageUrl}
-                                            alt={blog.alt}
-                                            layout="fill"
-                                            objectFit="cover"
-                                            priority
-                                        />
+                                        <iframe
+                                            width="100%"
+                                            height="180"
+                                            src="https://www.youtube.com/embed/gG4urkinFQI?si=pG4xFoQXMSs7yJ4v"
+                                            title="YouTube video player"
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                        ></iframe>
                                     </Box>
                                     <CardContent>
                                         <Typography gutterBottom variant="h6" component="div" style={{ fontWeight: 'bold' }}>
