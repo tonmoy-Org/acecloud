@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Card, Typography, Box, Container } from '@mui/material';
+import { Card, Typography, Box, Container, CardActions } from '@mui/material';
 import { motion } from 'framer-motion';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
@@ -11,8 +11,8 @@ import c2 from '@/public/client/c2.jpg';
 import c3 from '@/public/client/c3.jpg';
 import c4 from '@/public/client/c4.jpg';
 import c5 from '@/public/client/c5.jpg';
-import cm from '@/public/client/Cm.jpg'
-import Image from 'next/image';
+import cm from '@/public/client/Cm.jpg';
+
 
 const responsive = {
     desktop: {
@@ -50,37 +50,37 @@ export default function Testimonials() {
     const testimonials = [
         {
             company: 'NUTRIMERCHANT',
-            feedback: "Working with Ace Cloud was a game-changer for our business. Our website went from outdated to modern and user-friendly. They really listened to our needs, and the final result was exactly what we wanted.",
+            feedback: "Working with Ace Cloud transformed our outdated website into a modern, user-friendly platform that met our exact needs.",
             avatar: cm.src,
             rating: 5,
         },
         {
             company: 'ECOBUILD',
-            feedback: "Working with Ace Cloud was a game-changer for our business. Our website went from outdated to modern and user-friendly. They really listened to our needs, and the final result was exactly what we wanted.",
+            feedback: "Collaborating with Ace Cloud revamped our outdated website into a modern, user-friendly platform that fulfilled our requirements.",
             avatar: c1.src,
             rating: 5,
         },
         {
             company: 'LiquidWave',
-            feedback: "The team at Ace Cloud was fantastic to work with. They were able to take our vague ideas and turn them into something polished and professional.",
+            feedback: "Ace Cloud transformed our vague ideas into a polished, professional website that exceeded our expectations.",
             avatar: c2.src,
             rating: 4,
         },
         {
             company: 'GlobeConnect',
-            feedback: "The team was professional, but we had a few delays. In the end, the site is great, but it took longer than expected.",
+            feedback: "Although there were delays, Ace Cloud ultimately delivered a great website that met our expectations and needs.",
             avatar: c3.src,
             rating: 3,
         },
         {
             company: 'QuickBooks',
-            feedback: "I had a positive experience working with Ace Cloud. Their cybersecurity services were invaluable. I'd recommend them!",
+            feedback: "My experience with Ace Cloud was positive; their cybersecurity services greatly enhanced our site's security.",
             avatar: c4.src,
             rating: 4,
         },
         {
             company: 'JAVAHAVEN',
-            feedback: "Ace Cloud made our site fast and easy to navigate. Their design and SEO expertise have started driving more traffic.",
+            feedback: "Ace Cloud improved our site's speed and navigation, significantly increasing our traffic with their design expertise.",
             avatar: c5.src,
             rating: 5,
         },
@@ -136,46 +136,64 @@ export default function Testimonials() {
                                     bgcolor: '#14151B',
                                     color: 'white',
                                     padding: 2,
-                                    height: '360px',
+                                    height: '400px',
                                     margin: '0 10px',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
                                     textAlign: 'center',
+                                    position: 'relative',
+                                    overflow: 'hidden',
+                                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+                                    borderRadius: '12px',
                                 }}
                             >
-                                <Image
-                                    alt={testimonial.company}
-                                    src={testimonial.avatar}
-                                    width={80}
-                                    height={10}
+                                {/* Image as background */}
+                                <Box
+                                    component="div"
+                                    sx={{
+                                        position: 'absolute',
+                                        top: 0,
+                                        left: 0,
+                                        width: '100%',
+                                        height: '100%',
+                                        backgroundImage: `url(${testimonial.avatar})`,
+                                        backgroundSize: 'cover',
+                                        backgroundPosition: 'center',
+                                        opacity: 0.2,
+                                    }}
                                 />
-                                <Typography variant="h6" sx={{ color: '#0DCCD7', mt: 2, fontWeight: 700 }}>
-                                    {testimonial.company}
-                                </Typography>
+                                
+                                <CardActions disableSpacing sx={{ zIndex: 1 }}>
+                                    <Box sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                        <Typography variant="h6" sx={{ color: '#0DCCD7', fontWeight: 700 }}>
+                                            {testimonial.company}
+                                        </Typography>
 
-                                {/* Rating stars */}
-                                <Box sx={{ mt: 1, display: 'flex', justifyContent: 'center' }}>
-                                    {[...Array(5)].map((_, i) => (
-                                        <motion.div
-                                            key={i}
-                                            variants={starVariants}
-                                            whileHover="hover"
-                                        >
-                                            <StarIcon
-                                                sx={{
-                                                    color: i < testimonial.rating ? '#ffd700' : '#444',
-                                                    fontSize: 20,
-                                                }}
-                                            />
-                                        </motion.div>
-                                    ))}
-                                </Box>
+                                        {/* Rating stars */}
+                                        <Box sx={{ mt: 1, display: 'flex', justifyContent: 'center' }}>
+                                            {[...Array(5)].map((_, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    variants={starVariants}
+                                                    whileHover="hover"
+                                                >
+                                                    <StarIcon
+                                                        sx={{
+                                                            color: i < testimonial.rating ? '#ffd700' : '#444',
+                                                            fontSize: 20,
+                                                        }}
+                                                    />
+                                                </motion.div>
+                                            ))}
+                                        </Box>
 
-                                {/* Feedback description */}
-                                <Typography variant="body2" sx={{ color: '#BABABA', mt: 2 }}>
-                                    "{testimonial.feedback}"
-                                </Typography>
+                                        {/* Feedback description */}
+                                        <Typography variant="body2" sx={{ color: '#BABABA', mt: 2, textAlign: 'center', zIndex: 1 }}>
+                                            "{testimonial.feedback}"
+                                        </Typography>
+                                    </Box>
+                                </CardActions>
                             </Card>
                         ))}
                     </Carousel>

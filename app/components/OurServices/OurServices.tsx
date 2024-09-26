@@ -7,7 +7,6 @@ import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
 import CodeIcon from '@mui/icons-material/Code';
 import WebhookIcon from '@mui/icons-material/Webhook';
 import SecurityIcon from '@mui/icons-material/Security';
-// import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import ApiIcon from '@mui/icons-material/Api';
 import { motion } from 'framer-motion';
 
@@ -111,18 +110,14 @@ export default function OurServices() {
                                                 p: { xs: 0, md: 2 },
                                                 position: 'relative',
                                                 overflow: 'hidden',
-                                                transition: 'all 0.4s ease-in-out',
+                                                transition: 'transform 0.3s ease-in-out, border-color 0.3s ease-in-out',
                                                 '&:hover': {
+                                                    transform: 'scale(1.03)', // Scale the card on hover
                                                     borderColor: '#0DCCD7',
-                                                    '& .content': {
-                                                        transform: { xs: 'translateY(-25%)', md: 'translateY(-30%)' },
-                                                    },
-                                                    '& .viewMore': {
-                                                        transform: 'translateY(100%)',
-                                                    },
+                                                    boxShadow: 20, // Add shadow on hover
                                                 },
                                                 border: service.title === 'Branding Design' ? '2px solid #0DCCD7' : '1px solid transparent',
-                                                boxShadow: 10
+                                                boxShadow: 10,
                                             }}
                                         >
                                             <CardContent
@@ -130,7 +125,7 @@ export default function OurServices() {
                                                 sx={{
                                                     textAlign: 'center',
                                                     position: 'relative',
-                                                    transition: 'transform 0.5s ease',
+                                                    transition: 'transform 0.3s ease',
                                                     transform: 'translateY(0)',
                                                 }}
                                             >
@@ -143,20 +138,6 @@ export default function OurServices() {
                                                 <Typography variant="body2" sx={{ color: '#BABABA', mb: 2 }}>
                                                     {service.description}
                                                 </Typography>
-                                                {/* <Button
-                                                    className="viewMore"
-                                                    sx={{
-                                                        transform: { xs: 'translateY(0%) translateY(175%)', md: 'translateX(0) translateY(180%)' },
-                                                        transition: 'all 0.4s ease-in-out',
-                                                        bgcolor: 'transparent',
-                                                        color: '#0DCCD7',
-                                                        padding: 0,
-                                                    }}
-                                                    variant="text"
-                                                    endIcon={<ArrowRightAltIcon fontSize='large' />}
-                                                >
-                                                    View More
-                                                </Button> */}
                                             </CardContent>
                                         </Card>
                                     </motion.div>
@@ -169,4 +150,3 @@ export default function OurServices() {
         </Box>
     );
 }
-    
