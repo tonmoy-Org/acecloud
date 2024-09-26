@@ -10,7 +10,7 @@ const blogData = [
         title: "How to Create Stunning UI",
         description:
             "Learn the essential tips and tricks to design user interfaces that are not only functional but visually appealing.",
-        videoUrl: "https://www.youtube.com/embed/sXtm9k3ohD4?si=94qZc5XDBfYkbHVM",
+        videoUrl: "https://www.youtube.com/embed/KfeaNa92Nns?si=Bw46dk7_o0AWT3iF",
     },
     {
         title: "Protect Your Digital Footprint",
