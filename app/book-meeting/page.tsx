@@ -130,7 +130,7 @@ const BookMeeting: React.FC = () => {
                                 textAlign: 'center',
                             }}
                         >
-                            Our dedicated team is ready to assist you with any inquiries or guidance you may need.
+                            Our dedicated team is ready to assist you with any inquiries or guidance you may need
                         </Typography>
                         <Typography
                             variant="body2"
