@@ -116,7 +116,7 @@ const ResponsiveAppBar = () => {
 
             {/* Centered Navigation Links */}
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                {['Home', 'About', 'Project', 'Contact'].map((text, index) => (
+                {['Home', 'Project', 'Contact'].map((text, index) => (
                     <motion.div
                         key={text}
                         initial={{ opacity: 0, scale: 0.8, y: -10 }} // Initial state for animation
@@ -133,11 +133,35 @@ const ResponsiveAppBar = () => {
                             }}
                             onClick={() => handleScroll(text.toLowerCase(), 1400)}
                         >
-                            <Link href={`/#${text.toLowerCase()}`}>{text}</Link>
+                            <Link href={`/#${text.toLowerCase()}`} passHref>
+                                {text}
+                            </Link>
                         </Button>
                     </motion.div>
                 ))}
+                {/* Fixed "About Us" route handling */}
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.8, y: -10 }}
+                    animate={{ opacity: mobileOpen ? 1 : 0, scale: mobileOpen ? 1 : 0.8, y: mobileOpen ? 0 : -10 }}
+                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
+                >
+                    <Button
+                        sx={{
+                            color: 'white',
+                            my: 1,
+                            '&:hover': {
+                                color: '#0DCCD7',
+                            },
+                        }}
+                        onClick={handleDrawerClose} // Ensure drawer closes when clicking the link
+                    >
+                        <Link href='/about-us' passHref>
+                            About Us
+                        </Link>
+                    </Button>
+                </motion.div>
             </Box>
+
             <Button
                 onClick={handleDrawerClose}
                 variant="outlined"
@@ -156,7 +180,6 @@ const ResponsiveAppBar = () => {
                     Book a call with us
                 </Link>
             </Button>
-
         </motion.div>
     );
 

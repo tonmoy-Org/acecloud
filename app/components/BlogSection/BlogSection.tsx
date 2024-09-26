@@ -7,19 +7,22 @@ import { motion } from 'framer-motion';
 
 const blogData = [
     {
-        title: "Branding for Package with Modern Style Design",
+        title: "How to Create Stunning UI",
         description:
-            "Lorem ipsum dolor sit amet consec tetur. Phasel lus elei fend duis rhoncus peil lean tesque. Vulpu tatera augue lobortis...",
+            "Learn the essential tips and tricks to design user interfaces that are not only functional but visually appealing.",
+        videoUrl: "https://www.youtube.com/embed/sXtm9k3ohD4?si=94qZc5XDBfYkbHVM",
     },
     {
-        title: "The Power of Branding: Building Your Business Identity",
+        title: "Protect Your Digital Footprint",
         description:
-            "Lorem ipsum dolor sit amet consec tetur. Phasel lus elei fend duis rhoncus peil lean tesque. Vulpu tatera augue lobortis...",
+            "In this video, we explore best practices for safeguarding your personal data and online identity in the digital age.",
+        videoUrl: "https://www.youtube.com/embed/VGNz8eKXoFA?si=lcfHPdy1Xzk7cKDw",
     },
     {
-        title: "Unleashing Brand Potential: Strategies for Success",
+        title: "Backend Development",
         description:
-            "Lorem ipsum dolor sit amet consec tetur. Phasel lus elei fend duis rhoncus peil lean tesque. Vulpu tatera augue lobortis...",
+            "Get a quick yet comprehensive overview of backend development, covering databases, APIs, and server logic.",
+        videoUrl: "https://www.youtube.com/embed/01Q1Te5DIF0?si=Ju05I5tyk528hZF9",
     },
 ];
 
@@ -104,7 +107,7 @@ const BlogSection: React.FC = () => {
                                         <iframe
                                             width="100%"
                                             height="180"
-                                            src="https://www.youtube.com/embed/gG4urkinFQI?si=pG4xFoQXMSs7yJ4v"
+                                            src={blog.videoUrl}
                                             title="YouTube video player"
                                             frameBorder="0"
                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

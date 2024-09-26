@@ -16,7 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "AceCloud",
+  title: "AceCloud | Elevating digital experiences through innovation and expertise.",
   description: "AceCloud - Elevating digital experiences through innovation and expertise.",
 };
 
