@@ -11,18 +11,21 @@ const blogData = [
         description:
             "Learn the essential tips and tricks to design user interfaces that are not only functional but visually appealing.",
         videoUrl: "https://www.youtube.com/embed/KfeaNa92Nns?si=Bw46dk7_o0AWT3iF",
+        watchLink: "https://www.youtube.com/watch?v=KfeaNa92Nns", // Actual video URL for "Read More"
     },
     {
         title: "Protect Your Digital Footprint",
         description:
             "In this video, we explore best practices for safeguarding your personal data and online identity in the digital age.",
         videoUrl: "https://www.youtube.com/embed/VGNz8eKXoFA?si=lcfHPdy1Xzk7cKDw",
+        watchLink: "https://www.youtube.com/watch?v=VGNz8eKXoFA", // Actual video URL for "Read More"
     },
     {
         title: "Backend Development",
         description:
             "Get a quick yet comprehensive overview of backend development, covering databases, APIs, and server logic.",
         videoUrl: "https://www.youtube.com/embed/01Q1Te5DIF0?si=Ju05I5tyk528hZF9",
+        watchLink: "https://www.youtube.com/watch?v=01Q1Te5DIF0", // Actual video URL for "Read More"
     },
 ];
 
@@ -123,7 +126,12 @@ const BlogSection: React.FC = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <CustomButton>Read More</CustomButton>
+                                        <CustomButton
+                                            href={blog.watchLink}
+                                            rel="noopener noreferrer"
+                                        >
+                                            Read More
+                                        </CustomButton>
                                     </CardActions>
                                 </CardWrapper>
                             </motion.div>

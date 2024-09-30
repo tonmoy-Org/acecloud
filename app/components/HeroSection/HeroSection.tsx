@@ -7,7 +7,7 @@ import { Box, Grid, Typography } from '@mui/material';
 import CountUp from 'react-countup';
 import banner from '@/public/banner/01.png';
 import './HeroSection.css';
-import { Link as ScrollLink } from 'react-scroll';
+// import { Link as ScrollLink } from 'react-scroll';
 
 export default function HeroSection() {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -116,7 +116,7 @@ export default function HeroSection() {
             </motion.p>
 
             {/* Animated More Button */}
-            <ScrollLink to="about" smooth={true} duration={1500}>
+            {/* <ScrollLink to="about" smooth={true} duration={1500}>
               <motion.div className="text-sm mt-12 flex justify-center" variants={textAnimation} custom={2}>
                 <div className="relative h-14 w-14 rounded-full flex items-center justify-center">
                   <div className="absolute h-14 w-14 rounded-full border-2 border-white flex items-center justify-center">
@@ -135,7 +135,7 @@ export default function HeroSection() {
                   </div>
                 </div>
               </motion.div>
-            </ScrollLink>
+            </ScrollLink> */}
 
             {/* Stats Section */}
             <Box sx={{ width: { lg: '1200px' }, mx: { lg: 'auto' }, py: 5 }}>

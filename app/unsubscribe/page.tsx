@@ -8,6 +8,8 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import banner from '@/public/banner/03.png';
 
+const WEB3FORMS_ACCESS_KEY = '9d818505-7ca6-4f44-8b21-5fae7a9a2c1d';
+
 interface FormValues {
     email: string;
 }
@@ -19,9 +21,20 @@ export default function Unsubscribe() {
     const onSubmit = async (data: FormValues) => {
         setLoading(true);
         try {
-            const response = await axios.post('/api/unsubscribe', {
-                email: data.email,
-            });
+            const response = await axios.post('https://api.web3forms.com/submit',
+                JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    subject: 'Unsubscription Request Ace Cloud',
+                    email: data.email,
+                    from_name: data.email,
+                    message: 'Unsubscription Request',
+                }),
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
 
             if (response.status === 200) {
                 Swal.fire({

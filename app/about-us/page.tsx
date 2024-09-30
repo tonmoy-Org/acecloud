@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import CountUp from "react-countup"; // Import CountUp component
 import TeamSection from "../components/MeetOurTeam/MeetOurTeam";
 import banner from "@/public/banner/03.png";
-
+import { useInView } from 'react-intersection-observer'; // Import useInView hook
 
 // Variants for text animations
 const textAnimation = {
@@ -21,8 +21,13 @@ const textAnimation = {
     }),
 };
 
-
 const AboutUs: React.FC = () => {
+    // useInView hook for observing when the statistics section comes into view
+    const { ref: statsRef, inView: statsInView } = useInView({
+        triggerOnce: true, // Trigger the animation only once
+        threshold: 0.2, // Start the animation when 20% of the section is visible
+    });
+
     return (
         <Box>
             <Box
@@ -106,6 +111,7 @@ const AboutUs: React.FC = () => {
 
             {/* Statistics Section */}
             <Box
+                ref={statsRef} // Attach ref to observe this section
                 sx={{
                     backgroundColor: "#121212",
                     color: "#fff",
@@ -120,43 +126,45 @@ const AboutUs: React.FC = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={6}>
                         <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
-                            Professional talent
+                            Professional Talent
                         </Typography>
                         <Typography variant="body2" color="grey.500">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-                            mollis aliquam ut porttitor.
+                            Our team consists of highly skilled professionals who are experts in their fields.
+                            We bring years of experience and a commitment to delivering exceptional results for
+                            every project we undertake. We strive for innovation, quality, and excellence in
+                            every detail of our work.
                         </Typography>
                         <Typography
                             variant="h3"
                             sx={{ fontWeight: 700, color: "#0DCCD7", mt: 2 }}
                         >
-                            <CountUp end={209} duration={2} />+
+                            {statsInView && <CountUp end={209} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1">Projects Completed</Typography>
                     </Grid>
 
                     <Grid item xs={12} md={6}>
                         <Typography variant="h6" sx={{ fontWeight: 600, mb: 2 }}>
-                            Driven by passion
+                            Driven by Passion
                         </Typography>
                         <Typography variant="body2" color="grey.500">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-                            mollis aliquam ut porttitor.
+                            We are passionate about what we do, and that drives us to go above and beyond for
+                            our clients. Every project is an opportunity to create something unique, valuable,
+                            and impactful. Our passion for excellence translates into outstanding results for
+                            our clients.
                         </Typography>
                         <Typography
                             variant="h3"
                             sx={{ fontWeight: 700, color: "#0DCCD7", mt: 2 }}
                         >
-                            <CountUp end={286} duration={2} />+
+                            {statsInView && <CountUp end={286} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1">Satisfied Customers</Typography>
                     </Grid>
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            <CountUp end={467} duration={2} />
+                            {statsInView && <CountUp end={467} duration={2} />}
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
                             Projects Completed
@@ -165,7 +173,7 @@ const AboutUs: React.FC = () => {
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            <CountUp end={5} duration={2} />+
+                            {statsInView && <CountUp end={5} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
                             Years Experience
@@ -174,7 +182,7 @@ const AboutUs: React.FC = () => {
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            <CountUp end={95} duration={2} />%
+                            {statsInView && <CountUp end={95} duration={2} />}%
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
                             Client Satisfaction
@@ -183,7 +191,7 @@ const AboutUs: React.FC = () => {
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            <CountUp end={50} duration={2} />+
+                            {statsInView && <CountUp end={50} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
                             Budget Spent
