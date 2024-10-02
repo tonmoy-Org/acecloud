@@ -128,7 +128,7 @@ export default function Testimonials() {
                                 sx={{
                                     background: 'linear-gradient(135deg, #1C1D24, #3A3B41)',
                                     color: 'white',
-                                    padding: 3,
+                                    padding: 0,
                                     height: '460px',
                                     margin: '0 14px',
                                     display: 'flex',
@@ -146,9 +146,10 @@ export default function Testimonials() {
                                     src={testimonial.avatar} // Use company-specific avatar
                                     alt={`${testimonial.company} logo`}
                                     sx={{
-                                        width: '100px', // Adjust size as needed
-                                        height: 'auto',
+                                        width: '50%', // Adjust size as needed
+                                        height: '120px',
                                         mb: 2,
+                                        mx: 'auto'
                                     }}
                                 />
 

@@ -140,7 +140,7 @@ const AboutUs: React.FC = () => {
                         >
                             {statsInView && <CountUp end={209} duration={2} />}+
                         </Typography>
-                        <Typography variant="subtitle1">Projects Completed</Typography>
+                        <Typography variant="subtitle1">Successful Projects</Typography>
                     </Grid>
 
                     <Grid item xs={12} md={6}>
@@ -159,15 +159,15 @@ const AboutUs: React.FC = () => {
                         >
                             {statsInView && <CountUp end={286} duration={2} />}+
                         </Typography>
-                        <Typography variant="subtitle1">Satisfied Customers</Typography>
+                        <Typography variant="subtitle1">Satisfied Clients</Typography>
                     </Grid>
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            {statsInView && <CountUp end={467} duration={2} />}
+                            {statsInView && <CountUp end={10} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
-                            Projects Completed
+                            Team Members
                         </Typography>
                     </Grid>
 
@@ -176,7 +176,7 @@ const AboutUs: React.FC = () => {
                             {statsInView && <CountUp end={5} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
-                            Years Experience
+                            Years of Experience
                         </Typography>
                     </Grid>
 
@@ -185,20 +185,22 @@ const AboutUs: React.FC = () => {
                             {statsInView && <CountUp end={95} duration={2} />}%
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
-                            Client Satisfaction
+                            Client Satisfaction Rate
                         </Typography>
                     </Grid>
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            {statsInView && <CountUp end={50} duration={2} />}+
+                            {statsInView && <CountUp end={15} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
-                            Budget Spent
+                            Active Clients
                         </Typography>
                     </Grid>
                 </Grid>
             </Box>
+
+
 
             {/* Team Section */}
             <Box sx={{ mt: 5 }}>
