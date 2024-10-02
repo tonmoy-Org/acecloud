@@ -164,15 +164,6 @@ const AboutUs: React.FC = () => {
 
                     <Grid item xs={6} md={3}>
                         <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
-                            {statsInView && <CountUp end={10} duration={2} />}+
-                        </Typography>
-                        <Typography variant="subtitle1" color="grey.500">
-                            Team Members
-                        </Typography>
-                    </Grid>
-
-                    <Grid item xs={6} md={3}>
-                        <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
                             {statsInView && <CountUp end={5} duration={2} />}+
                         </Typography>
                         <Typography variant="subtitle1" color="grey.500">
@@ -197,10 +188,18 @@ const AboutUs: React.FC = () => {
                             Active Clients
                         </Typography>
                     </Grid>
+
+                    {/* New Grid Item for Global Partnerships */}
+                    <Grid item xs={6} md={3}>
+                        <Typography variant="h3" sx={{ fontWeight: 700, color: "#fff" }}>
+                            {statsInView && <CountUp end={13} duration={2} />}+
+                        </Typography>
+                        <Typography variant="subtitle1" color="grey.500">
+                            Global Partnerships in Countries
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Box>
-
-
 
             {/* Team Section */}
             <Box sx={{ mt: 5 }}>
