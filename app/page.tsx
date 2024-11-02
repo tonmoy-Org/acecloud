@@ -19,9 +19,8 @@ export default function Home() {
         <Projects />
         <HighlightSection />
         <Testimonials />
-        <GlowingSection/>
         <BlogSection />
-        <Contact />
+        <GlowingSection/>
       </Box>
     </main>
   );

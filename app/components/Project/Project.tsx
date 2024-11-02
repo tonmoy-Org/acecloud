@@ -81,7 +81,7 @@ export default function Projects() {
                             <Typography variant="h4" component="h2" sx={{ color: '#E0E0E0', fontWeight: 900 }}>
                                 Recent Work
                             </Typography>
-                            <Typography sx={{ color: '#BABABA', maxWidth: '600px', margin: '20px auto' }}>
+                            <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
                                 Explore some of the projects I have worked on, demonstrating my expertise in web development, API integration, and more.
                             </Typography>
                         </Box>
@@ -138,7 +138,7 @@ export default function Projects() {
                                                 <Typography variant="h6" sx={{ fontWeight: 700 }}>
                                                     {project.title}
                                                 </Typography>
-                                                <Typography variant="body2" sx={{ color: '#BABABA', mt: 1 }}>
+                                                <Typography variant="body2" sx={{ color: 'hsl(220 10% 54.4%)', mt: 1 }}>
                                                     {project.description}
                                                 </Typography>
                                             </CardContent>

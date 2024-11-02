@@ -193,15 +193,16 @@ const ResponsiveAppBar = () => {
                     boxShadow: elevate ? '0px 4px 12px rgba(0, 0, 0, 0.2)' : 'none',
                 }}
             >
-                <Container maxWidth="lg">
+                <Container sx={{ minWidth: { xs: '100%', md: '85%' } }}>
                     <Toolbar sx={{
                         display: 'flex',
                         justifyContent: 'space-between',
                         paddingLeft: '0px !important',
                         paddingRight: '0px !important',
+
                     }}>
                         <Typography variant="h4" noWrap sx={{ textAlign: 'center' }}>
-                            <div className="w-36 me-10">
+                            <div className="w-32 me-10">
                                 <Link href="/" passHref>
                                     <Image src={logo} alt="Ace Cloud Logo" layout="responsive" />
                                 </Link>
@@ -209,17 +210,20 @@ const ResponsiveAppBar = () => {
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            {['Home', 'Project', 'Contact'].map((text) => (
+                            {['Home', 'Project'].map((text) => (
                                 <Button
                                     key={text}
-                                    sx={{ my: 1, color: 'white', '&:hover': { color: '#0DCCD7' } }}
+                                    sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
                                     onClick={() => handleScroll(text.toLowerCase(), 1400)}
                                 >
                                     <Link href={`/#${text.toLowerCase()}`}>{text}</Link>
                                 </Button>
                             ))}
-                            <Button sx={{ my: 1, color: 'white', '&:hover': { color: '#0DCCD7' } }}>
-                                <Link href="/about-us">About Us</Link>
+                            <Button sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}>
+                                <Link href="/about-us">About</Link>
+                            </Button>
+                            <Button sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}>
+                                <Link href="/contact-us">Contact</Link>
                             </Button>
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
@@ -231,9 +235,12 @@ const ResponsiveAppBar = () => {
                                     borderColor: '#0DCCD7',
                                     transition: 'transform 0.3s ease, background-color 0.3s ease',
                                     borderRadius: '6px',
+                                    textTransform: 'none !important',
+                                    py: '2px !important',
+                                    px: '8px !important',
                                 }}
                             >
-                                <Link href="/book-meeting" style={{ textDecoration: 'none' }}>
+                                <Link href="/book-meeting">
                                     Book a call with us
                                 </Link>
                             </Button>

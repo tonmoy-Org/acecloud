@@ -16,7 +16,7 @@ interface FormValues {
 
 const WEB3FORMS_ACCESS_KEY = '7be54b28-f65a-4886-86ba-a34f68e2a37f';
 
-export default function Contact() {
+export default function ContactSection() {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();
     const [loading, setLoading] = useState(false);
 
@@ -87,7 +87,7 @@ export default function Contact() {
                             bgcolor="#1E1E1E"
                             p={4}
                             color="white"
-                            sx={{ borderRadius: '16px' }}
+                            sx={{ borderRadius: '8px' }}
                         >
                             <form onSubmit={handleSubmit(onSubmit)} noValidate>
                                 {/* Name Field */}
@@ -236,7 +236,7 @@ export default function Contact() {
                                 >
                                     Contact Information
                                 </Typography>
-                                <Typography variant="body1" gutterBottom>
+                                <Typography variant="body1" gutterBottom sx={{ color: 'hsl(220 10% 54.4%)' }}>
                                     Have any questions or concerns? Feel free to reach out to us at any time!
                                 </Typography>
                                 <Divider sx={{ my: 2 }} />

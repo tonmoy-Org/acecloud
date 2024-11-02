@@ -7,97 +7,101 @@ body {
 }
 
 @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-fade-in-up {
-    animation: fade-in-up 1s ease-out;
-  }
-  
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .animate-fade-in {
-    animation: fade-in 1.5s ease-out;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-  }
-  
-  .animate-pulse {
-    animation: pulse 2s infinite;
-  }
-  
-
-  .outlined-title {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-    color: transparent;
-    -webkit-text-stroke: 2px #0DCCD7;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+  from {
+    opacity: 0;
+    transform: translateY(30px);
   }
 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  .outlined-text {
-    font-family: 'Arial', sans-serif;
-    font-weight: bold;
-    color: transparent;
-    -webkit-text-stroke: 2px #ffff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
   }
 
+  to {
+    opacity: 1;
+  }
+}
 
-  :root {
-    --glow-color: rgba(0, 55, 255, 0.3);
-    --vulcan: #0e1122;
+.animate-fade-in {
+  animation: fade-in 1.5s ease-out;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+
+.outlined-title {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: transparent;
+  -webkit-text-stroke: 2px #0DCCD7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+.outlined-text {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: transparent;
+  -webkit-text-stroke: 2px #ffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+:root {
+  --glow-color: rgba(0, 55, 255, 0.3);
+  --vulcan: #0e1122;
 }
 
 .highlight-section {
-    user-select: none;
-    position: relative;
-    overflow: hidden;
-    padding: 8rem 0;
-    transition: background 0.3s ease;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+  padding: 8rem 0;
+  transition: background 0.3s ease;
 }
 
 .highlight-section:hover .glow-overlay {
-    opacity: 1;
+  opacity: 1;
 }
 
 .glow-overlay {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    mix-blend-mode: overlay;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 
-
-
-
-
+.bg-background {
+  background-color: hsl(220, 65%, 3.52%);
+}
 

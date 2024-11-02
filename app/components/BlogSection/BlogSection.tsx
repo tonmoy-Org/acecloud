@@ -88,7 +88,7 @@ const BlogSection: React.FC = () => {
                         </Typography>
                     </Box>
                     <Box>
-                        <Typography sx={{ color: '#BABABA', }}>
+                        <Typography sx={{ color: 'hsl(220 10% 54.4%)', }}>
                             We provide comprehensive solutions that ensure your business thrives in the digital landscape. From design to development, we cater to all your digital needs with precision and creativity.
                         </Typography>
                     </Box>
@@ -121,7 +121,7 @@ const BlogSection: React.FC = () => {
                                         <Typography gutterBottom variant="h6" component="div" style={{ fontWeight: 'bold' }}>
                                             {blog.title}
                                         </Typography>
-                                        <Typography variant="body2" style={{ color: "#BABABA" }}>
+                                        <Typography variant="body2" style={{ color: "hsl(220 10% 54.4%)" }}>
                                             {blog.description}
                                         </Typography>
                                     </CardContent>

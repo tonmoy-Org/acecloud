@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'body-bg': 'black', // Add this custom color
+        'body-bg': 'hsl(220, 65%, 3.52%)',
       },
     },
   },

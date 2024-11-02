@@ -1,7 +1,6 @@
-'use client'
+'use client';
 
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from 'react';
 
 const GlowingSection = () => {
     const sectionRef = useRef(null);
@@ -29,73 +28,63 @@ const GlowingSection = () => {
     return (
         <div
             ref={sectionRef}
-            className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full rounded-md z-0"
+            className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full rounded-md z-0 lg:mt-28"
         >
-            {/* Glowing Tube Effect */}
-            <div className="relative flex w-full flex-1 scale-y-150 items-center justify-center isolate z-0">
+            <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
                 <div
-                    className={`absolute inset-auto right-1/2 h-56 overflow-visible w-[27rem] bg-gradient-conic from-blue-500 via-transparent to-transparent text-white transition-opacity duration-1000 ease-out ${
-                        isInView ? "opacity-100" : "opacity-0"
-                    } [--conic-position:from_70deg_at_center_top]`}
+                    className={`absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-[#1D4ED8] via-transparent to-transparent text-white transition-opacity duration-1000 ease-in-out ${isInView ? 'opacity-100' : 'opacity-0'
+                        } [--conic-position:from_70deg_at_center_top]`}
                     style={{
-                        backgroundImage: "conic-gradient(var(--conic-position), var(--tw-gradient-stops))",
-                        willChange: "auto",
+                        backgroundImage: 'conic-gradient(var(--conic-position), var(--tw-gradient-stops))',
+                        willChange: 'auto',
+                    }}
+                >
+                    <div className="absolute w-full h-40 bottom-0 z-20 bg-background [mask-image:linear-gradient(to_top,white,transparent)]"></div>
+                    <div className="absolute w-40 h-full bottom-0 z-20 bg-background [mask-image:linear-gradient(to_right,white,transparent)]"></div>
+                </div>
+
+                <div
+                    className={`absolute inset-auto left-1/2 h-56 w-[30rem] bg-gradient-conic from-transparent via-transparent to-[#1D4ED8] text-white transition-opacity duration-1000 ease-in-out ${isInView ? 'opacity-100' : 'opacity-0'
+                        } [--conic-position:from_290deg_at_center_top]`}
+                    style={{
+                        backgroundImage: 'conic-gradient(var(--conic-position), var(--tw-gradient-stops))',
+                        willChange: 'auto',
+                    }}
+                >
+                    <div className="absolute w-40 h-full right-0 bottom-0 z-20 bg-background [mask-image:linear-gradient(to_left,white,transparent)]"></div>
+                    <div className="absolute w-full h-40 right-0 bottom-0 z-20 bg-background [mask-image:linear-gradient(to_top,white,transparent)]"></div>
+                </div>
+
+                <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-background blur-[8rem]"></div>
+                <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
+                <div
+                    className={`absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-[#1D4ED8] blur-2xl transition-opacity duration-1000 ease-in-out ${isInView ? 'opacity-100' : 'opacity-0'
+                        } [--conic-position:from_290deg_at_center_top]`}
+                ></div>
+
+
+                {/* Glowing Tube Effect */}
+                <div
+                    className={`absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-[#1D4ED8] transition-transform duration-1000 ease-in-out ${isInView ? 'scale-x-200' : 'scale-x-0'}`}
+                    style={{
+                        transformOrigin: 'center',
                     }}
                 ></div>
 
-                <div
-                    className={`absolute inset-auto left-1/2 h-56 w-[27rem] bg-gradient-conic from-transparent via-transparent to-blue-500 text-white transition-opacity duration-1000 ease-out ${
-                        isInView ? "opacity-100" : "opacity-0"
-                    } [--conic-position:from_290deg_at_center_top]`}
-                    style={{
-                        backgroundImage: "conic-gradient(var(--conic-position), var(--tw-gradient-stops))",
-                        willChange: "auto",
-                    }}
-                ></div>
-
-                <motion.div
-                    className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-background blur-[8rem]"
-                    animate={{ opacity: isInView ? 1 : 0 }}
-                    transition={{ duration: 1 }}
-                ></motion.div>
-
-                <motion.div
-                    className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"
-                    animate={{ opacity: isInView ? 1 : 0 }}
-                    transition={{ duration: 1 }}
-                ></motion.div>
-
-                <motion.div
-                    className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-primary blur-2xl"
-                    style={{ width: "16rem", willChange: "auto" }}
-                    animate={{ opacity: isInView ? 1 : 0 }}
-                    transition={{ duration: 1 }}
-                ></motion.div>
-
-                {/* Animated Top Glow */}
-                <motion.div
-                    className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-background opacity-50"
-                    initial={{ scaleX: 0.1, opacity: 0.4 }}
-                    animate={{ scaleX: isInView ? 1.5 : 0.1, opacity: isInView ? 0.7 : 0.4 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                    style={{
-                        filter: "blur(15px)",
-                        transformOrigin: "center",
-                    }}
-                ></motion.div>
+                <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-background"></div>
             </div>
 
             <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
                 <div className="flex flex-col items-center justify-center relative w-full text-center">
                     <h2 className="text-4xl lg:text-5xl xl:text-6xl lg:!leading-snug font-semibold mt-8 text-white">
                         Boost Your Agency's Performance <br />
-                        with <span className="text-blue-800">Ababil Contractors</span>
+                        with <span className="text-blue-800">AceCloud</span>
                     </h2>
-                    <p className="text-muted-foreground mt-6 max-w-md mx-auto">
-                        Unlock the full potential of your agency with <span className="text-blue-800">Ababil Contractors</span>. Our specialized teams and streamlined processes are designed to enhance your client outreach, sales, and service delivery.
+                    <p className="text-white mt-6 max-w-md mx-auto">
+                        Unlock the full potential of your agency with <span className="text-blue-800">AceCloud</span>. Our specialized teams and streamlined processes are designed to enhance your client outreach, sales, and service delivery.
                     </p>
                     <a
-                        className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-foreground text-background hover:bg-foreground/90 h-9 px-4 py-2 mt-6"
+                        className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-foreground text-white hover:bg-foreground/90 h-9 px-4 py-2 mt-6"
                         href="#contact"
                     >
                         Start Transforming Your Agency Today

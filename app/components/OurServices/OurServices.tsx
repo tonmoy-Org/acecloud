@@ -85,7 +85,7 @@ export default function OurServices() {
                             </motion.div>
                         </Box>
                         <Box>
-                            <Typography sx={{ color: '#BABABA', }}>
+                            <Typography sx={{ color: 'hsl(220 10% 54.4%)', }}>
                                 We provide comprehensive solutions that ensure your business thrives in the digital landscape. From design to development, we cater to all your digital needs with precision and creativity.
                             </Typography>
                         </Box>
@@ -135,7 +135,7 @@ export default function OurServices() {
                                                 <Typography variant="h5" component="div" gutterBottom sx={{ mt: 2 }}>
                                                     {service.title}
                                                 </Typography>
-                                                <Typography variant="body2" sx={{ color: '#BABABA', mb: 2 }}>
+                                                <Typography variant="body2" sx={{ color: 'hsl(220 10% 54.4%)', mb: 2 }}>
                                                     {service.description}
                                                 </Typography>
                                             </CardContent>
