@@ -67,3 +67,37 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
   }
+
+
+  :root {
+    --glow-color: rgba(0, 55, 255, 0.3);
+    --vulcan: #0e1122;
+}
+
+.highlight-section {
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    padding: 8rem 0;
+    transition: background 0.3s ease;
+}
+
+.highlight-section:hover .glow-overlay {
+    opacity: 1;
+}
+
+.glow-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+
+
+

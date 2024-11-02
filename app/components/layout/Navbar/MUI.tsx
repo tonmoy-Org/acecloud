@@ -12,11 +12,11 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import logo from '@/public/logo/acecloud.png';
 
-const drawerHeight = '100%'; // Full height for the drawer
+const drawerHeight = '100%';
 
 const ResponsiveAppBar = () => {
-    const [mobileOpen, setMobileOpen] = useState<boolean>(false);
-    const [isClosing, setIsClosing] = useState<boolean>(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
     const [elevate, setElevate] = useState(false);
 
     const handleDrawerClose = () => {
@@ -24,7 +24,7 @@ const ResponsiveAppBar = () => {
         setTimeout(() => {
             setMobileOpen(false);
             setIsClosing(false);
-        }, 500); // Sync with animation delay
+        }, 500);
     };
 
     const handleDrawerToggle = () => {
@@ -61,7 +61,7 @@ const ResponsiveAppBar = () => {
 
             window.requestAnimationFrame(animation);
         }
-        handleDrawerClose(); // Close the drawer after starting scroll
+        handleDrawerClose();
     };
 
     useEffect(() => {
@@ -76,26 +76,25 @@ const ResponsiveAppBar = () => {
 
     const drawer = (
         <motion.div
-            initial={{ opacity: 0, y: -100 }} // Start above the view
-            animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : -100 }} // Slide down/up
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }} // Adjusted transition for smoothness
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: mobileOpen ? 1 : 0, x: mobileOpen ? 0 : -100 }}
+            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             style={{
                 backgroundColor: '#1a1a1a',
                 color: 'white',
                 height: drawerHeight,
-                padding: '16px',
+                padding: '24px',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'flex-start', // Align to top
+                justifyContent: 'flex-start',
                 position: 'fixed',
                 top: 0,
                 left: 0,
                 width: '100%',
-                zIndex: 1300 // Above AppBar
+                zIndex: 1300,
             }}
         >
-            {/* Close Drawer Button */}
             <IconButton
                 onClick={handleDrawerClose}
                 sx={{
@@ -107,21 +106,18 @@ const ResponsiveAppBar = () => {
             >
                 <CloseIcon />
             </IconButton>
-
-            {/* Logo */}
             <Box display="flex" justifyContent="center" mb={2}>
-                <Image src={logo} alt="Ace Cloud Logo" width={160} height={80} />
+                <Image src={logo} alt="Ace Cloud Logo" width={140} height={80} />
             </Box>
             <Divider sx={{ backgroundColor: '#333', width: '80%' }} />
 
-            {/* Centered Navigation Links */}
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 {['Home', 'Project', 'Contact'].map((text, index) => (
                     <motion.div
                         key={text}
-                        initial={{ opacity: 0, scale: 0.8, y: -10 }} // Initial state for animation
-                        animate={{ opacity: mobileOpen ? 1 : 0, scale: mobileOpen ? 1 : 0.8, y: mobileOpen ? 0 : -10 }} // Animate scale and position
-                        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: index * 0.1 }} // Staggered animation with smoother easing
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : 20 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                         <Button
                             sx={{
@@ -139,11 +135,10 @@ const ResponsiveAppBar = () => {
                         </Button>
                     </motion.div>
                 ))}
-                {/* Fixed "About Us" route handling */}
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: -10 }}
-                    animate={{ opacity: mobileOpen ? 1 : 0, scale: mobileOpen ? 1 : 0.8, y: mobileOpen ? 0 : -10 }}
-                    transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1], delay: 0.3 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : 20 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
                 >
                     <Button
                         sx={{
@@ -153,9 +148,9 @@ const ResponsiveAppBar = () => {
                                 color: '#0DCCD7',
                             },
                         }}
-                        onClick={handleDrawerClose} // Ensure drawer closes when clicking the link
+                        onClick={handleDrawerClose}
                     >
-                        <Link href='/about-us' passHref>
+                        <Link href="/about-us" passHref>
                             About Us
                         </Link>
                     </Button>
@@ -169,14 +164,15 @@ const ResponsiveAppBar = () => {
                     color: '#0DCCD7',
                     borderColor: '#0DCCD7',
                     borderRadius: '20px',
-                    mt: 2,
+                    mt: 3,
+                    px: 4,
                     '&:hover': {
                         borderColor: '#0DCCD7',
                         backgroundColor: 'rgba(13,204,215,0.1)',
                     },
                 }}
             >
-                <Link href='/book-meeting' style={{ textDecoration: 'none', color: '#0DCCD7' }}>
+                <Link href="/book-meeting" style={{ textDecoration: 'none', color: '#0DCCD7' }}>
                     Book a call with us
                 </Link>
             </Button>
@@ -185,130 +181,84 @@ const ResponsiveAppBar = () => {
 
     return (
         <motion.div
-            className="lg:text-center text-white"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }} // Smooth entry animation for AppBar
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
         >
             <AppBar
                 position="fixed"
                 sx={{
-                    bgcolor: elevate ? 'black' : 'transparent',
-                    color: 'white',
-                    boxShadow: elevate ? 3 : 'none',
-                    transition: 'background-color 0.3s ease',
+                    backgroundColor: 'rgba(255, 255, 255, 0.01)',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: elevate ? '0px 4px 12px rgba(0, 0, 0, 0.2)' : 'none',
                 }}
             >
-                <Container maxWidth="xl">
-                    <Toolbar disableGutters>
-                        <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1, alignItems: 'center' }}>
-                            <Button sx={{
-                                my: 2,
-                                color: 'white',
-                                '&:hover': {
-                                    color: '#0DCCD7',
-                                },
-                            }} onClick={() => handleScroll('home', 1400)}>
-                                <Link href='/#home'>Home</Link>
-                            </Button>
-                            <Button sx={{
-                                my: 2,
-                                color: 'white',
-                                '&:hover': {
-                                    color: '#0DCCD7',
-                                },
-                            }} onClick={() => handleScroll('project', 1400)}>
-                                <Link href='/#project'>Projects</Link>
-                            </Button>
-                        </Box>
-                        <Typography
-                            variant="h4"
-                            noWrap
-                            sx={{
-                                display: { xs: 'none', md: 'flex' },
-                                flexGrow: 0.73,
-                                textAlign: 'center',
-                                alignItems: 'center'
-                            }}
-                        >
-                            <div className="w-40">
-                                <Link href='/' passHref>
+                <Container maxWidth="lg">
+                    <Toolbar sx={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        paddingLeft: '0px !important',
+                        paddingRight: '0px !important',
+                    }}>
+                        <Typography variant="h4" noWrap sx={{ textAlign: 'center' }}>
+                            <div className="w-36 me-10">
+                                <Link href="/" passHref>
                                     <Image src={logo} alt="Ace Cloud Logo" layout="responsive" />
                                 </Link>
                             </div>
                         </Typography>
 
-                        <Typography
-                            variant="h4"
-                            noWrap
-                            sx={{
-                                ms: 10,
-                                display: { xs: 'flex', md: 'none' },
-                                flexGrow: 1,
-                                alignItems: 'center'
-                            }}
-                        >
-                            <div className="w-32">
-                                <Link href='/' passHref>
-                                    <Image src={logo} alt="Ace Cloud Logo" layout="responsive" />
-                                </Link>
-                            </div>
-                        </Typography>
-                        <Box sx={{ flexGrow: 0, display: { xs: 'flex', md: 'none' } }}>
-                            <IconButton
-                                size="large"
-                                onClick={handleDrawerToggle}
-                                color="inherit"
-                            >
-                                {mobileOpen ? <CloseIcon /> : <MenuIcon />}
-                            </IconButton>
-                            <Drawer
-                                variant="temporary"
-                                open={mobileOpen}
-                                onClose={handleDrawerClose}
-                                anchor="top" // Set anchor to top
-                                ModalProps={{ keepMounted: true }}
-                                sx={{
-                                    display: { xs: 'block', sm: 'none' },
-                                    '& .MuiDrawer-paper': {
-                                        height: drawerHeight,
-                                        bgcolor: 'transparent', // Make the drawer background transparent for animation
-                                        border: 'none', // Remove border
-                                    },
-                                }}
-                            >
-                                {drawer}
-                            </Drawer>
-                        </Box>
-                        <Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 0 }}>
-                            <Button sx={{
-                                my: 2,
-                                mr: 1,
-                                color: 'white',
-                                '&:hover': {
-                                    color: '#0DCCD7',
-                                },
-                            }}>
-                                <Link href='/about-us'>About Us</Link>
+                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                            {['Home', 'Project', 'Contact'].map((text) => (
+                                <Button
+                                    key={text}
+                                    sx={{ my: 1, color: 'white', '&:hover': { color: '#0DCCD7' } }}
+                                    onClick={() => handleScroll(text.toLowerCase(), 1400)}
+                                >
+                                    <Link href={`/#${text.toLowerCase()}`}>{text}</Link>
+                                </Button>
+                            ))}
+                            <Button sx={{ my: 1, color: 'white', '&:hover': { color: '#0DCCD7' } }}>
+                                <Link href="/about-us">About Us</Link>
                             </Button>
+                        </Box>
+                        <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
                             <Button
                                 variant="outlined"
                                 sx={{
-                                    my: 2,
+                                    my: 1,
                                     color: '#0DCCD7',
                                     borderColor: '#0DCCD7',
                                     transition: 'transform 0.3s ease, background-color 0.3s ease',
-                                    borderRadius: '20px',
+                                    borderRadius: '6px',
                                 }}
                             >
-                                <Link href='/book-meeting' style={{ textDecoration: 'none' }}>
-                                    Book a call with us
+                                <Link href="/book-meeting" style={{ textDecoration: 'none' }}>
+                                    Book a call with us
                                 </Link>
                             </Button>
                         </Box>
+                        <IconButton
+                            color="inherit"
+                            edge="start"
+                            onClick={handleDrawerToggle}
+                            sx={{ display: { xs: 'flex', md: 'none' } }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
                     </Toolbar>
                 </Container>
             </AppBar>
+
+            <Drawer
+                open={mobileOpen}
+                onClose={handleDrawerClose}
+                sx={{
+                    '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '100%' },
+                }}
+            >
+                {drawer}
+            </Drawer>
         </motion.div>
     );
 };
