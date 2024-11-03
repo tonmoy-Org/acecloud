@@ -112,7 +112,7 @@ const ResponsiveAppBar = () => {
             <Divider sx={{ backgroundColor: '#333', width: '80%' }} />
 
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                {['Home', 'Project', 'Contact'].map((text, index) => (
+                {['Home', 'Project'].map((text, index) => (
                     <motion.div
                         key={text}
                         initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,8 @@ const ResponsiveAppBar = () => {
                     >
                         <Button
                             sx={{
-                                color: 'white',
+                                textTransform: 'none !important',
+                                color: 'hsl(220 10% 54.4%)',
                                 my: 1,
                                 '&:hover': {
                                     color: '#0DCCD7',
@@ -141,40 +142,48 @@ const ResponsiveAppBar = () => {
                     transition={{ duration: 0.5, delay: 0.3 }}
                 >
                     <Button
-                        sx={{
-                            color: 'white',
-                            my: 1,
-                            '&:hover': {
-                                color: '#0DCCD7',
-                            },
-                        }}
+                        component={Link}
                         onClick={handleDrawerClose}
+                        href="/about-us"
+                        sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
                     >
-                        <Link href="/about-us" passHref>
-                            About Us
-                        </Link>
+                        About
+                    </Button>
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : 20 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                    <Button
+                        component={Link}
+                        onClick={handleDrawerClose}
+                        href="/contact-us"
+                        sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                    >
+                        Contact
                     </Button>
                 </motion.div>
             </Box>
-
             <Button
                 onClick={handleDrawerClose}
                 variant="outlined"
+                component={Link}
+                href="/book-meeting"
                 sx={{
+                    my: 1,
                     color: '#0DCCD7',
                     borderColor: '#0DCCD7',
-                    borderRadius: '20px',
-                    mt: 3,
-                    px: 4,
-                    '&:hover': {
-                        borderColor: '#0DCCD7',
-                        backgroundColor: 'rgba(13,204,215,0.1)',
-                    },
+                    transition: 'transform 0.3s ease, background-color 0.3s ease',
+                    borderRadius: '6px',
+                    textTransform: 'none !important',
+                    py: '2px !important',
+                    px: '8px !important',
                 }}
             >
-                <Link href="/book-meeting" style={{ textDecoration: 'none', color: '#0DCCD7' }}>
-                    Book a call with us
-                </Link>
+                Book a call with us
             </Button>
         </motion.div>
     );
@@ -219,16 +228,28 @@ const ResponsiveAppBar = () => {
                                     <Link href={`/#${text.toLowerCase()}`}>{text}</Link>
                                 </Button>
                             ))}
-                            <Button sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}>
-                                <Link href="/about-us">About</Link>
+                            <Button
+                                component={Link}
+                                href="/about-us"
+                                sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                            >
+                                About Us
                             </Button>
-                            <Button sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}>
-                                <Link href="/contact-us">Contact</Link>
+                            <Button
+                                component={Link}
+                                href="/contact-us"
+                                sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                            >
+                                Contact
                             </Button>
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
                             <Button
                                 variant="outlined"
+                                component={Link}
+                                href="/book-meeting"
                                 sx={{
                                     my: 1,
                                     color: '#0DCCD7',
@@ -240,9 +261,7 @@ const ResponsiveAppBar = () => {
                                     px: '8px !important',
                                 }}
                             >
-                                <Link href="/book-meeting">
-                                    Book a call with us
-                                </Link>
+                                Book a call with us
                             </Button>
                         </Box>
                         <IconButton
