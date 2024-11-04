@@ -125,7 +125,7 @@ const ResponsiveAppBar = () => {
                                 color: 'hsl(220 10% 54.4%)',
                                 my: 1,
                                 '&:hover': {
-                                    color: '#0DCCD7',
+                                    color: 'white',
                                 },
                             }}
                             onClick={() => handleScroll(text.toLowerCase(), 1400)}
@@ -145,7 +145,7 @@ const ResponsiveAppBar = () => {
                         component={Link}
                         onClick={handleDrawerClose}
                         href="/about-us"
-                        sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                        sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                     >
                         About
@@ -160,7 +160,7 @@ const ResponsiveAppBar = () => {
                         component={Link}
                         onClick={handleDrawerClose}
                         href="/contact-us"
-                        sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                        sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                     >
                         Contact
@@ -174,7 +174,7 @@ const ResponsiveAppBar = () => {
                 href="/book-meeting"
                 sx={{
                     my: 1,
-                    color: '#0DCCD7',
+                    color: 'white',
                     borderColor: '#1D4ED8',
                     transition: 'transform 0.3s ease, background-color 0.3s ease',
                     borderRadius: '6px',
@@ -222,7 +222,7 @@ const ResponsiveAppBar = () => {
                             {['Home', 'Project'].map((text) => (
                                 <Button
                                     key={text}
-                                    sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                                    sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
                                     onClick={() => handleScroll(text.toLowerCase(), 1400)}
                                 >
                                     <Link href={`/#${text.toLowerCase()}`}>{text}</Link>
@@ -231,7 +231,7 @@ const ResponsiveAppBar = () => {
                             <Button
                                 component={Link}
                                 href="/about-us"
-                                sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                             >
                                 About
@@ -239,7 +239,7 @@ const ResponsiveAppBar = () => {
                             <Button
                                 component={Link}
                                 href="/contact-us"
-                                sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                             >
                                 Contact
