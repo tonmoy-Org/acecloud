@@ -14,33 +14,33 @@ export default function OurServices() {
     const services = [
         {
             title: 'Web Design',
-            description: 'We craft visually engaging and responsive websites that align with your brand’s identity, ensuring a seamless user experience on all devices.',
-            icon: <WebIcon style={{ fontSize: 50 }} sx={{ color: '#0DCCD7' }} />,
+            description: 'Craft visually engaging and responsive websites, ensuring a seamless user experience on all devices.',
+            icon: <WebIcon sx={{ fontSize: 40, color: '#fff' }} />,
         },
         {
             title: 'Branding Design',
-            description: 'We create powerful branding strategies and designs that resonate with your audience and differentiate your business in a competitive market.',
-            icon: <BrandingWatermarkIcon style={{ fontSize: 50 }} sx={{ color: '#0DCCD7' }} />,
+            description: 'Develop powerful branding strategies that resonate with your audience and stand out in the market.',
+            icon: <BrandingWatermarkIcon sx={{ fontSize: 40, color: '#fff' }} />,
         },
         {
             title: 'Web Development',
-            description: 'Our web development team builds robust, scalable websites and applications using the latest technologies to power your business.',
-            icon: <CodeIcon style={{ fontSize: 50 }} sx={{ color: '#0DCCD7' }} />,
+            description: 'Build robust, scalable websites and applications using the latest technologies to drive your business.',
+            icon: <CodeIcon sx={{ fontSize: 40, color: '#fff' }} />,
         },
         {
             title: 'DevOps',
-            description: 'We streamline development and operational workflows to ensure faster, more efficient software delivery and scalability with a focus on automation.',
-            icon: <WebhookIcon style={{ fontSize: 50 }} sx={{ color: '#0DCCD7' }} />,
+            description: 'Streamline development and operational workflows for efficient software delivery with a focus on automation.',
+            icon: <WebhookIcon sx={{ fontSize: 40, color: '#fff' }} />,
         },
         {
             title: 'Security',
-            description: 'Ensure the safety of your digital assets with top-notch security protocols, risk assessment, and vulnerability testing.',
-            icon: <SecurityIcon style={{ fontSize: 50 }} sx={{ color: '#0DCCD7' }} />,
+            description: 'Protect digital assets with advanced security protocols, risk assessments, and vulnerability testing.',
+            icon: <SecurityIcon sx={{ fontSize: 40, color: '#fff' }} />,
         },
         {
             title: 'SQA',
-            description: 'Our software quality assurance team ensures that your applications are reliable, scalable, and free of defects before they reach your users.',
-            icon: <ApiIcon style={{ fontSize: 50 }} sx={{ color: '#0DCCD7' }} />,
+            description: 'Ensure applications are reliable, scalable, and defect-free with expert quality assurance.',
+            icon: <ApiIcon sx={{ fontSize: 40, color: '#fff' }} />,
         },
     ];
 
@@ -50,7 +50,7 @@ export default function OurServices() {
             opacity: 1,
             y: 0,
             transition: {
-                staggerChildren: 0.3, // Delay each card's animation
+                staggerChildren: 0.3,
                 duration: 0.5,
             },
         },
@@ -62,91 +62,106 @@ export default function OurServices() {
     };
 
     return (
-        <Box id="service">
-            <Box sx={{ mb: 10 }}>
-                <Container>
-                    <Box sx={{ display: { xs: 'block', lg: 'flex' }, justifyContent: 'space-around', alignItems: 'center', gap: 6, py: 10 }}>
-                        <Box sx={{ pb: { xs: 2 } }}>
-                            <Typography color='#0DCCD7' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px' }}>
-                                Our Services
+        <Box
+            id="service"
+            sx={{
+                py: 10,
+                position: 'relative',
+                overflow: 'hidden',
+                '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: '-60px', // Adjust for visual effect
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '200%',
+                    height: '340px',
+                    background: 'linear-gradient(90deg, rgba(0, 55, 255, 0.3), rgba(255, 255, 255, 0))',
+                    borderRadius: '100%',
+                    filter: 'blur(50px)',
+                    zIndex: 0,
+                },
+            }}
+        >
+            <Container>
+                <Box sx={{ display: { xs: 'block', lg: 'flex' }, justifyContent: 'space-between', alignItems: 'center', pb: 8, zIndex: 1, position: 'relative' }}>
+                    <Box>
+                        <Typography color='#FFD700' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px', fontWeight: 'bold' }}>
+                            Our Services
+                        </Typography>
+                        <motion.div
+                            initial={{ opacity: 0, y: 100 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.4 }}
+                        >
+                            <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+                                Driving Innovation for Your Business.
                             </Typography>
-                            <motion.div
-                                initial={{ opacity: 0, y: 100 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.5, ease: "easeOut" }}
-                                viewport={{ once: true, amount: 0.4 }}
-                            >
-                                <Typography
-                                    variant='h4'
-                                    component='h1'
-                                    sx={{ color: 'white', fontWeight: 900 }}>
-                                    What we do for your business?
-                                </Typography>
-                            </motion.div>
-                        </Box>
-                        <Box>
-                            <Typography sx={{ color: 'hsl(220 10% 54.4%)', }}>
-                                We provide comprehensive solutions that ensure your business thrives in the digital landscape. From design to development, we cater to all your digital needs with precision and creativity.
-                            </Typography>
-                        </Box>
+                        </motion.div>
                     </Box>
-                    <motion.div
-                        variants={staggerContainer}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.2 }}
-                    >
-                        <Grid container spacing={3}>
-                            {services.map((service, index) => (
-                                <Grid item xs={12} sm={6} md={4} key={index}>
-                                    <motion.div variants={staggerItem}>
-                                        <Card
-                                            sx={{
-                                                bgcolor: '#14151B',
-                                                color: 'white',
-                                                width: '100%',
-                                                height: { xs: 240, md: 285 },
-                                                mx: 'auto',
-                                                p: { xs: 0, md: 2 },
-                                                position: 'relative',
-                                                overflow: 'hidden',
-                                                transition: 'transform 0.3s ease-in-out, border-color 0.3s ease-in-out',
-                                                '&:hover': {
-                                                    transform: 'scale(1.03)', // Scale the card on hover
-                                                    borderColor: '#0DCCD7',
-                                                    boxShadow: 20, // Add shadow on hover
-                                                },
-                                                border: service.title === 'Branding Design' ? '2px solid #0DCCD7' : '1px solid transparent',
-                                                boxShadow: 10,
-                                            }}
-                                        >
-                                            <CardContent
-                                                className="content"
+                    <Box>
+                        <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500 }}>
+                            Empowering brands through tailor-made solutions from design to development. Let us elevate your digital journey with precision and creativity.
+                        </Typography>
+                    </Box>
+                </Box>
+
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true, amount: 0.2 }}
+                >
+                    <Grid container spacing={4}>
+                        {services.map((service, index) => (
+                            <Grid item xs={12} sm={6} md={4} key={index}>
+                                <motion.div variants={staggerItem}>
+                                    <Card
+                                        sx={{
+                                            backgroundColor: 'transparent',
+                                            color: 'white',
+                                            borderRadius: 3,
+                                            p: 3,
+                                            boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.25)',
+                                            border: '1px solid transparent',
+                                            '&:hover': {
+                                                borderColor: '#0DCCD7',
+                                                transform: 'scale(1.05)',
+                                                boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.3)',
+                                            },
+                                            transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+                                        }}
+                                    >
+                                        <CardContent sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                            <Box
                                                 sx={{
-                                                    textAlign: 'center',
-                                                    position: 'relative',
-                                                    transition: 'transform 0.3s ease',
-                                                    transform: 'translateY(0)',
+                                                    width: 70,
+                                                    height: 70,
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    borderRadius: '50%',
+                                                    background: 'linear-gradient(135deg, #007BFF, #00CFFD)', // Blue gradient
+                                                    mb: 3,
                                                 }}
                                             >
-                                                <Box sx={{ mb: 4 }}>
-                                                    {service.icon}
-                                                </Box>
-                                                <Typography variant="h5" component="div" gutterBottom sx={{ mt: 2 }}>
-                                                    {service.title}
-                                                </Typography>
-                                                <Typography variant="body2" sx={{ color: 'hsl(220 10% 54.4%)', mb: 2 }}>
-                                                    {service.description}
-                                                </Typography>
-                                            </CardContent>
-                                        </Card>
-                                    </motion.div>
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </motion.div>
-                </Container>
-            </Box>
+                                                {service.icon}
+                                            </Box>
+                                            <Typography variant="h6" component="div" sx={{ fontWeight: 700, mb: 1 }}>
+                                                {service.title}
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center' }}>
+                                                {service.description}
+                                            </Typography>
+                                        </CardContent>
+                                    </Card>
+                                </motion.div>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </motion.div>
+            </Container>
         </Box>
     );
 }

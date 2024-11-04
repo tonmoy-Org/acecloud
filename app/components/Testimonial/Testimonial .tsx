@@ -4,6 +4,7 @@ import React from 'react';
 import { Card, Typography, Box, Container, CardContent } from '@mui/material';
 import Marquee from 'react-fast-marquee';
 import PersonIcon from '@mui/icons-material/Person';
+import { motion } from 'framer-motion';
 
 export default function Testimonials() {
   const testimonials = [
@@ -40,14 +41,24 @@ export default function Testimonials() {
   return (
     <Box sx={{ mt: 15, mb: 8, position: 'relative', overflow: 'hidden' }} id="testimonials">
       <Container sx={{ position: 'relative' }}>
-        <Box textAlign={'center'}>
-          <Typography variant="h4" sx={{ mb: 2, color: 'white', fontWeight: 600, fontSize: '2.5rem' }}>
-            What Our Clients Say
-          </Typography>
-          <Typography sx={{ color: 'hsl(220 10% 54.4%)', mb: 4 }}>
-            Here's what some of our users have to say about Linkify.
-          </Typography>
-        </Box>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.4 }}
+        >
+          <Box sx={{ textAlign: 'center', pb: 3 }}>
+            <Typography color='#FFD700' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px', fontWeight: 'bold' }}>
+              Testimonials
+            </Typography>
+            <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+              What Our Clients Say.
+            </Typography>
+            <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
+              Here's what some of our users have to say about Linkify.
+            </Typography>
+          </Box>
+        </motion.div>
         <Marquee pauseOnHover gradient={true} speed={30} gradientColor="hsl(220, 65%, 3.52%)" gradientWidth={300} style={{ width: '100%' }}>
           {testimonials.map((testimonial, index) => (
             <Card

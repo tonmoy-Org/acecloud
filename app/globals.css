@@ -60,7 +60,7 @@ body {
   color: transparent;
   -webkit-text-stroke: 2px #0DCCD7;
   letter-spacing: 2px;
-  text-transform: uppercase;
+
 }
 
 
@@ -70,13 +70,13 @@ body {
   color: transparent;
   -webkit-text-stroke: 2px #ffff;
   letter-spacing: 2px;
-  text-transform: uppercase;
+
 }
 
 
 :root {
   --glow-color: rgba(0, 55, 255, 0.3);
-  --vulcan: #0e1122;
+  --vulcan: hsl(220, 65%, 3.52%);
 }
 
 .highlight-section {
@@ -105,3 +105,34 @@ body {
   background-color: hsl(220, 65%, 3.52%);
 }
 
+
+
+
+/* Add any existing styles above this */
+
+
+
+
+@keyframes rotate-border {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-rotate {
+  animation: rotate-border 10s linear infinite;
+  /* Adjust duration and timing as needed */
+}
+
+/* Optional: This class could define a transparent border if needed */
+.ring-gradient {
+  /* Keep this transparent for the rotating effect */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  /* You can adjust this color */
+  border-radius: 50%;
+  /* Ensures it follows the button's round shape */
+}

@@ -11,21 +11,21 @@ const blogData = [
         description:
             "Learn the essential tips and tricks to design user interfaces that are not only functional but visually appealing.",
         videoUrl: "https://www.youtube.com/embed/KfeaNa92Nns?si=Bw46dk7_o0AWT3iF",
-        watchLink: "https://www.youtube.com/watch?v=KfeaNa92Nns", // Actual video URL for "Read More"
+        watchLink: "https://www.youtube.com/watch?v=KfeaNa92Nns",
     },
     {
         title: "Protect Your Digital Footprint",
         description:
             "In this video, we explore best practices for safeguarding your personal data and online identity in the digital age.",
         videoUrl: "https://www.youtube.com/embed/VGNz8eKXoFA?si=lcfHPdy1Xzk7cKDw",
-        watchLink: "https://www.youtube.com/watch?v=VGNz8eKXoFA", // Actual video URL for "Read More"
+        watchLink: "https://www.youtube.com/watch?v=VGNz8eKXoFA",
     },
     {
         title: "Backend Development",
         description:
             "Get a quick yet comprehensive overview of backend development, covering databases, APIs, and server logic.",
         videoUrl: "https://www.youtube.com/embed/01Q1Te5DIF0?si=Ju05I5tyk528hZF9",
-        watchLink: "https://www.youtube.com/watch?v=01Q1Te5DIF0", // Actual video URL for "Read More"
+        watchLink: "https://www.youtube.com/watch?v=01Q1Te5DIF0",
     },
 ];
 
@@ -37,14 +37,12 @@ const CardWrapper = styled(Card)({
 });
 
 const CustomButton = styled(Button)(({ theme }) => ({
-    backgroundColor: '#0DCCD7',
-    borderRadius: '20px',
+    border: '2px solid #1D4ED8', // Outlined button border color
+    borderRadius: '8px',
     textTransform: 'none',
-    padding: theme.spacing(1, 4),
+    padding: theme.spacing(0.6, 3),
     color: '#FFF',
-    '&:hover': {
-        backgroundColor: '#00A5D4',
-    },
+    backgroundColor: 'transparent',
 }));
 
 const staggerContainer = {
@@ -66,7 +64,7 @@ const staggerItem = {
 
 const BlogSection: React.FC = () => {
     return (
-        <Container id='blog'>
+        <Container id='blog' sx={{ my: 5 }}>
             <motion.div
                 initial="hidden"
                 whileInView="show"
@@ -74,21 +72,24 @@ const BlogSection: React.FC = () => {
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.4 }}
             >
-                <Box sx={{ display: { xs: 'block', lg: 'flex' }, justifyContent: 'space-around', alignItems: 'center', gap: 6, py: 10 }}>
-                    <Box sx={{ pb: { xs: 2 } }}>
-                        <Typography color='#0DCCD7' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px' }}>
+                <Box sx={{ display: { xs: 'block', lg: 'flex' }, justifyContent: 'space-between', alignItems: 'center', pb: 8, zIndex: 1, position: 'relative' }}>
+                    <Box>
+                        <Typography color='#FFD700' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px', fontWeight: 'bold' }}>
                             Blogs
                         </Typography>
-                        <Typography
-                            variant='h4'
-                            component='h1'
-                            sx={{ color: 'white', fontWeight: 900 }}
+                        <motion.div
+                            initial={{ opacity: 0, y: 100 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.4 }}
                         >
-                            Check out some of our news.
-                        </Typography>
+                            <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+                                Check out some of our news.
+                            </Typography>
+                        </motion.div>
                     </Box>
                     <Box>
-                        <Typography sx={{ color: 'hsl(220 10% 54.4%)', }}>
+                        <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500 }}>
                             We provide comprehensive solutions that ensure your business thrives in the digital landscape. From design to development, we cater to all your digital needs with precision and creativity.
                         </Typography>
                     </Box>
@@ -102,9 +103,7 @@ const BlogSection: React.FC = () => {
                 <Grid container spacing={4}>
                     {blogData.map((blog, index) => (
                         <Grid item xs={12} sm={6} md={4} key={index}>
-                            <motion.div
-                                variants={staggerItem}
-                            >
+                            <motion.div variants={staggerItem}>
                                 <CardWrapper>
                                     <Box sx={{ position: 'relative', height: 180 }}>
                                         <iframe
@@ -126,10 +125,7 @@ const BlogSection: React.FC = () => {
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
-                                        <CustomButton
-                                            href={blog.watchLink}
-                                            rel="noopener noreferrer"
-                                        >
+                                        <CustomButton href={blog.watchLink} rel="noopener noreferrer">
                                             Read More
                                         </CustomButton>
                                     </CardActions>

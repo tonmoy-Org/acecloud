@@ -18,7 +18,7 @@ export default function HighlightSection() {
             className="highlight-section"
             onMouseMove={handleMouseMove}
             style={{
-                background: `radial-gradient(circle at ${glowPosition.x} ${glowPosition.y}, rgba(0, 55, 255,0.2), transparent 60%), linear-gradient(180deg, #0e1122 0%, #1a1a2e 35.54%, #0e1122 100%)`,
+                background: `radial-gradient(circle at ${glowPosition.x} ${glowPosition.y}, rgba(0, 55, 255,0.2), transparent 60%), linear-gradient(180deg, hsl(220, 65%, 3.52%) 0%, hsl(220, 65%, 3.52%) 35.54%, hsl(220, 65%, 3.52%) 100%)`,
             }}
         >
             <div className="rte text-center relative z-10 text-white">

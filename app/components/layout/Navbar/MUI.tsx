@@ -175,7 +175,7 @@ const ResponsiveAppBar = () => {
                 sx={{
                     my: 1,
                     color: '#0DCCD7',
-                    borderColor: '#0DCCD7',
+                    borderColor: '#1D4ED8',
                     transition: 'transform 0.3s ease, background-color 0.3s ease',
                     borderRadius: '6px',
                     textTransform: 'none !important',
@@ -234,7 +234,7 @@ const ResponsiveAppBar = () => {
                                 sx={{ my: 1, mx: 1, '&:hover': { color: '#0DCCD7' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                             >
-                                About Us
+                                About
                             </Button>
                             <Button
                                 component={Link}
@@ -247,21 +247,14 @@ const ResponsiveAppBar = () => {
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', alignItems: 'center' }}>
                             <Button
+                                sx={{ textTransform: 'none !important' }}
                                 variant="outlined"
                                 component={Link}
                                 href="/book-meeting"
-                                sx={{
-                                    my: 1,
-                                    color: '#0DCCD7',
-                                    borderColor: '#0DCCD7',
-                                    transition: 'transform 0.3s ease, background-color 0.3s ease',
-                                    borderRadius: '6px',
-                                    textTransform: 'none !important',
-                                    py: '2px !important',
-                                    px: '8px !important',
-                                }}
+                                className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] border-[#1D4ED8] rounded-lg animated-border"
                             >
-                                Book a call with us
+                                <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg group-hover:translate-x-0"></span>
+                                <span className="relative z-10">Book a call with us</span>
                             </Button>
                         </Box>
                         <IconButton

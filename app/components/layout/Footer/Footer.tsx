@@ -1,18 +1,32 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from 'react';
-import { Box, Container, Grid, Typography, Link, TextField, Button } from "@mui/material";
-import { Email, LocationOn } from "@mui/icons-material";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import logo from '@/public/logo/acecloud.png';
-
+import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import React, { useCallback, useState } from 'react';
 const WEB3FORMS_ACCESS_KEY = '9d818505-7ca6-4f44-8b21-5fae7a9a2c1d';
 
-const Footer = () => {
+function Footer() {
+    const [glowPosition, setGlowPosition] = useState({ x: "50%", y: "50%" });
+    const [opacity, setOpacity] = useState(0);
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [elevate, setElevate] = useState(false);
+
+
+
+    const handleMouseMove = useCallback((e) => {
+        // Calculate the mouse position as a percentage of the viewport dimensions
+        const xPos = `${(e.clientX / window.innerWidth) * 100}%`;
+        const yPos = `${(e.clientY / window.innerHeight) * 100}%`;
+
+        // Update glow position and set opacity based on cursor proximity
+        setGlowPosition({ x: xPos, y: yPos });
+        setOpacity(1);
+    }, []);
+
+    const handleMouseLeave = () => {
+        // Reset opacity when the cursor leaves the text area
+        setOpacity(0);
+    };
+
 
     const handleSubscribe = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
@@ -48,142 +62,169 @@ const Footer = () => {
         }
     };
 
-    const handleScroll = (id: string, duration: number = 1000) => {
-        const element = document.getElementById(id);
-        if (!element) return;
-
-        const targetPosition = element.getBoundingClientRect().top + window.scrollY;
-        const startPosition = window.scrollY;
-        const distance = targetPosition - startPosition;
-        let startTime: number | null = null;
-
-        const easeInOutQuad = (time: number, start: number, distance: number, duration: number) => {
-            time /= duration / 2;
-            if (time < 1) return (distance / 2) * time * time + start;
-            time--;
-            return (-distance / 2) * (time * (time - 2) - 1) + start;
-        };
-
-        const animation = (currentTime: number) => {
-            if (startTime === null) startTime = currentTime;
-            const timeElapsed = currentTime - startTime;
-            const scroll = easeInOutQuad(timeElapsed, startPosition, distance, duration);
-            window.scrollTo(0, scroll);
-
-            if (timeElapsed < duration) window.requestAnimationFrame(animation);
-        };
-
-        window.requestAnimationFrame(animation);
-    };
-
-    useEffect(() => {
-        const handleScroll = () => setElevate(window.scrollY > 50);
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
-        <Box component="footer" sx={{ bgcolor: elevate ? '#121212' : 'transparent', color: "#fff", pt: 6, pb: 3 }}>
-            <Container>
-                {/* Footer Content */}
-                <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.4 }}
+        <Box sx={{ border: '1px solid rgba(225, 225, 225, 0.1)', }}>
+            {/* Animated Background Circles */}
+
+            <Container maxWidth="lg">
+                <footer
+                    className="relative pt-16 px-6 lg:px-8"
                 >
-                    <Grid container spacing={4}>
-                        {/* Logo and Company Description */}
-                        <Grid item xs={12} md={4}>
-                            <Box display="flex" alignItems="center" mb={2}>
-                                <div className='w-40'>
-                                    <Image src={logo} alt="Company Logo" layout="responsive" />
-                                </div>
+                    {/* Decorative Dot at the Top */}
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded-full">
+                        <Box sx={{
+                            position: 'absolute',
+                            top: '-50px',
+                            left: '-50px',
+                            width: '200px',
+                            height: '200px',
+                            borderRadius: '50%',
+                            background: 'rgba(255, 255, 255, 0.1)',
+                            filter: 'blur(50px)',
+                            zIndex: 0,
+                        }} /></div>
+
+                    {/* Footer Content */}
+                    <div className="text-gray-200 flex items-start gap-20">
+                        <div className="w-[350px]">
+                            <div className="mb-4">
+                                {/* <svg className="w-7 h-7 text-white"></svg> */}
+                                <h2 className="text-2xl font-bold text-white">AceCloud Agency</h2>
+                            </div>
+                            <p className="text-sm">
+                                With AceCloud <span className="text-white font-semibold">Design</span>, <span className="text-[#1D4ED8] font-semibold">Optimize</span>, <span className="text-white font-semibold">Transform</span>.
+                            </p>
+                            <span className="mt-4 text-gray-400 text-sm">
+                                Made by <a className="font-semibold text-white hover:underline" href="https://AceCloudagency.com">AceCloud Agency</a>
+                            </span>
+                        </div>
+
+                        {/* Navigation Links */}
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-screen-lg mx-auto">
+                            <FooterLinkSection title="Integrations" links={[
+                                { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61563399607727' },
+                                { name: 'Instagram', href: 'https://www.instagram.com/AceCloudagency/' },
+                                { name: 'X', href: 'https://x.com/AceCloudAgency' },
+                                { name: 'LinkedIn', href: 'https://www.linkedin.com/in/AceCloud-agency/' }
+                            ]} />
+
+                            <FooterLinkSection title="Resources" links={[
+                                { name: 'Blog', href: '/resources/blog' },
+                                { name: 'Support', href: '/resources/help' },
+                                { name: 'Contact Us', href: '/resources/help' }
+                            ]} />
+
+                            <FooterLinkSection title="Company" links={[
+                                { name: 'About Us', href: '/about' },
+                                { name: 'Privacy Policy', href: '/privacy' },
+                                { name: 'Terms & Conditions', href: '/terms' }
+                            ]} />
+
+                            <Box>
+                                <FooterLinkSection title="Newsletter" links={[{ name: '', href: '' }]} />
+                                <form onSubmit={handleSubscribe}>
+                                    <TextField
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        label="Enter your email"
+                                        variant="outlined"
+                                        size="small"
+                                        sx={{
+                                            input: { color: '#fff' },
+                                            label: { color: '#aaa' },
+                                            fieldset: { borderColor: '#1D4ED8' },
+                                            mb: 2,
+                                            width: { xs: '100%', sm: 230 },
+                                            '& .MuiOutlinedInput-root': {
+                                                '& fieldset': {
+                                                    borderColor: 'default',
+                                                },
+                                                '&:hover fieldset': {
+                                                    borderColor: '#1D4ED8',
+                                                },
+                                                '&.Mui-focused fieldset': {
+                                                    borderColor: '#1D4ED8',
+                                                },
+                                            },
+                                            '& .MuiInputLabel-root': {
+                                                color: 'default',
+                                            },
+                                            '&:hover .MuiInputLabel-root': {
+                                                color: '#1D4ED8',
+                                            },
+                                            '& .MuiInputLabel-root.Mui-focused': {
+                                                color: '#1D4ED8',
+                                            },
+                                        }}
+                                    />
+                                    <Button
+                                        type="submit"
+                                        sx={{ textTransform: 'none' }}
+                                        variant="outlined"
+                                        className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] bg-[#1D4ED8] border-[#1D4ED8] rounded-lg animated-border"
+                                    >
+                                        <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg"></span>
+                                        <span className="relative z-10">Subscribe</span>
+                                    </Button>
+                                </form>
+                                {message && (
+                                    <Typography variant="body2" sx={{ color: "#1D4ED8", mt: 1 }}>{message}</Typography>
+                                )}
                             </Box>
-                            <Typography variant="body2" sx={{ color: "#aaa", mb: 2 }}>
-                                AceCloud offers innovative solutions to streamline your business processes. Our mission is to provide top-notch services that meet the evolving needs of our clients.
-                            </Typography>
-                        </Grid>
+                        </div>
+                    </div>
 
-                        {/* Information Links */}
-                        <Grid item xs={12} md={2}>
-                            <Typography variant="h6" sx={{ fontWeight: "bold" }}>INFORMATION</Typography>
-                            <Box component="div" sx={{ borderBottom: "2px solid #00BCD4", width: "40px", mb: 1 }} />
-                            <Link href="/about-us" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>About Us</Link>
-                            <Link onClick={() => handleScroll('blog', 1400)} href='/#blog' color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>Blog</Link>
-                            <Link href="/termsAndConditions" color="inherit" underline="none" sx={{ display: "block", mb: 1 }}>Terms & Conditions</Link>
-                        </Grid>
+                    {/* Copyright */}
+                    <div className="mt-2 pt-4 md:pt-4 w-full">
+                        <p className="text-sm text-gray-400">© 2024 AceCloud Agency INC. All rights reserved.</p>
+                    </div>
 
-                        {/* Contact Information */}
-                        <Grid item xs={12} md={2}>
-                            <Typography variant="h6" sx={{ fontWeight: "bold" }}>ADDRESS</Typography>
-                            <Box component="div" sx={{ borderBottom: "2px solid #00BCD4", width: "40px", mb: 1 }} />
-                            <Box display="flex" alignItems="center" mb={1}>
-                                <Email sx={{ color: "#00BCD4", mr: 1 }} />
-                                <Typography variant="body2">contact@acecloud.ca</Typography>
-                            </Box>
-                            <Box display="flex" alignItems="center" mb={1}>
-                                <LocationOn sx={{ color: "#00BCD4", mr: 1 }} />
-                                <Typography variant="body2">Toronto, Canada</Typography>
-                            </Box>
-                        </Grid>
-
-                        {/* Newsletter Subscription */}
-                        <Grid item xs={12} md={4}>
-                            <Typography variant="h6" sx={{ fontWeight: "bold" }}>SUBSCRIBE TO OUR NEWSLETTER</Typography>
-                            <Box component="div" sx={{ borderBottom: "2px solid #00BCD4", width: "40px", mb: 2 }} />
-                            <form onSubmit={handleSubscribe}>
-                                <TextField
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    label="Enter your email"
-                                    variant="outlined"
-                                    fullWidth
-                                    size="small"
-                                    sx={{
-                                        mb: 2,
-                                        input: { color: '#fff' },
-                                        label: { color: '#aaa' },
-                                        fieldset: { borderColor: '#00BCD4' },
-                                    }}
-                                />
-                                <Button type="submit" variant="contained" sx={{ backgroundColor: "#00BCD4", color: "#fff", width: "100%" }}>
-                                    Subscribe
-                                </Button>
-                            </form>
-                            {message && (
-                                <Typography variant="body2" sx={{ color: "#00BCD4", mt: 1 }}>{message}</Typography>
-                            )}
-                        </Grid>
-                    </Grid>
-                </motion.div>
-
-                {/* Footer Bottom */}
-                <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-                    <Box mt={4} sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: { xs: 'column', md: 'row' } }}>
-                        <Typography color="#aaa" sx={{ mb: { xs: 2, md: 0 } }}>
-                            {/* Designed and Developed by Md. Tanvir Hasan Tonmoy */}
-                        </Typography>
-                        {/* <Box>
-                            <ScrollLink to="home" smooth={true} duration={1700}>
-                                <Box sx={{ display: 'flex', alignItems: 'center', color: '#00BCD4', fontSize: '16px', cursor: 'pointer' }}>
-                                    <Box component="span" sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '50%', border: '1px solid #00BCD4', width: '30px', height: '30px', mr: 1 }}>
-                                        <ArrowUpward />
-                                    </Box>
-                                    Back To Top
-                                </Box>
-                            </ScrollLink>
-                        </Box> */}
-                    </Box>
-                </motion.div>
+                    {/* Glowing Gradient Text */}
+                    <div onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave} className="h-[20.5rem] w-full mt-4">
+                        <svg width="100%" height="100%" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" className="select-none">
+                            <defs>
+                                {/* Create a radial gradient for a small, circular glow effect */}
+                                <radialGradient id="radialGlow" cx={glowPosition.x} cy={glowPosition.y} x1={glowPosition.x} x2={glowPosition.x} y1={glowPosition.y} y2={glowPosition.y} r="35%" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" style={{ stopColor: "#ff00ff", stopOpacity: opacity }} />
+                                    <stop offset="50%" style={{ stopColor: "#00ffff", stopOpacity: opacity }} />
+                                    <stop offset="100%" style={{ stopColor: "transparent", stopOpacity: 0 }} />
+                                </radialGradient>
+                            </defs>
+                            <text
+                                x="50%"
+                                y="50%"
+                                textAnchor="middle"
+                                dominantBaseline="middle"
+                                stroke="url(#radialGlow)"
+                                strokeWidth="0.3"
+                                className="font-bold fill-transparent text-7xl transition-opacity duration-500 ease-in-out"
+                                style={{ opacity }}
+                            >
+                                AceCloud
+                            </text>
+                            <text
+                                x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" stroke-width="0.3" className="font-bold fill-transparent text-7xl stroke-neutral-800" stroke-dashoffset="0" stroke-dasharray="1000">AceCloud</text>
+                            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" stroke="url(#textGradient)" stroke-width="0.3" mask="url(#textMask)" className="font-[helvetica] font-bold fill-transparent text-7xl">AceCloud</text>
+                        </svg>
+                    </div>
+                </footer>
             </Container>
-            <Box sx={{ py: 0, mt: 2 }}>
-                <Container>
-                    <Typography variant="body2" align="center" color="#aaa">&copy; {new Date().getFullYear()} AceCloud. All Rights Reserved.</Typography>
-                </Container>
-            </Box>
-        </Box>
+        </Box >
     );
-};
+}
+
+const FooterLinkSection = ({ title, links }) => (
+    <div>
+        <h3 className="text-lg font-medium text-white">{title}</h3>
+        <ul className="mt-4 text-sm space-y-2">
+            {links.map((link) => (
+                <li key={link.name}>
+                    <a className="hover:text-[#1D4ED8] transition duration-300" href={link.href}>{link.name}</a>
+                </li>
+            ))}
+        </ul>
+    </div>
+);
 
 export default Footer;
