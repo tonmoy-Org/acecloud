@@ -7,27 +7,31 @@ import { LocationOn, Email } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import Image from 'next/image';
+import map from '@/public/banner/world.svg';
 
 interface FormValues {
     name: string;
     email: string;
     message: string;
+    company: string;
+    phone: string;
 }
 
-const WEB3FORMS_ACCESS_KEY = '7be54b28-f65a-4886-86ba-a34f68e2a37f';
-
-export default function ContactSection() {
+const ContactSection = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>();
     const [loading, setLoading] = useState(false);
 
     const onSubmit = async (data: FormValues) => {
-        setLoading(true);  // Start loading indicator
+        setLoading(true);
         try {
             const response = await axios.post('https://api.web3forms.com/submit', {
-                access_key: WEB3FORMS_ACCESS_KEY,
+                access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_CONTACT,
                 subject: "New Contact Form Submission from Your Website Ace Cloud",
                 from_name: data.name,
                 from_email: data.email,
+                phone: data.phone,
+                company: data.company,
                 to: "contact@acecloud.com",
                 message: data.message,
             });
@@ -37,190 +41,57 @@ export default function ContactSection() {
                     icon: 'success',
                     title: 'Message Sent!',
                     text: "Your message has been sent successfully! We'll get back to you shortly.",
-                    confirmButtonColor: '#0DCCD7',
+                    confirmButtonColor: '#FFD700',
                 });
                 reset();
             } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: "Something went wrong. Please try again later.",
-                    confirmButtonColor: '#0DCCD7',
-                });
+                throw new Error('Response not OK');
             }
         } catch (error) {
             console.error("Error sending email:", error);
-
             Swal.fire({
                 icon: 'error',
                 title: 'Error!',
                 text: "There was an error sending your message. Please check your connection and try again.",
-                confirmButtonColor: '#0DCCD7',
+                confirmButtonColor: '#1D4ED8',
             });
         } finally {
-            setLoading(false);  // Stop loading indicator
+            setLoading(false);
         }
     };
 
     return (
-        <Box id="contact" sx={{ pt: 14 }}>
+        <Box id="contact" sx={{ pb: { xs: 8, md: 20 }, pt: { xs: 6, md: 17 } }}>
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.4 }}
             >
-                <Typography
-                    variant='h4'
-                    component='h1'
-                    sx={{ textAlign: 'center', color: 'white', fontWeight: 900, letterSpacing: 2, mb: 8 }}
-                >
-                    Get In Touch
-                </Typography>
+                <Box sx={{ textAlign: 'center', pb: 3 }}>
+                    <Typography
+                        color='#FFD700'
+                        gutterBottom
+                        sx={{
+                            textTransform: 'uppercase',
+                            fontSize: '14px',
+                            fontWeight: 'bold',
+                            animation: 'shadow-pulse 1.5s infinite'
+                        }}
+                    >
+                        Get In Touch
+                    </Typography>
+                    <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+                        Contact Us
+                    </Typography>
+                    <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
+                        Need help? We got you.
+                    </Typography>
+                </Box>
             </motion.div>
 
-            <Container>
-                <Grid container spacing={4}>
-                    {/* Contact Form */}
-                    <Grid item xs={12} md={6}>
-                        <Box
-                            bgcolor="#1E1E1E"
-                            p={4}
-                            color="white"
-                            sx={{ borderRadius: '8px' }}
-                        >
-                            <form onSubmit={handleSubmit(onSubmit)} noValidate>
-                                {/* Name Field */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                    viewport={{ once: true, amount: 0.4 }}
-                                >
-                                    <TextField
-                                        label="Name"
-                                        fullWidth
-                                        variant="outlined"
-                                        {...register('name', { required: 'Name is required' })}
-                                        error={!!errors.name}
-                                        helperText={errors.name ? errors.name.message : ''}
-                                        InputProps={{
-                                            style: { color: 'white' },
-                                        }}
-                                        sx={{
-                                            mb: 3,
-                                            '& .MuiOutlinedInput-root': {
-                                                '& fieldset': { borderColor: '#555' },
-                                                '&:hover fieldset': { borderColor: '#0DCCD7' },
-                                                '&.Mui-focused fieldset': { borderColor: '#0DCCD7' },
-                                            },
-                                            '& .MuiInputLabel-root': { color: '#999' },
-                                            '&:hover .MuiInputLabel-root': { color: '#0DCCD7' },
-                                            '& .MuiInputLabel-root.Mui-focused': { color: '#0DCCD7' },
-                                        }}
-                                    />
-                                </motion.div>
-
-                                {/* Email Field */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                    viewport={{ once: true, amount: 0.4 }}
-                                >
-                                    <TextField
-                                        label="Email"
-                                        fullWidth
-                                        variant="outlined"
-                                        {...register('email', {
-                                            required: 'Email is required',
-                                            pattern: {
-                                                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                                message: 'Please enter a valid email address',
-                                            },
-                                        })}
-                                        error={!!errors.email}
-                                        helperText={errors.email ? errors.email.message : ''}
-                                        InputProps={{
-                                            style: { color: 'white' },
-                                        }}
-                                        sx={{
-                                            mb: 3,
-                                            '& .MuiOutlinedInput-root': {
-                                                '& fieldset': { borderColor: '#555' },
-                                                '&:hover fieldset': { borderColor: '#0DCCD7' },
-                                                '&.Mui-focused fieldset': { borderColor: '#0DCCD7' },
-                                            },
-                                            '& .MuiInputLabel-root': { color: '#999' },
-                                            '&:hover .MuiInputLabel-root': { color: '#0DCCD7' },
-                                            '& .MuiInputLabel-root.Mui-focused': { color: '#0DCCD7' },
-                                        }}
-                                    />
-                                </motion.div>
-
-                                {/* Message Field */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                    viewport={{ once: true, amount: 0.4 }}
-                                >
-                                    <TextField
-                                        label="Message"
-                                        multiline
-                                        rows={4}
-                                        fullWidth
-                                        variant="outlined"
-                                        {...register('message', { required: 'Message is required' })}
-                                        error={!!errors.message}
-                                        helperText={errors.message ? errors.message.message : ''}
-                                        InputProps={{
-                                            style: { color: 'white' },
-                                        }}
-                                        sx={{
-                                            mb: 4,
-                                            '& .MuiOutlinedInput-root': {
-                                                '& fieldset': { borderColor: '#555' },
-                                                '&:hover fieldset': { borderColor: '#0DCCD7' },
-                                                '&.Mui-focused fieldset': { borderColor: '#0DCCD7' },
-                                            },
-                                            '& .MuiInputLabel-root': { color: '#999' },
-                                            '&:hover .MuiInputLabel-root': { color: '#0DCCD7' },
-                                            '& .MuiInputLabel-root.Mui-focused': { color: '#0DCCD7' },
-                                        }}
-                                    />
-                                </motion.div>
-
-                                {/* Submit Button */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 50 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                    viewport={{ once: true, amount: 0.4 }}
-                                >
-                                    <Button
-                                        variant="contained"
-                                        type="submit"
-                                        disabled={loading}
-                                        startIcon={loading && <CircularProgress size={20} color="inherit" />}
-                                        sx={{
-                                            backgroundColor: '#0DCCD7',
-                                            borderRadius: '20px',
-                                            textTransform: 'none',
-                                            color: '#FFF',
-                                            '&:hover': {
-                                                backgroundColor: '#00A5D4',
-                                            },
-                                        }}
-                                    >
-                                        {loading ? 'Sending...' : 'Send Message'}
-                                    </Button>
-                                </motion.div>
-                            </form>
-                        </Box>
-                    </Grid>
-
-                    {/* Contact Information */}
+            <Container maxWidth="lg">
+                <Grid container spacing={4} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'flex-start' }}>
                     <Grid item xs={12} md={6}>
                         <motion.div
                             initial={{ opacity: 0, y: 50 }}
@@ -230,11 +101,18 @@ export default function ContactSection() {
                         >
                             <Box p={4} color="white">
                                 <Typography
-                                    variant="h5"
-                                    gutterBottom
-                                    sx={{ fontWeight: 'bold', mb: 3, color: '#0DCCD7' }}
+                                    component="h2"
+                                    sx={{
+                                        background: 'linear-gradient(to bottom, #D1D5DB, #1F2937)',
+                                        backgroundClip: 'text',
+                                        WebkitBackgroundClip: 'text',
+                                        color: 'transparent',
+                                        fontSize: { xs: '1.5rem', md: '2rem', lg: '2.5rem' },
+                                        fontWeight: 'bold',
+                                        textTransform: 'uppercase',
+                                    }}
                                 >
-                                    Contact Information
+                                    Get In Touch
                                 </Typography>
                                 <Typography variant="body1" gutterBottom sx={{ color: 'hsl(220 10% 54.4%)' }}>
                                     Have any questions or concerns? Feel free to reach out to us at any time!
@@ -248,14 +126,130 @@ export default function ContactSection() {
                                     <LocationOn sx={{ verticalAlign: 'middle', mr: 1 }} />
                                     Toronto, Canada
                                 </Typography>
+                                <Box sx={{ mt: 3 }}>
+                                    <Image
+                                        src={map}
+                                        alt="Map of the world"
+                                        width={400}
+                                        height={300}
+                                    />
+                                </Box>
                             </Box>
                         </motion.div>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Box bgcolor="#1E1E1E" p={4} color="white" sx={{ borderRadius: '8px', height: '100%' }}>
+                            <form onSubmit={handleSubmit(onSubmit)} noValidate>
+                                <TextField
+                                    label="Name"
+                                    fullWidth
+                                    variant="outlined"
+                                    {...register('name', { required: 'Name is required' })}
+                                    error={!!errors.name}
+                                    helperText={errors.name ? errors.name.message : ''}
+                                    InputProps={{ style: { color: 'white' } }}
+                                    sx={inputStyles}
+                                />
+
+                                <TextField
+                                    label="Email"
+                                    fullWidth
+                                    variant="outlined"
+                                    {...register('email', {
+                                        required: 'Email is required',
+                                        pattern: {
+                                            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                            message: 'Please enter a valid email address',
+                                        },
+                                    })}
+                                    error={!!errors.email}
+                                    helperText={errors.email ? errors.email.message : ''}
+                                    InputProps={{ style: { color: 'white' } }}
+                                    sx={inputStyles}
+                                />
+                                <TextField
+                                    label="Phone Number"
+                                    fullWidth
+                                    variant="outlined"
+                                    {...register('phone', { required: 'Phone Number is required' })}
+                                    error={!!errors.phone}
+                                    helperText={errors.phone ? errors.phone.message : ''}
+                                    InputProps={{ style: { color: 'white' } }}
+                                    sx={inputStyles}
+                                />
+                                <TextField
+                                    label="Company"
+                                    fullWidth
+                                    variant="outlined"
+                                    {...register('company', { required: 'Company is required' })}
+                                    error={!!errors.company}
+                                    helperText={errors.company ? errors.company.message : ''}
+                                    InputProps={{ style: { color: 'white' } }}
+                                    sx={inputStyles}
+                                />
+                                <TextField
+                                    label="Message"
+                                    multiline
+                                    rows={4}
+                                    fullWidth
+                                    variant="outlined"
+                                    {...register('message', { required: 'Message is required' })}
+                                    error={!!errors.message}
+                                    helperText={errors.message ? errors.message.message : ''}
+                                    InputProps={{ style: { color: 'white' } }}
+                                    sx={inputStyles}
+                                />
+
+                                <Button
+                                    variant="contained"
+                                    type="submit"
+                                    disabled={loading}
+                                    startIcon={loading && <CircularProgress size={20} />}
+                                    sx={buttonStyles}
+                                >
+                                    {loading ? 'Sending...' : 'Send Message'}
+                                </Button>
+                            </form>
+                        </Box>
                     </Grid>
                 </Grid>
             </Container>
 
-            {/* Google Map Iframe */}
-           
+            <style jsx global>{`
+                @keyframes shadow-pulse {
+                    0% {
+                        text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+                    }
+                    50% {
+                        text-shadow: 0 0 20px rgba(255, 215, 0, 1);
+                    }
+                    100% {
+                        text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+                    }
+                }
+            `}</style>
         </Box>
     );
-}
+};
+
+// Styles
+const inputStyles = {
+    mb: 3,
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': { borderColor: '#555' },
+        '&:hover fieldset': { borderColor: 'rgba(225, 225, 225, 0.1)' },
+        '&.Mui-focused fieldset': { borderColor: 'rgba(225, 225, 225, 0.1)' },
+    },
+    '& .MuiInputLabel-root': { color: '#999' },
+    '&:hover .MuiInputLabel-root': { color: '' },
+    '& .MuiInputLabel-root.Mui-focused': { color: 'gray' },
+};
+
+const buttonStyles = {
+    backgroundColor: '#fff',
+    borderRadius: '8px',
+    textTransform: 'none',
+    color: 'black',
+};
+
+export default ContactSection;

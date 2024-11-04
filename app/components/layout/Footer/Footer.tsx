@@ -2,7 +2,7 @@
 
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import React, { useCallback, useState } from 'react';
-const WEB3FORMS_ACCESS_KEY = '9d818505-7ca6-4f44-8b21-5fae7a9a2c1d';
+
 
 function Footer() {
     const [glowPosition, setGlowPosition] = useState({ x: "50%", y: "50%" });
@@ -43,7 +43,7 @@ function Footer() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    access_key: WEB3FORMS_ACCESS_KEY,
+                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_NEWSLETTER,
                     subject: "Subscription Request Ace Cloud",
                     email: email,
                     from_name: email,
