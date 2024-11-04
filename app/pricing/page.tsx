@@ -182,7 +182,6 @@ export default function Pricing() {
                                         backgroundColor: 'white',
                                         color: 'black',
                                         textTransform: 'none !important',
-                                        '&:hover': { backgroundColor: '#2563eb' },
                                     }}
                                 >
                                     Get Started
