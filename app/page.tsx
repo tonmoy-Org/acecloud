@@ -8,6 +8,7 @@ import Projects from "./components/Project/Project";
 import HighlightSection from "./components/HighlightSection/HighlightSection";
 import GlowingSection from "./components/GlowingSection/GlowingSection";
 import VideoSection from "./components/VideoSection/VideoSection";
+import Pricing from "./pricing/page";
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
         <OurServices />
         <Projects />
         <HighlightSection />
+        <Pricing />
         <Testimonials />
         <BlogSection />
         <GlowingSection/>

@@ -230,6 +230,14 @@ const ResponsiveAppBar = () => {
                             ))}
                             <Button
                                 component={Link}
+                                href="/pricing"
+                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                            >
+                                Pricing
+                            </Button>
+                            <Button
+                                component={Link}
                                 href="/about-us"
                                 sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
