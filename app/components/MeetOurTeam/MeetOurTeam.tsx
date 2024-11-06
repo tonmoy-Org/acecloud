@@ -46,29 +46,26 @@ export default function TeamSection() {
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                     viewport={{ once: true, amount: 0.4 }}
-                    style={{ textAlign: 'center', padding: '40px 0', color: '#fff' }}
                 >
-                    <Typography color='#0DCCD7' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px' }}>
-                        Team
-                    </Typography>
-                    <Typography
-                        variant="h4"
-                        sx={{
-                            fontWeight: 700,
-                            marginBottom: 2,
-                            color: '#E0E0E0',
-                        }}
-                    >
-                        Meet Our Team
-                    </Typography>
-                    <Box sx={{ maxWidth: '700px', margin: 'auto', marginBottom: 3 }}>
+                    <Box sx={{ textAlign: 'center', pb: 3 }}>
                         <Typography
-                            variant="body1"
-                            color="#BABABA"
-                            sx={{ color: '#B0B0B0' }}
+                            color='#FFD700'
+                            gutterBottom
+                            sx={{
+                                textTransform: 'uppercase',
+                                fontSize: '14px',
+                                fontWeight: 'bold',
+                                animation: 'shadow-pulse 1.5s infinite'
+                            }}
                         >
+                            Team
+                        </Typography>
+                        <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+                            Meet Our Team
+                        </Typography>
+                        <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
                             We are passionate about our work and dedicated to your success. Meet the professionals
                             who are driving our company forward and are ready to take your business to the next level.
                         </Typography>
@@ -86,7 +83,7 @@ export default function TeamSection() {
                                 whileHover={{
                                     scale: 1.05,
                                     rotateY: 0,
-                                    boxShadow: '0px 20px 50px rgba(0, 188, 255, 0.7)',
+                                    boxShadow: '0px 20px 50px #1D4ED8',
                                     transition: {
                                         duration: 0.3,
                                         ease: 'easeInOut',
@@ -151,7 +148,7 @@ export default function TeamSection() {
                                         <Typography
                                             variant="body2"
                                             sx={{
-                                                color: '#0DCCD7',
+                                                color: '#1D4ED8',
                                                 marginTop: '4px',
                                             }}
                                         >

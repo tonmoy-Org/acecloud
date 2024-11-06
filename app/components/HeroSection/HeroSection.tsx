@@ -123,8 +123,23 @@ export default function HeroSection() {
               As a forward-thinking digital agency, we redefine digital experiences through a fusion of innovation and expertise.
             </motion.p>
 
-            {/* Stats Section */}
-        
+            <Box sx={{ my: 2 }}>
+              <Box className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] select-none focus:outline-none">
+                <Box
+                  component="span"
+                  className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#6d28d9_0%,#d8b4fe_50%,#1D4ED8_100%)]"
+                ></Box>
+                <Button
+                  component="span"
+                  className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl"
+                  sx={{ position: "relative", zIndex: 1, textTransform: 'none !important' }}
+                >
+                  Start Building Now
+                </Button>
+              </Box>
+            </Box>
+
+
           </motion.div>
           {/* Social Media Icons with Rotation Hover Effect */}
           <div>

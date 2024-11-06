@@ -68,7 +68,7 @@ const GlowingSection = () => {
                 className={`relative z-50 flex -translate-y-80 flex-col items-center px-5`}>
                 <div className="flex flex-col items-center justify-center relative w-full text-center">
                     <motion.div
-                        initial={{ opacity: 1, y: 100 }}
+                        initial={{ opacity: 0, y: 80 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         viewport={{ once: false, amount: 0.4 }}
