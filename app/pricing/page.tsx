@@ -6,6 +6,7 @@ import TaskAltIcon from '@mui/icons-material/TaskAlt';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
+
 export default function Pricing() {
     return (
         <Box className="min-h-screen">
@@ -101,7 +102,8 @@ export default function Pricing() {
                                     variant="contained"
                                     fullWidth
                                     component={Link}
-                                    href="/"
+                                    href='https://buy.stripe.com/bIY7tw1Sj0dx7zabIK'
+                                    passHref
                                     sx={{
                                         backgroundColor: '#1D4ED8',
                                         textTransform: 'none !important',
@@ -177,7 +179,8 @@ export default function Pricing() {
                                     variant="contained"
                                     fullWidth
                                     component={Link}
-                                    href="/"
+                                    href='https://buy.stripe.com/9AQeVYfJ9e4naLm003'
+                                    passHref
                                     sx={{
                                         backgroundColor: 'white',
                                         color: 'black',
