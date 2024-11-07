@@ -142,7 +142,7 @@ export default function HeroSection() {
 
           </motion.div>
           {/* Social Media Icons with Rotation Hover Effect */}
-          <div>
+          {/* <div>
             <div
               className="hidden lg:flex fixed top-1/2 lg:right-20 right-0 transform -translate-y-1/2 flex-col items-center space-y-4 mr-2"
               style={{
@@ -181,7 +181,7 @@ export default function HeroSection() {
                 <LinkedIn />
               </motion.a>
             </div>
-          </div>
+          </div> */}
         </motion.div>
       </Box>
     </Box>
