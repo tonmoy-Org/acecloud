@@ -149,10 +149,10 @@ const Card: FC<CardProps> = ({ step, title, description, icon, glowPosition, onM
                 style={{ border: '1px solid rgba(225, 225, 225, 0.1)' }}
                 variants={staggerItem}
             >
-                <div className="flex flex-col items-start justify-center w-full relative">
+                <div className="flex flex-col items-start justify-center w-full h-38 relative">
                     {icon}
                     <div className="flex flex-col items-start">
-                        <span className="absolute -top-6 right-0 text-foreground font-medium text-2xl rounded-full w-12 h-12 flex items-center justify-center pt-0.5"
+                        <span className="absolute -top-2 lg:-top-6 right-0 text-foreground font-medium text-2xl rounded-full w-12 h-12 flex items-center justify-center pt-0.5"
                             style={{ border: '1px solid rgba(225, 225, 225, 0.1)' }}
                         >
                             {step}

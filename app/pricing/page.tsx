@@ -37,9 +37,9 @@ export default function Pricing() {
                         <Stack
                             component={motion.div}
                             direction="row"
-                            spacing={3}
                             justifyContent="center"
                             flexWrap="wrap"
+                            sx={{ gap: 3 }}
                         >
                             <Card
                                 component={motion.div}
@@ -117,6 +117,7 @@ export default function Pricing() {
                                 variants={cardVariants}
                                 sx={{
                                     width: 320,
+
                                     borderRadius: 3,
                                     bgcolor: 'hsl(220, 65%, 3.52%)',
                                     border: '2px solid #1D4ED8',
@@ -270,7 +271,7 @@ export default function Pricing() {
                     </motion.div>
                 </Box>
                 <Box>
-                    
+
                 </Box>
             </Container>
         </Box>

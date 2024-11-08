@@ -25,7 +25,9 @@ export default function HighlightSection() {
                 <h2 className="text-3xl font-bold">
                     The results speak for themselves
                 </h2>
-                <p className="text-lg mt-2">
+                <p className="text-lg mt-2" 
+                style={{ color: 'hsl(220 10% 54.4%)' }}
+                >
                     We help the world's most successful brands make great things happen.
                 </p>
             </div>

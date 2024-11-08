@@ -319,7 +319,7 @@ const ResponsiveAppBar = () => {
                                         >
                                             <div className='absolute bottom-3'>
                                                 <h1 className="text-lg font-bold">ALL Features</h1>
-                                                <p className="text-sm">
+                                                <p className="text-sm text-[#A3A3A3]">
                                                     Build dynamic websites, enhance performance, and scale effortlessly.
                                                 </p>
                                             </div>

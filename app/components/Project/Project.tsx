@@ -87,7 +87,7 @@ const BlogSection: React.FC = () => {
     };
 
     return (
-        <Container sx={{ py: 8 }}>
+        <Container sx={{ py: 8 }} id='project'>
             <ApproachSection
                 header="Projects"
                 title="Recent Work."

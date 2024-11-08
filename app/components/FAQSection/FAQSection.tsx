@@ -72,7 +72,7 @@ export default function FAQSection() {
                     viewport={{ once: true, amount: 0.4 }}
                 >
                     <Box sx={{ textAlign: 'center', pb: 3 }}>
-                        <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+                        <Typography  className="text-2.5xl md:text-[2.5rem] font-bold text-white leading-normal">
                             Frequently Asked Questions
                         </Typography>
                         <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>

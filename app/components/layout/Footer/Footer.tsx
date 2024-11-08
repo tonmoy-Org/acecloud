@@ -63,10 +63,9 @@ function Footer() {
     };
 
     return (
-        <Box sx={{ border: '1px solid rgba(225, 225, 225, 0.1)', }}>
+        <Box >
             {/* Animated Background Circles */}
-
-            <Container maxWidth="lg">
+            <Container maxWidth="lg" sx={{ borderTop: '1px solid rgba(225, 225, 225, 0.1)', }}>
                 <footer
                     className="relative pt-16 px-6 lg:px-8"
                 >
@@ -85,7 +84,7 @@ function Footer() {
                         }} /></div>
 
                     {/* Footer Content */}
-                    <div className="text-gray-200 flex items-start gap-20">
+                    <div className="text-gray-200 lg:flex items-start gap-20 ">
                         <div className="w-[350px]">
                             <div className="mb-4">
                                 {/* <svg className="w-7 h-7 text-white"></svg> */}
@@ -100,7 +99,7 @@ function Footer() {
                         </div>
 
                         {/* Navigation Links */}
-                        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full max-w-screen-lg mx-auto">
+                        <div className="grid grid-cols-2 lg:mt-0 mt-10 md:grid-cols-4 gap-6 w-full max-w-screen-lg mx-auto">
                             <FooterLinkSection title="Integrations" links={[
                                 { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61563399607727' },
                                 { name: 'Instagram', href: 'https://www.instagram.com/AceCloudagency/' },
@@ -175,7 +174,7 @@ function Footer() {
                     </div>
 
                     {/* Copyright */}
-                    <div className="mt-2 pt-4 md:pt-4 w-full">
+                    <div className="mt-2 pt-2 md:pt-4 w-full">
                         <p className="text-sm text-gray-400">© 2024 AceCloud Agency INC. All rights reserved.</p>
                     </div>
 

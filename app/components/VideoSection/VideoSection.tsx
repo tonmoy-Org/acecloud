@@ -27,7 +27,7 @@ export default function VideoSection() {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.4 }}
               >
-                <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
+                <Typography className="text-3xl md:text-[2.5rem] font-bold text-white leading-normal">
                   Build Websites Like a Pro
                 </Typography>
               </motion.div>

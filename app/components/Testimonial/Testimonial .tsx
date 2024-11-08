@@ -46,7 +46,7 @@ export default function Testimonials() {
           title=" What Our Clients Say."
           description="Here's what some of our users have to say about Linkify.."
         />
-        <Marquee pauseOnHover gradient={true} speed={30} gradientColor="hsl(220, 65%, 3.52%)" gradientWidth={300} style={{ width: '100%' }}>
+        <Marquee pauseOnHover gradient={true} speed={30} gradientColor="hsl(220, 65%, 3.52%)" gradientWidth={200} style={{ width: '100%' }}>
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
@@ -82,7 +82,7 @@ export default function Testimonials() {
             </Card>
           ))}
         </Marquee>
-        <Marquee pauseOnHover direction='right' gradient={true} speed={30} gradientColor="hsl(220, 65%, 3.52%)" gradientWidth={300} style={{ width: '100%' }}>
+        <Marquee pauseOnHover direction='right' gradient={true} speed={30} gradientColor="hsl(220, 65%, 3.52%)" gradientWidth={200} style={{ width: '100%' }}>
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}

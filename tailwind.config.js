@@ -10,6 +10,9 @@ module.exports = {
       colors: {
         'body-bg': 'hsl(220, 65%, 3.52%)',
       },
+      fontFamily: {
+        sans: ['Helvetica', 'Arial', 'sans-serif'],
+      },
     },
   },
   plugins: [],
