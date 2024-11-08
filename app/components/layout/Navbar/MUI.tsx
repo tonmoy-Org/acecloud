@@ -4,6 +4,10 @@ import React, { useState, useEffect } from 'react';
 import {
     AppBar, Box, Toolbar, IconButton, Typography, Container,
     Button, Divider, Drawer,
+    List,
+    ListItem,
+    ListItemButton,
+    ListItemText,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -11,8 +15,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import logo from '@/public/logo/acecloud.png';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import LinkIcon from '@mui/icons-material/Link';
+import HttpsIcon from '@mui/icons-material/Https';
+import InsightsIcon from '@mui/icons-material/Insights';
+import TvIcon from '@mui/icons-material/Tv';
+import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-const drawerHeight = '100%';
+
+const drawerWidth = 240;
 
 const ResponsiveAppBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -31,6 +43,12 @@ const ResponsiveAppBar = () => {
         if (!isClosing) {
             setMobileOpen(!mobileOpen);
         }
+    };
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
     };
 
     const handleScroll = (id: string, duration: number = 1000) => {
@@ -75,117 +93,182 @@ const ResponsiveAppBar = () => {
     }, []);
 
     const drawer = (
-        <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: mobileOpen ? 1 : 0, x: mobileOpen ? 0 : -100 }}
-            transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-            style={{
-                backgroundColor: '#1a1a1a',
-                color: 'white',
-                height: drawerHeight,
-                padding: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'flex-start',
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                width: '100%',
-                zIndex: 1300,
-            }}
-        >
-            <IconButton
-                onClick={handleDrawerClose}
-                sx={{
-                    position: 'absolute',
-                    top: 16,
-                    right: 16,
-                    color: 'white',
-                }}
-            >
-                <CloseIcon />
-            </IconButton>
-            <Box display="flex" justifyContent="center" mb={2}>
-                <Image src={logo} alt="Ace Cloud Logo" width={140} height={80} />
-            </Box>
-            <Divider sx={{ backgroundColor: '#333', width: '80%' }} />
-
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                {['Home', 'Project'].map((text, index) => (
-                    <motion.div
-                        key={text}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : 20 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                        <Button
-                            sx={{
-                                textTransform: 'none !important',
-                                color: 'hsl(220 10% 54.4%)',
-                                my: 1,
-                                '&:hover': {
-                                    color: 'white',
-                                },
-                            }}
-                            onClick={() => handleScroll(text.toLowerCase(), 1400)}
-                        >
-                            <Link href={`/#${text.toLowerCase()}`} passHref>
-                                {text}
-                            </Link>
-                        </Button>
-                    </motion.div>
-                ))}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : 20 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
+        <Box sx={{ textAlign: 'center', bgcolor: 'hsl(220, 65%, 3.52%)', height: '100%', color: 'white' }}>
+            <Box sx={{ p: 4 }}>
+                <IconButton
+                    onClick={handleDrawerClose}
+                    sx={{
+                        position: 'absolute',
+                        top: 16,
+                        right: 16,
+                        color: 'white',
+                    }}
                 >
-                    <Button
+                    <CloseIcon />
+                </IconButton>
+                <Box display="flex" justifyContent="left" mb={2}>
+                    <Image src={logo} alt="Ace Cloud Logo" width={140} height={80} />
+                </Box>
+            </Box>
+            <Box display="flex" justifyContent="center" alignItems="center" gap={2}>
+                <Button
+                    onClick={handleDrawerClose}
+                    variant="outlined"
+                    component={Link}
+                    href="/book-meeting"
+                    sx={{
+                        my: 1,
+                        color: 'white',
+                        borderColor: '#1D4ED8',
+                        transition: 'transform 0.3s ease, background-color 0.3s ease',
+                        borderRadius: '6px',
+                        textTransform: 'none !important',
+                        py: '2px !important',
+                        px: '8px !important',
+                    }}
+                >
+                    Book a call with us
+                </Button>
+                <Button
+                    onClick={handleDrawerClose}
+                    variant="outlined"
+                    component={Link}
+                    href="/book-meeting"
+                    sx={{
+                        my: 1,
+                        color: 'white',
+                        borderColor: '#1D4ED8',
+                        transition: 'transform 0.3s ease, background-color 0.3s ease',
+                        borderRadius: '6px',
+                        textTransform: 'none !important',
+                        py: '2px !important',
+                        px: '8px !important',
+                    }}
+                >
+                    Start Building Now
+                </Button>
+            </Box>
+            <Divider />
+            <List sx={{ p: 2}}>
+                <ListItem disablePadding>
+                    <ListItemButton
+                        component={Link}
+                        onClick={handleDrawerClose}
+                        href="/"
+                    >
+                        <ListItemText primary='Home' />
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <li className="relative group">
+                        <Accordion sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)', bgcolor: "hsl(220, 65%, 3.52%)", }}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                className="flex justify-between"
+                            >
+                                <Typography className="text-sm font-medium text-neutral-400">Features</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <ul className="flex flex-col space-y-1 p-2">
+                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                        <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                Custom Website <br />
+                                            </span>
+                                        </a>
+                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
+                                            Create a custom website with your own domain name and branding
+                                        </span>
+                                    </li>
+                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                        <a href="/feature-2" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <HttpsIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                Secure Hosting <br />
+                                            </span>
+                                        </a>
+                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
+                                            Ensure your website is always accessible with reliable hosting solutions
+                                        </span>
+                                    </li>
+                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                        <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <InsightsIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                Performance Insights <br />
+                                            </span>
+                                        </a>
+                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
+                                            Get real-time performance insights to improve your website's speed and user experience
+                                        </span>
+                                    </li>
+                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                        <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <TvIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                Responsive Design <br />
+                                            </span>
+                                        </a>
+                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
+                                            Ensure your website looks great on all devices with responsive design features
+                                        </span>
+                                    </li>
+                                </ul>
+                            </AccordionDetails>
+                        </Accordion>
+                    </li>
+
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton
                         component={Link}
                         onClick={handleDrawerClose}
                         href="/about-us"
-                        sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                        sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                     >
                         About
-                    </Button>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: mobileOpen ? 1 : 0, y: mobileOpen ? 0 : 20 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                >
-                    <Button
-                        component={Link}
+                    </ListItemButton>
+
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton
                         onClick={handleDrawerClose}
-                        href="/contact-us"
-                        sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                        component={Link}
+                        href="/pricing"
+                        sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                    >
+                        Pricing
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton
+                        onClick={handleDrawerClose}
+                        component={Link}
+                        href="/blog"
+                        sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                    >
+                        Blog
+                    </ListItemButton>
+                </ListItem>
+                <ListItem disablePadding>
+                    <ListItemButton
+                        onClick={handleDrawerClose}
+                        component={Link}
+                        href="/blog"
+                        sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                     >
                         Contact
-                    </Button>
-                </motion.div>
-            </Box>
-            <Button
-                onClick={handleDrawerClose}
-                variant="outlined"
-                component={Link}
-                href="/book-meeting"
-                sx={{
-                    my: 1,
-                    color: 'white',
-                    borderColor: '#1D4ED8',
-                    transition: 'transform 0.3s ease, background-color 0.3s ease',
-                    borderRadius: '6px',
-                    textTransform: 'none !important',
-                    py: '2px !important',
-                    px: '8px !important',
-                }}
-            >
-                Book a call with us
-            </Button>
-        </motion.div>
+                    </ListItemButton>
+                </ListItem>
+            </List>
+        </Box>
     );
 
     return (
@@ -219,13 +302,81 @@ const ResponsiveAppBar = () => {
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                            <div className="relative group">
+                                <Button
+                                    className="hover:text-accent-foreground"
+                                    sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                                >
+                                    Features
+                                    <ChevronDownIcon className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
+                                </Button>
+                                <div className="absolute left-0 mt-0 hidden w-[500px] rounded-md text-white shadow-lg group-hover:block p-3"
+                                    style={{ backgroundColor: 'hsl(220, 65%, 3.52%)', border: '1px solid rgba(225, 225, 225, 0.1)' }}
+                                >
 
-                            <Button
-                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+                                    <div className="flex w-full gap-2">
+                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-sm"
+                                        >
+                                            <div className='absolute bottom-3'>
+                                                <h1 className="text-lg font-bold">ALL Features</h1>
+                                                <p className="text-sm">
+                                                    Build dynamic websites, enhance performance, and scale effortlessly.
+                                                </p>
+                                            </div>
+                                        </div>
 
-                            >
-                                Features
-                            </Button>
+                                        <div className="w-3/5">
+                                            <ul className="flex flex-col space-y-1 p-2">
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Custom Website <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Create a custom website with your own domain name and branding
+                                                    </span>
+                                                </li>
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-2" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <HttpsIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Secure Hosting <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Ensure your website is always accessible with reliable hosting solutions
+                                                    </span>
+                                                </li>
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <InsightsIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Performance Insights <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Get real-time performance insights to improve your website's speed and user experience
+                                                    </span>
+                                                </li>
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Responsive Design <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Ensure your website looks great on all devices with responsive design features
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                             {['Project'].map((text) => (
                                 <Button
                                     key={text}
@@ -293,6 +444,7 @@ const ResponsiveAppBar = () => {
             </AppBar>
 
             <Drawer
+                anchor="right"
                 open={mobileOpen}
                 onClose={handleDrawerClose}
                 sx={{
