@@ -10,6 +10,7 @@ import VideoSection from "./components/VideoSection/VideoSection";
 import Pricing from "./pricing/page";
 import FAQSection from "./components/FAQSection/FAQSection";
 import OurApproach from "./components/OurApproach/OurApproach";
+import IndustrySection from "./components/IndustrySection/IndustrySection";
 
 
 
@@ -19,6 +20,7 @@ export default function Home() {
       <Box>
         <HeroSection />
         <VideoSection />
+        <IndustrySection  />
         <OurServices />
         <Projects />
         <HighlightSection />

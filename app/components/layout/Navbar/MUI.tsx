@@ -202,7 +202,7 @@ const ResponsiveAppBar = () => {
                     boxShadow: elevate ? '0px 4px 12px rgba(0, 0, 0, 0.2)' : 'none',
                 }}
             >
-                <Container sx={{ minWidth: { xs: '100%', md: '85%' } }}>
+                <Container maxWidth="lg">
                     <Toolbar sx={{
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -213,13 +213,20 @@ const ResponsiveAppBar = () => {
                         <Typography variant="h4" noWrap sx={{ textAlign: 'center' }}>
                             <div className="w-32 me-10">
                                 <Link href="/" passHref>
-                                    <Image src={logo} alt="Ace Cloud Logo" layout="responsive" />
+                                    <Image src={logo} onClick={() => handleScroll('home', 1400)} alt="Ace Cloud Logo" layout="responsive" />
                                 </Link>
                             </div>
                         </Typography>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                            {['Home', 'Project'].map((text) => (
+
+                            <Button
+                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                            >
+                                Features
+                            </Button>
+                            {['Project'].map((text) => (
                                 <Button
                                     key={text}
                                     sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
@@ -230,19 +237,27 @@ const ResponsiveAppBar = () => {
                             ))}
                             <Button
                                 component={Link}
-                                href="/pricing"
-                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
-
-                            >
-                                Pricing
-                            </Button>
-                            <Button
-                                component={Link}
                                 href="/about-us"
                                 sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
                             >
                                 About
+                            </Button>
+                            <Button
+                                component={Link}
+                                href="/blog"
+                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                            >
+                                Blog
+                            </Button>
+                            <Button
+                                component={Link}
+                                href="/pricing"
+                                sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
+
+                            >
+                                Pricing
                             </Button>
                             <Button
                                 component={Link}

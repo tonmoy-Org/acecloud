@@ -69,7 +69,7 @@ const staggerItem = {
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 };
 
-const BlogSection: React.FC = () => {
+const MoreBlog: React.FC = () => {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
     const [glowPosition, setGlowPosition] = useState<{ x: string; y: string }>({ x: '50%', y: '50%' });
     const router = useRouter();
@@ -101,8 +101,8 @@ const BlogSection: React.FC = () => {
         <Container sx={{ pt: 10, pb: 20 }}>
             <ApproachSection
                 header=""
-                title="Blog."
-                description="Latest news and updates"
+                title="Check Out Some More Blogs"
+                description=""
             />
             <motion.div
                 variants={staggerContainer}
@@ -166,4 +166,4 @@ const BlogSection: React.FC = () => {
     );
 };
 
-export default BlogSection;
+export default MoreBlog;

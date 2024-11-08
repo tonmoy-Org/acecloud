@@ -1,23 +1,11 @@
 'use client';
 
-import { Container, Card, CardContent, CardMedia, Typography } from '@mui/material';
-import React, { useState, useCallback, useMemo } from 'react';
-import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
-import ApproachSection from '../SectionTitle/SectionTitle';
+import MoreBlog from '@/app/components/MoreBlog/MoreBlog';
+import { Container, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
+import { useParams } from 'next/navigation';
+import React, { useMemo } from 'react';
 
-const staggerContainer = {
-    hidden: { opacity: 0, y: 100 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            staggerChildren: 0.3,
-            duration: 0.5,
-        },
-    },
-};
-
+// Static data for demonstration; in a real application, fetch this data from an API.
 const cardData = [
     {
         id: 'the-future-of-web-development-trends-to-watch-in-2025',
@@ -63,107 +51,60 @@ const cardData = [
     }
 ];
 
+const BlogDetails: React.FC = () => {
+    const params = useParams();
+    const { id } = params;
 
-const staggerItem = {
-    hidden: { opacity: 0, y: 100 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-};
+    // Find the blog post data based on the string ID
+    const blogPost = useMemo(() => cardData.find(post => post.id === id), [id]);
 
-const BlogSection: React.FC = () => {
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-    const [glowPosition, setGlowPosition] = useState<{ x: string; y: string }>({ x: '50%', y: '50%' });
-    const router = useRouter();
-
-    const handleMouseMove = useCallback(
-        (e: React.MouseEvent) => {
-            const { clientX, clientY, currentTarget } = e;
-            const { left, top } = currentTarget.getBoundingClientRect();
-            setGlowPosition({ x: `${clientX - left}px`, y: `${clientY - top}px` });
-        },
-        []
-    );
-
-    const handleMouseEnter = (index: number) => {
-        setHoveredCard(index);
-    };
-
-    const handleMouseLeave = () => {
-        setHoveredCard(null);
-    };
-
-    const handleCardClick = (index: number) => {
-        router.push(`/blogs/${index}`);
-    };
-
-
+    if (!blogPost) {
+        return (
+            <Container sx={{ my: 5, textAlign: 'center' }}>
+                <Typography variant="h4" color="error">Blog post not found.</Typography>
+            </Container>
+        );
+    }
 
     return (
-        <Container sx={{ pt: 10, pb: 20 }}>
-            <ApproachSection
-                header=""
-                title="Blog."
-                description="Latest news and updates"
-            />
-            <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                animate="show"
-                style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center' }}
-            >
-                {cardData.map((card, index) => {
-                    const isHovered = hoveredCard === index;
-                    const glowStyle = useMemo(
-                        () => ({
-                            background: `radial-gradient(500px at ${glowPosition.x} ${glowPosition.y}, ${isHovered ? 'rgba(168, 85, 247, 0.2)' : 'rgba(168, 85, 247, 0)'}, transparent 60%)`,
-                            transition: 'background 0.3s ease-out',
-                        }),
-                        [glowPosition, isHovered]
-                    );
-
-                    return (
-                        <motion.div
-                            key={card.id}
-                            variants={staggerItem}
-                            onMouseMove={handleMouseMove}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={handleMouseLeave}
-                            onClick={() => handleCardClick(card.id)} // Redirect to details page
-                            style={{ cursor: 'pointer' }}
-                        >
-                            <Card
-                                sx={{
-                                    width: 350,
-                                    height: '100%',
-                                    position: 'relative',
-                                    color: 'white', // Set text color to white
-                                    ...glowStyle,
-                                    backgroundColor: 'hsl(0, 0%, 3.9%)',
-                                    padding: 1
-                                }}
-                                style={{ border: '1px solid rgba(225, 225, 225, 0.1)' }}
-                            >
-                                <CardMedia
-                                    component="img"
-                                    height="140"
-                                    image={card.image}
-                                    alt={card.title}
-                                    sx={{ padding: 2, height: 230, width: '100%' }}
-                                />
-                                <CardContent>
-                                    <Typography sx={{ color: 'white', fontSize: 18, fontWeight: 600 }}>
-                                        {card.title}
-                                    </Typography>
-                                    <Typography variant="body2" sx={{ color: 'hsl(220 10% 54.4%)', mt: 1 }}>
-                                        {card.shortDescription}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    );
-                })}
-            </motion.div>
-        </Container>
+        <Container sx={{ pt: 20, pb: 10 }}>
+            <Card sx={{ backgroundColor: 'hsl(220, 65%, 3.52%)', color: 'white', maxWidth: '75%', mx: 'auto' }}>
+                <Typography
+                    color='#FFD700'
+                    gutterBottom
+                    sx={{
+                        textTransform: 'uppercase',
+                        fontSize: '14px',
+                        fontWeight: 'bold',
+                        animation: 'shadow-pulse 1.5s infinite'
+                    }}
+                >
+                    Blog
+                </Typography>
+                <Typography variant="h4" component="h1" gutterBottom sx={{ py: 2, fontWeight: 'bold' }}>
+                    {blogPost.title}
+                </Typography>
+                <CardMedia
+                    component="img"
+                    height="400"
+                    image={blogPost.image}
+                    alt={blogPost.title}
+                    sx={{}}
+                />
+                <CardContent sx={{ padding: '0 !important', my: 2 }}>
+                    <Typography variant="h6" component="h1" gutterBottom sx={{ color: 'hsl(220 10% 54.4%)' }}>
+                        {blogPost.shortDescription}
+                    </Typography>
+                    <Typography variant="body1" sx={{ mt: 3 }}>
+                        {blogPost.description}
+                    </Typography>
+                </CardContent>
+            </Card>
+            <Box>
+                <MoreBlog />
+            </Box>
+        </Container >
     );
 };
 
-export default BlogSection;
+export default BlogDetails;
