@@ -65,31 +65,20 @@ function Footer() {
     return (
         <Box >
             {/* Animated Background Circles */}
-            <Container maxWidth="lg" sx={{ borderTop: '1px solid rgba(225, 225, 225, 0.1)', }}>
+            <Container maxWidth="lg" sx={{ borderTop: '1.5px solid rgba(225, 225, 225, 0.1)', }}>
                 <footer
-                    className="relative pt-16"
+                    className="relative pt-20 bg-[radial-gradient(35%_128px_at_50%_0%,theme(backgroundColor.white/8%),transparent)]"
                 >
                     {/* Decorative Dot at the Top */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded">
-                        <Box sx={{
-                            position: 'absolute',
-                            top: '0px',
-                            left: '-100px',
-                            right: '-100px',
-                            width: '200px',
-                            height: '200px',
-                            borderRadius: '50%',
-                            background: 'rgba(255, 255, 255, 0.1)',
-                            filter: 'blur(50px)',
-                            zIndex: 0,
-                        }} /></div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded-full ">
+                    </div>
 
                     {/* Footer Content */}
-                    <div className="text-gray-200 lg:flex items-start gap-10">
-                        <div className="w-[350px]">
+                    <div className="text-gray-200 lg:flex items-start gap-20 ">
+                        <div className="lg:w-[500px]">
                             <div className="mb-4">
                                 {/* <svg className="w-7 h-7 text-white"></svg> */}
-                                <h2 className="text-2xl font-bold text-white">AceCloud Agency</h2>
+                                <h2 className="text-2xl font-bold text-white">AceCloud</h2>
                             </div>
                             <p className="text-sm">
                                 With AceCloud <span className="text-white font-semibold">Design</span>, <span className="text-[#1D4ED8] font-semibold">Optimize</span>, <span className="text-white font-semibold">Transform</span>.
@@ -100,22 +89,22 @@ function Footer() {
                         </div>
 
                         {/* Navigation Links */}
-                        <div className="grid grid-cols-2 lg:mt-0 mt-10 md:grid-cols-4 gap-6 w-full max-w-screen-lg mx-auto">
-                            <FooterLinkSection title="Integrations" links={[
-                                { name: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61563399607727' },
-                                { name: 'Instagram', href: 'https://www.instagram.com/AceCloudagency/' },
-                                { name: 'X', href: 'https://x.com/AceCloudAgency' },
-                                { name: 'LinkedIn', href: 'https://www.linkedin.com/in/AceCloud-agency/' }
+                        <div className="grid grid-cols-2 lg:mt-0 mt-10 md:grid-cols-5 gap-5 mx-auto">
+                            <FooterLinkSection title="Follow Us" links={[
+                                { name: 'Facebook', href: 'hhttps://www.facebook.com/profile.php?id=61565758503116' },
+                                { name: 'Instagram', href: 'https://www.instagram.com/acecloud.ca/' },
+                                { name: 'LinkedIn', href: 'https://www.instagram.com/acecloud.ca' },
+                                { name: 'Dribbble', href: 'https://dribbble.com/AceCloud' },
+                                { name: 'Behance', href: 'https://www.behance.net/AceCloud_ca' }
                             ]} />
 
                             <FooterLinkSection title="Resources" links={[
-                                { name: 'Blog', href: '/resources/blog' },
-                                { name: 'Support', href: '/resources/help' },
-                                { name: 'Contact Us', href: '/resources/help' }
+                                { name: 'Blog', href: '/blog' },
+                                { name: 'Contact Us', href: '/contact-us' }
                             ]} />
 
                             <FooterLinkSection title="Company" links={[
-                                { name: 'About Us', href: '/about' },
+                                { name: 'About Us', href: '/about-us' },
                                 { name: 'Privacy Policy', href: '/privacy' },
                                 { name: 'Terms & Conditions', href: '/terms' }
                             ]} />
@@ -134,7 +123,7 @@ function Footer() {
                                             label: { color: '#aaa' },
                                             fieldset: { borderColor: '#1D4ED8' },
                                             mb: 2,
-                                            width: { xs: '100%', sm: '100%' },
+                                            width: { xs: '100%', sm: 230 },
                                             '& .MuiOutlinedInput-root': {
                                                 '& fieldset': {
                                                     borderColor: 'default',
@@ -176,7 +165,7 @@ function Footer() {
 
                     {/* Copyright */}
                     <div className="mt-2 pt-2 md:pt-4 w-full">
-                        <p className="text-sm text-gray-400">© 2024 AceCloud Agency INC. All rights reserved.</p>
+                        <p className="text-sm text-gray-400">© 2024 AceCloud All rights reserved.</p>
                     </div>
 
                     {/* Glowing Gradient Text */}
@@ -205,7 +194,7 @@ function Footer() {
                             </text>
                             <text
                                 x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" stroke-width="0.3" className="font-bold fill-transparent text-7xl stroke-neutral-800" stroke-dashoffset="0" stroke-dasharray="1000">AceCloud</text>
-                            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" stroke="url(#textGradient)" stroke-width="0.3" mask="url(#textMask)" className="font-[helvetica] font-bold fill-transparent text-7xl">AceCloud</text>
+                            <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" stroke="url(#textGradient)" stroke-width="0.3" mask="url(#textMask)" className="font-bold fill-transparent text-7xl">AceCloud</text>
                         </svg>
                     </div>
                 </footer>

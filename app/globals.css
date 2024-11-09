@@ -151,3 +151,15 @@ body {
 .animate-spin-slow {
   animation: spin-slow 4s linear infinite;
 }
+
+
+
+
+.email-link:hover {
+  color: #007BFF; /* Change the color on hover */
+  transform: scale(1.05); /* Slightly scale up the text and icon */
+}
+
+.email-link:hover .MuiSvgIcon-root {
+  transform: rotate(10deg); /* Rotate the email icon slightly on hover */
+}

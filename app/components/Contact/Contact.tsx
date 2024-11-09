@@ -119,8 +119,20 @@ const ContactSection = () => {
                                 </Typography>
                                 <Divider sx={{ my: 2 }} />
                                 <Typography variant="body1" gutterBottom>
-                                    <Email sx={{ verticalAlign: 'middle', mr: 1 }} />
-                                    contact@acecloud.ca
+                                    <a
+                                        href="mailto:contact@acecloud.ca"
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            transition: 'color 0.3s ease, transform 0.3s ease',
+                                        }}
+                                        className="email-link"
+                                    >
+                                        <Email sx={{ verticalAlign: 'middle', mr: 1, transition: 'transform 0.3s ease' }} />
+                                        contact@acecloud.ca
+                                    </a>
                                 </Typography>
                                 <Typography variant="body1">
                                     <LocationOn sx={{ verticalAlign: 'middle', mr: 1 }} />

@@ -68,19 +68,7 @@ export default function OurServices() {
                 py: 10,
                 position: 'relative',
                 overflow: 'hidden',
-                '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    bottom: '-60px', // Adjust for visual effect
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '200%',
-                    height: '340px',
-                    background: 'linear-gradient(90deg, rgba(0, 55, 255, 0.3), rgba(255, 255, 255, 0))',
-                    borderRadius: '100%',
-                    filter: 'blur(50px)',
-                    zIndex: 0,
-                },
+                background: 'linear-gradient(180deg, hsl(220, 65%, 3.52%), rgba(0, 55, 255, 0.1), hsl(220, 65%, 3.52%))',
             }}
         >
             <Container>
@@ -121,18 +109,20 @@ export default function OurServices() {
                                 <motion.div variants={staggerItem}>
                                     <Card
                                         sx={{
-                                            backgroundColor: 'transparent',
+                                            backgroundColor: '#1a1a1a',
                                             color: 'white',
-                                            borderRadius: 3,
+                                            borderRadius: 1,
                                             p: 3,
-                                            boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.25)',
-                                            border: '1px solid transparent',
+                                            boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.15)',
+                                            border: '1px solid #333',
                                             '&:hover': {
-                                                borderColor: '#d8b4fe',
+                                                borderColor: '#FFD700',
                                                 transform: 'scale(1.05)',
-                                                boxShadow: '0px 15px 30px rgba(0, 0, 0, 0.3)',
+                                                boxShadow: '0px 15px 40px rgba(0, 0, 0, 0.25)',
+                                                filter: 'brightness(1.1)',
                                             },
-                                            transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
+                                            transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease',
+                                            position: 'relative',
                                         }}
                                     >
                                         <CardContent sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -144,8 +134,9 @@ export default function OurServices() {
                                                     alignItems: 'center',
                                                     justifyContent: 'center',
                                                     borderRadius: '50%',
-                                                    background: 'linear-gradient(135deg, #007BFF, #00CFFD)', // Blue gradient
+                                                    background: 'linear-gradient(135deg, #00CFFD, #007BFF)', // Blue gradient
                                                     mb: 3,
+                                                    boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)',
                                                 }}
                                             >
                                                 {service.icon}

@@ -11,32 +11,79 @@ export default function Testimonials() {
     {
       company: 'NUTRIMERCHANT',
       feedback:
-        'Working with Ace Cloud transformed our outdated website into a modern, user-friendly platform that met our exact needs.',
+        'Ace Cloud’s attention to detail and dedication to understanding our business needs helped us reach our target audience effectively. Our website is now fast, functional, and easy to manage!',
       author: 'Emily J',
       role: '@Agency Owner',
     },
     {
       company: 'ECOBUILD',
       feedback:
-        'Collaborating with Ace Cloud revamped our outdated website into a modern, user-friendly platform that fulfilled our requirements.',
+        'Partnering with Ace Cloud has been instrumental in scaling our operations. The new website has not only attracted more clients but has improved overall team efficiency and project visibility.',
       author: 'John D',
       role: '@Project Manager',
     },
     {
       company: 'LiquidWave',
       feedback:
-        'Ace Cloud transformed our vague ideas into a polished, professional website that exceeded our expectations.',
+        'Ace Cloud worked wonders for us. They took our ideas, gave them life, and created a website that truly represents our brand’s values. The professional approach and seamless process were impressive.',
       author: 'Sarah L',
       role: '@Founder',
     },
     {
-      company: 'LiquidWave',
+      company: 'GreenFields',
       feedback:
-        'Ace Cloud transformed our vague ideas into a polished, professional website that exceeded our expectations.',
-      author: 'Sarah L',
-      role: '@Founder',
+        'Choosing Ace Cloud was one of the best decisions we made. They designed a website that fits our eco-conscious brand perfectly, and their customer support is outstanding.',
+      author: 'David T',
+      role: '@Marketing Director',
+    },
+    {
+      company: 'UrbanTech Solutions',
+      feedback:
+        'Ace Cloud brought our vision to life with their cutting-edge design and understanding of tech solutions. We now have a site that stands out in our industry.',
+      author: 'Lisa M',
+      role: '@CEO',
     },
   ];
+
+  const testimonials2 = [
+    {
+      company: 'FreshWave Foods',
+      feedback:
+        'Ace Cloud understood our brand and created a seamless online ordering experience, boosting customer engagement significantly.',
+      author: 'Michael S',
+      role: '@Brand Manager',
+    },
+    {
+      company: 'Bright Futures Education',
+      feedback:
+        'Ace Cloud transformed our complex needs into a streamlined, user-friendly website, making the whole process smooth and enjoyable.',
+      author: 'Sophia R',
+      role: '@Program Director',
+    },
+    {
+      company: 'HealthFirst Clinic',
+      feedback:
+        'Ace Cloud delivered a secure, reliable healthcare platform that meets compliance standards and enhances patient trust.',
+      author: 'Dr. Liam W',
+      role: '@Clinic Head',
+    },
+    {
+      company: 'EcoScape Landscapes',
+      feedback:
+        'Ace Cloud provided a beautifully designed website that perfectly showcases our landscape services, exceeding expectations.',
+      author: 'Olivia H',
+      role: '@Co-Founder',
+    },
+    {
+      company: 'Peak Performance Fitness',
+      feedback:
+        'Ace Cloud built a modern, user-friendly website that integrates seamlessly with our scheduling tools, bringing in more clients.',
+      author: 'Jake B',
+      role: '@Operations Manager',
+    },
+  ];
+
+
 
   return (
     <Box sx={{ mt: 15, mb: 8, position: 'relative', overflow: 'hidden' }} id="testimonials">
@@ -83,7 +130,7 @@ export default function Testimonials() {
           ))}
         </Marquee>
         <Marquee pauseOnHover direction='right' gradient={true} speed={30} gradientColor="hsl(220, 65%, 3.52%)" gradientWidth={200} style={{ width: '100%' }}>
-          {testimonials.map((testimonial, index) => (
+          {testimonials2.map((testimonial, index) => (
             <Card
               key={index}
               sx={{

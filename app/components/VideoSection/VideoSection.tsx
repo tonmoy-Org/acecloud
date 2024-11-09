@@ -33,14 +33,11 @@ export default function VideoSection() {
               </motion.div>
             </Box>
             <Box>
-              {/* <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500 }}>
-                Empowering brands through tailor-made solutions from design to development. Let us elevate your digital journey with precision and creativity.
-              </Typography> */}
             </Box>
           </Box>
           {/* Glow effect behind the video */}
           <Box
-            className="absolute md:top-[20%] left-1/2 w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 blur-[5rem] animate-image-glow"
+            className="absolute md:top-[22.5%] left-1/2 w-3/4 -translate-x-1/2 h-1/4 md:h-1/3 blur-[5rem] animate-image-glow"
             sx={{
               background:
                 "linear-gradient(90deg, #1D4ED8 0%, rgba(156,64,255,1) 50%, transparent 100%)",
@@ -61,8 +58,7 @@ export default function VideoSection() {
               className="absolute inset-[0] rounded-[inherit]"
               sx={{
                 border: "calc(1.5px * 2) solid transparent",
-                maskImage:
-                  "linear-gradient(transparent,transparent), linear-gradient(white,white)",
+                maskImage: "linear-gradient(transparent,transparent), linear-gradient(white,white)",
                 maskComposite: "intersect",
               }}
             >
@@ -71,9 +67,8 @@ export default function VideoSection() {
                 className="absolute aspect-square animate-border-beam"
                 sx={{
                   width: "calc(250px * 1)", // Modify `250px` based on the actual desired size
-                  animationDelay: "-9s",
-                  background:
-                    "linear-gradient(to left, #ffaa40, #9c40ff, transparent)",
+                  animation: "spin 9s linear infinite", // Apply spinning animation
+                  background: "linear-gradient(to left, #ffaa40, #9c40ff, transparent)",
                   offsetPath: "rect(0 auto auto 0 round calc(250px * 1))",
                 }}
               />

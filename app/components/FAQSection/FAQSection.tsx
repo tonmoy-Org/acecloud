@@ -9,46 +9,47 @@ import { motion } from 'framer-motion';
 export default function FAQSection() {
     const faqs = [
         {
-            question: "How does Adaptify create custom websites?",
+            question: "How does Acecloud assist with cloud solutions?",
             answer:
-                "Adaptify combines a deep understanding of your business needs with modern design and development practices. We work closely with you to create a unique, tailored website that reflects your brand and meets your goals.",
+                "Acecloud specializes in tailored cloud solutions to support your business needs. Our team analyzes your requirements and builds a customized cloud infrastructure for improved performance and scalability.",
         },
         {
-            question: "What services does Adaptify offer?",
+            question: "What services does Acecloud offer?",
             answer:
-                "Adaptify offers end-to-end web solutions, including custom website development, design, maintenance, and digital marketing services. Our aim is to provide comprehensive support to help your business thrive online.",
+                "Acecloud offers a range of services, including cloud migration, infrastructure management, cybersecurity, and data backup solutions. Our goal is to ensure seamless cloud integration and reliable support.",
         },
         {
-            question: "How does the pricing work?",
+            question: "How does pricing work for cloud services?",
             answer:
-                "Our pricing is flexible and based on the specific needs of each project. We offer transparent, competitive rates, and can provide a detailed quote after an initial consultation.",
+                "Our pricing model is flexible and designed to suit the specific needs of each project. We provide transparent and competitive rates, with a detailed quote available after an initial consultation.",
         },
         {
-            question: "Can I request changes after my website is launched?",
+            question: "Can I upgrade my cloud resources as my business grows?",
             answer:
-                "Yes! We understand that businesses evolve, so we offer post-launch support and website updates to ensure your site stays relevant and up-to-date.",
+                "Yes, Acecloud provides scalable solutions, allowing you to adjust resources as needed. Whether your needs increase or decrease, we’ll make sure your infrastructure adapts accordingly.",
         },
         {
-            question: "What kind of support does Adaptify provide?",
+            question: "What support does Acecloud offer?",
             answer:
-                "Adaptify provides ongoing support, from troubleshooting to adding new features. Our support team is here to ensure your website remains functional and optimized at all times.",
+                "Acecloud offers 24/7 support for all our clients, ensuring prompt assistance for troubleshooting, system updates, and optimizing cloud performance to keep your business running smoothly.",
         },
         {
-            question: "Will my website be optimized for search engines?",
+            question: "Will my data be secure on Acecloud's platform?",
             answer:
-                "Absolutely. We follow SEO best practices to ensure your website ranks well on search engines, helping you attract more visitors.",
+                "Absolutely. We follow stringent security protocols and employ the latest cybersecurity measures to ensure your data is protected at all times.",
         },
         {
-            question: "Is my website mobile-friendly?",
+            question: "Is Acecloud's infrastructure reliable?",
             answer:
-                "Yes, all our websites are designed to be fully responsive, ensuring a seamless experience for users on both desktop and mobile devices.",
+                "Yes, Acecloud's infrastructure is designed for high availability and resilience, with redundant systems in place to ensure uptime and continuity for your critical operations.",
         },
         {
             question: "What payment methods do you accept?",
             answer:
-                "We accept various payment methods, including credit cards, bank transfers, and online payment platforms. Let us know your preferred method, and we’ll do our best to accommodate it.",
+                "We accept various payment methods, including credit cards, bank transfers, and online payment platforms. Let us know your preferred method, and we’ll accommodate it where possible.",
         },
     ];
+
 
     const StyledAccordionSummary = styled(AccordionSummary)({
         "& .MuiAccordionSummary-content": {
@@ -72,7 +73,7 @@ export default function FAQSection() {
                     viewport={{ once: true, amount: 0.4 }}
                 >
                     <Box sx={{ textAlign: 'center', pb: 3 }}>
-                        <Typography  className="text-2.5xl md:text-[2.5rem] font-bold text-white leading-normal">
+                        <Typography className="text-2.5xl md:text-[2.5rem] font-bold text-white leading-normal">
                             Frequently Asked Questions
                         </Typography>
                         <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>

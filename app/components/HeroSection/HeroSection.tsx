@@ -2,10 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, LinkedIn } from '@mui/icons-material';
-import { Box, Button, Typography } from '@mui/material';
+
+import { Box, Typography } from '@mui/material';
 import banner from '@/public/banner/01.png';
 import './HeroSection.css';
+import NextLink from 'next/link';  // Alias for next/link
+import { Link } from 'react-scroll';
 
 
 export default function HeroSection() {
@@ -63,26 +65,23 @@ export default function HeroSection() {
       id='home'
       sx={{
         position: 'relative',
-        background: `url(${banner.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
         color: 'white',
         textAlign: 'center',
-      }}
-    >
-      {/* Overlay */}
-      <Box
-        sx={{
+        '&::before': {
+          content: '""',
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          background: `url(${banner.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          filter: 'brightness(50%)',
           zIndex: 1,
-        }}
-      />
-
+        },
+      }}
+    >
       {/* Main Content */}
       <Box sx={{ position: 'relative', zIndex: 2 }}>
         <motion.div className="relative flex flex-col justify-center items-center lg:h-screen pb-10 lg:pt-40 pt-24 px-8 overflow-hidden">
@@ -130,53 +129,12 @@ export default function HeroSection() {
                 <div className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] focus:outline-none select-none">
                   <span className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#6d28d9_0%,#d8b4fe_50%,#6d28d9_100%)]"></span>
                   <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                    Start Building Now
+                    <NextLink href="/contact-us" className="text-white">Start Building Now</NextLink>
                   </span>
                 </div>
               </Box>
             </motion.div>
           </motion.div>
-          {/* Social Media Icons with Rotation Hover Effect */}
-          {/* <div>
-            <div
-              className="hidden lg:flex fixed top-1/2 lg:right-20 right-0 transform -translate-y-1/2 flex-col items-center space-y-4 mr-2"
-              style={{
-                opacity: isScrolling ? 0.2 : 1,
-                transition: 'opacity 0.5s ease-in-out',
-              }}
-            >
-              <motion.a
-                href="https://www.facebook.com/profile.php?id=61565758503116"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-xl hover:text-blue-600"
-                whileHover="hover"
-                variants={iconHoverEffect}
-              >
-                <Facebook />
-              </motion.a>
-              <motion.a
-                href="https://www.instagram.com/acecloud.ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-xl hover:text-pink-600"
-                whileHover="hover"
-                variants={iconHoverEffect}
-              >
-                <Instagram />
-              </motion.a>
-              <motion.a
-                href="https://www.linkedin.com/company/ace-cloud-ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white text-xl hover:text-blue-700"
-                whileHover="hover"
-                variants={iconHoverEffect}
-              >
-                <LinkedIn />
-              </motion.a>
-            </div>
-          </div> */}
         </motion.div>
       </Box>
     </Box>
