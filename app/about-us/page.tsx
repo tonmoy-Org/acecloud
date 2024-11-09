@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import TeamSection from "../components/MeetOurTeam/MeetOurTeam";
 import GlowingSection from "../components/GlowingSection/GlowingSection";
 import Link from "next/link";
+import FAQSection from "../components/FAQSection/FAQSection";
+import OurApproach from "../components/OurApproach/OurApproach";
 
 // Variants for text animations
 const textAnimation = {
@@ -122,6 +124,12 @@ const AboutUs: React.FC = () => {
             </Box>
             <Box sx={{ my: 2 }}>
                 <TeamSection />
+            </Box>
+            <Box sx={{ my: 2 }}>
+                <OurApproach />
+            </Box>
+            <Box sx={{ my: 2 }}>
+                <FAQSection />
             </Box>
             <Box sx={{ my: 2 }}>
                 <GlowingSection />

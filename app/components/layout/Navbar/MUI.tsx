@@ -149,7 +149,7 @@ const ResponsiveAppBar = () => {
                 </Button>
             </Box>
             <Divider />
-            <List sx={{ p: 2}}>
+            <List sx={{ p: 2 }}>
                 <ListItem disablePadding>
                     <ListItemButton
                         component={Link}
@@ -377,15 +377,84 @@ const ResponsiveAppBar = () => {
 
                                 </div>
                             </div>
-                            {['Project'].map((text) => (
+                            <div className="relative group">
                                 <Button
-                                    key={text}
-                                    sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
-                                    onClick={() => handleScroll(text.toLowerCase(), 1400)}
+                                    component={Link}
+                                    href="/services-us"
+                                    className="hover:text-accent-foreground"
+                                    sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
                                 >
-                                    <Link href={`/#${text.toLowerCase()}`}>{text}</Link>
+                                    Service
+                                    <ChevronDownIcon className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
                                 </Button>
-                            ))}
+                                <div className="absolute left-0 mt-0 hidden w-[600px] rounded-md text-white shadow-lg group-hover:block p-3"
+                                    style={{ backgroundColor: 'hsl(220, 65%, 3.52%)', border: '1px solid rgba(225, 225, 225, 0.1)' }}
+                                >
+
+                                    <div className="flex w-full gap-2">
+                                        <div className="w-3/5">
+                                            <ul className="flex flex-col space-y-1 p-2">
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Web Design <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Deliver your business to a wider audience
+                                                    </span>
+                                                </li>
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <InsightsIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Branding <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Creating brands your proud of
+                                                    </span>
+                                                </li>
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            SEO <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Get your brand seen online
+                                                    </span>
+                                                </li>
+                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                    <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
+                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                            Shopify
+                                                            <br />
+                                                        </span>
+                                                    </a>
+                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
+                                                        Custom Shopify store in 4 weeks
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-sm"
+                                        >
+                                            <div className='absolute bottom-3'>
+                                                <h1 className="text-lg font-bold">View all Services</h1>
+                                                <p className="text-sm text-[#A3A3A3]">
+                                                    We dont stop there, check out all
+                                                    the services we offer here at Shape
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                             <Button
                                 component={Link}
                                 href="/about-us"

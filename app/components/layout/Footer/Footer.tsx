@@ -67,14 +67,15 @@ function Footer() {
             {/* Animated Background Circles */}
             <Container maxWidth="lg" sx={{ borderTop: '1px solid rgba(225, 225, 225, 0.1)', }}>
                 <footer
-                    className="relative pt-16 px-6 lg:px-8"
+                    className="relative pt-16"
                 >
                     {/* Decorative Dot at the Top */}
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded-full">
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-1.5 bg-white rounded">
                         <Box sx={{
                             position: 'absolute',
-                            top: '-50px',
-                            left: '-50px',
+                            top: '0px',
+                            left: '-100px',
+                            right: '-100px',
                             width: '200px',
                             height: '200px',
                             borderRadius: '50%',
@@ -84,7 +85,7 @@ function Footer() {
                         }} /></div>
 
                     {/* Footer Content */}
-                    <div className="text-gray-200 lg:flex items-start gap-20 ">
+                    <div className="text-gray-200 lg:flex items-start gap-10">
                         <div className="w-[350px]">
                             <div className="mb-4">
                                 {/* <svg className="w-7 h-7 text-white"></svg> */}
@@ -133,7 +134,7 @@ function Footer() {
                                             label: { color: '#aaa' },
                                             fieldset: { borderColor: '#1D4ED8' },
                                             mb: 2,
-                                            width: { xs: '100%', sm: 230 },
+                                            width: { xs: '100%', sm: '100%' },
                                             '& .MuiOutlinedInput-root': {
                                                 '& fieldset': {
                                                     borderColor: 'default',

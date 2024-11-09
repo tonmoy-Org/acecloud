@@ -9,7 +9,6 @@ import GlowingSection from "./components/GlowingSection/GlowingSection";
 import VideoSection from "./components/VideoSection/VideoSection";
 import Pricing from "./pricing/page";
 import FAQSection from "./components/FAQSection/FAQSection";
-import OurApproach from "./components/OurApproach/OurApproach";
 import IndustrySection from "./components/IndustrySection/IndustrySection";
 
 
@@ -24,7 +23,6 @@ export default function Home() {
         <OurServices />
         <Projects />
         <HighlightSection />
-        <OurApproach />
         <Pricing />
         <Testimonials />
         <FAQSection />
