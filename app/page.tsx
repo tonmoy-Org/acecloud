@@ -1,15 +1,18 @@
 import { Box } from "@mui/material";
 
-import HeroSection from "./components/HeroSection/HeroSection";
-import OurServices from "./components/OurServices/OurServices";
-import Testimonials from "./components/Testimonial/Testimonial ";
-import Projects from "./components/Project/Project";
-import HighlightSection from "./components/HighlightSection/HighlightSection";
-import GlowingSection from "./components/GlowingSection/GlowingSection";
-import VideoSection from "./components/VideoSection/VideoSection";
-import FAQSection from "./components/FAQSection/FAQSection";
-import IndustrySection from "./components/IndustrySection/IndustrySection";
-import Pricing from "./components/Pricing/Pricing";
+import dynamic from 'next/dynamic';
+
+// Dynamically load components
+const HeroSection = dynamic(() => import("./components/HeroSection/HeroSection"));
+const OurServices = dynamic(() => import("./components/OurServices/OurServices"));
+const Projects = dynamic(() => import("./components/Project/Project"));
+const HighlightSection = dynamic(() => import("./components/HighlightSection/HighlightSection"));
+const GlowingSection = dynamic(() => import("./components/GlowingSection/GlowingSection"));
+const VideoSection = dynamic(() => import("./components/VideoSection/VideoSection"));
+const FAQSection = dynamic(() => import("./components/FAQSection/FAQSection"));
+const IndustrySection = dynamic(() => import("./components/IndustrySection/IndustrySection"));
+const Pricing = dynamic(() => import("./components/Pricing/Pricing"));
+const Testimonials = dynamic(() => import("./components/Testimonial/Testimonial "));
 
 
 

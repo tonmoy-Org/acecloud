@@ -172,18 +172,18 @@ const ResponsiveAppBar = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <ul className="flex flex-col space-y-1 p-2">
-                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
-                                        <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                    <li className="hover:bg-[#262626] p-1 rounded-md">
+                                        <Link prefetch={false} href="/feature/customwebpage" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Custom Website <br />
                                             </span>
-                                        </a>
+                                        </Link>
                                         <span className="line-clamp-1 px-2 text-[#A3A3A3]">
                                             Create a custom website with your own domain name and branding
                                         </span>
                                     </li>
-                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                    <li className="hover:bg-[#262626] p-1 rounded-md">
                                         <a href="/feature-2" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                             <HttpsIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
                                             <span className="text-[#F5F5F5] font-semibold">
@@ -194,7 +194,7 @@ const ResponsiveAppBar = () => {
                                             Ensure your website is always accessible with reliable hosting solutions
                                         </span>
                                     </li>
-                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                    <li className="hover:bg-[#262626] p-1 rounded-md">
                                         <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                             <InsightsIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
                                             <span className="text-[#F5F5F5] font-semibold">
@@ -205,7 +205,7 @@ const ResponsiveAppBar = () => {
                                             Get real-time performance insights to improve your website's speed and user experience
                                         </span>
                                     </li>
-                                    <li className="hover:bg-[#262626] p-1 rounded-sm">
+                                    <li className="hover:bg-[#262626] p-1 rounded-md">
                                         <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                             <TvIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
                                             <span className="text-[#F5F5F5] font-semibold">
@@ -295,7 +295,7 @@ const ResponsiveAppBar = () => {
                     }}>
                         <Typography variant="h4" noWrap sx={{ textAlign: 'center' }}>
                             <div className="w-32 me-10">
-                                <Link href="/" passHref>
+                                <Link prefetch={false} href="/" passHref>
                                     <Image src={logo} onClick={() => handleScroll('home', 1400)} alt="Ace Cloud Logo" layout="responsive" />
                                 </Link>
                             </div>
@@ -315,7 +315,7 @@ const ResponsiveAppBar = () => {
                                 >
 
                                     <div className="flex w-full gap-2">
-                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-sm"
+                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-md"
                                         >
                                             <div className='absolute bottom-3'>
                                                 <h1 className="text-lg font-bold">ALL Features</h1>
@@ -327,49 +327,53 @@ const ResponsiveAppBar = () => {
 
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
-                                                    <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                                    <Link prefetch={false} href="/feature/customwebpage" className="flex items-center  py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             Custom Website <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Create a custom website with your own domain name and branding
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Create a custom website with your own domain name and branding
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
-                                                    <a href="/feature-2" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <HttpsIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                                    <Link prefetch={false} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             Secure Hosting <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Ensure your website is always accessible with reliable hosting solutions
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Ensure your website is always accessible with reliable hosting solutions
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
-                                                    <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <InsightsIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                                    <Link prefetch={false} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             Performance Insights <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Get real-time performance insights to improve your website's speed and user experience
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Get real-time performance insights to improve your website's speed and user experience
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
-                                                    <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                                    <Link prefetch={false} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             Responsive Design <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Ensure your website looks great on all devices with responsive design features
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Ensure your website looks great on all devices with responsive design features
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>
@@ -394,9 +398,9 @@ const ResponsiveAppBar = () => {
                                     <div className="flex w-full gap-2">
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <LinkIcon className="w-5 h-5 mr-2 text-gray-500" />
                                                         <span className='text-[#F5F5F5] font-semibold'>
                                                             Web Design <br />
                                                         </span>
@@ -405,9 +409,9 @@ const ResponsiveAppBar = () => {
                                                         Deliver your business to a wider audience
                                                     </span>
                                                 </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <InsightsIcon className="w-5 h-5 mr-2 text-gray-500" /> {/* Icon */}
+                                                        <InsightsIcon className="w-5 h-5 mr-2 text-gray-500" />
                                                         <span className='text-[#F5F5F5] font-semibold'>
                                                             Branding <br />
                                                         </span>
@@ -416,7 +420,7 @@ const ResponsiveAppBar = () => {
                                                         Creating brands your proud of
                                                     </span>
                                                 </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                                         <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
                                                         <span className='text-[#F5F5F5] font-semibold'>
@@ -427,7 +431,7 @@ const ResponsiveAppBar = () => {
                                                         Get your brand seen online
                                                     </span>
                                                 </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-sm'>
+                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                                         <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
                                                         <span className='text-[#F5F5F5] font-semibold'>
@@ -441,7 +445,7 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-sm"
+                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-md"
                                         >
                                             <div className='absolute bottom-3'>
                                                 <h1 className="text-lg font-bold">View all Services</h1>

@@ -10,7 +10,7 @@ const Services: React.FC = () => {
                     <div className="flex flex-wrap justify-between mb-3 md:mb-5 lg:mb-0">
                         <div className="px-2 relative">
                             <div className="inline-flex items-center space-x-2 w-auto mb-3 lg:absolute lg:top-3 lg:left-4">
-                                <div className="bg-gray-600 dark:bg-grayDark-100 w-1.5 h-1.5 rounded-full"></div>
+                                <div className="w-1.5 h-1.5 rounded-full"></div>
                                 <div className="font-light text-sm lg:text-base text-[#FFD700] dark:text-grayDark-100">
                                     Services
                                 </div>

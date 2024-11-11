@@ -2,11 +2,12 @@
 
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
-import TeamSection from "../components/MeetOurTeam/MeetOurTeam";
-import GlowingSection from "../components/GlowingSection/GlowingSection";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import FAQSection from "../components/FAQSection/FAQSection";
-import OurApproach from "../components/OurApproach/OurApproach";
+const TeamSection = dynamic(() => import("../components/MeetOurTeam/MeetOurTeam"));
+const GlowingSection = dynamic(() => import("../components/GlowingSection/GlowingSection"));
+const FAQSection = dynamic(() => import("../components/FAQSection/FAQSection"));
+const OurApproach = dynamic(() => import("../components/OurApproach/OurApproach"));
 
 // Variants for text animations
 const textAnimation = {

@@ -1,6 +1,9 @@
 import React from 'react'
-import Pricing from '../components/Pricing/Pricing'
-import FAQSection from '../components/FAQSection/FAQSection'
+import dynamic from 'next/dynamic';
+
+// Dynamically import components
+const Pricing = dynamic(() => import('../components/Pricing/Pricing'));
+const FAQSection = dynamic(() => import('../components/FAQSection/FAQSection'));
 import { Box } from '@mui/material'
 
 export default function PricingPage() {

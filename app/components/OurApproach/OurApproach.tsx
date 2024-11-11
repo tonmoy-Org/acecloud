@@ -2,7 +2,8 @@
 
 import { FC, ReactNode, useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import ApproachSection from '../SectionTitle/SectionTitle';
+import dynamic from 'next/dynamic';
+const ApproachSection = dynamic(() => import('../SectionTitle/SectionTitle'));
 
 const staggerContainer = {
     hidden: { opacity: 0, y: 100 },

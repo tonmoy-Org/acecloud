@@ -4,7 +4,9 @@ import { Container, Card, CardContent, CardMedia, Typography } from '@mui/materi
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
-import ApproachSection from '../SectionTitle/SectionTitle';
+import dynamic from 'next/dynamic';
+
+const ApproachSection = dynamic(() => import('../SectionTitle/SectionTitle'));
 
 const staggerContainer = {
     hidden: { opacity: 0, y: 100 },

@@ -21,7 +21,7 @@ const GlowingSection = () => {
                 ref={scope}
                 className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full rounded-md z-0 lg:mt-28"
             >
-                <div className="relative flex w-full flex-1 lg:scale-y-125 scale-y-90 items-center justify-center isolate z-0">
+                <div className="relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0">
                     <div
                         className={`absolute inset-auto right-1/2 h-56 overflow-visible w-[30rem] bg-gradient-conic from-[#1D4ED8] via-transparent to-transparent text-white transition-opacity duration-1000 delay-700 ease-out ${isInView ? 'opacity-100' : 'opacity-0'
                             } [--conic-position:from_70deg_at_center_top]`}
