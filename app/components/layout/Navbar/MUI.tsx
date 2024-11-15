@@ -304,6 +304,8 @@ const ResponsiveAppBar = () => {
                         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                             <div className="relative group">
                                 <Button
+                                    component={Link}
+                                    href="/feature"
                                     className="hover:text-accent-foreground"
                                     sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
                                 >
@@ -399,49 +401,40 @@ const ResponsiveAppBar = () => {
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <a href="/feature-1" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-2 text-gray-500" />
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                    <Link prefetch={false} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             Web Design <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Deliver your business to a wider audience
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Deliver your business to a wider audience
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <InsightsIcon className="w-5 h-5 mr-2 text-gray-500" />
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                    <Link prefetch={false} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             Branding <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Creating brands your proud of
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Creating brands your proud of
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
-                                                        <span className='text-[#F5F5F5] font-semibold'>
+                                                    <Link prefetch={false} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <span className="text-[#F5F5F5] font-semibold">
                                                             SEO <br />
+                                                            <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                                Get your brand seen online
+                                                            </span>
                                                         </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Get your brand seen online
-                                                    </span>
-                                                </li>
-                                                <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <TvIcon className="w-5 h-5 mr-2 text-gray-500" />
-                                                        <span className='text-[#F5F5F5] font-semibold'>
-                                                            Shopify
-                                                            <br />
-                                                        </span>
-                                                    </a>
-                                                    <span className='line-clamp-1 px-2 text-[#A3A3A3]'>
-                                                        Custom Shopify store in 4 weeks
-                                                    </span>
+                                                        <br />
+                                                    </Link>
                                                 </li>
                                             </ul>
                                         </div>

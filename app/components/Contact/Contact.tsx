@@ -3,12 +3,13 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Box, TextField, Button, Typography, Divider, Container, Grid, CircularProgress } from '@mui/material';
-import { LocationOn, Email } from '@mui/icons-material';
+import { LocationOn, Email, Phone } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Image from 'next/image';
 import map from '@/public/banner/world.svg';
+import ApproachSection from '../SectionTitle/SectionTitle';
 
 interface FormValues {
     name: string;
@@ -62,34 +63,11 @@ const ContactSection = () => {
 
     return (
         <Box id="contact" sx={{ pb: { xs: 8, md: 20 }, pt: { xs: 6, md: 17 } }}>
-            <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.4 }}
-            >
-                <Box sx={{ textAlign: 'center', pb: 3 }}>
-                    <Typography
-                        color='#FFD700'
-                        gutterBottom
-                        sx={{
-                            textTransform: 'uppercase',
-                            fontSize: '14px',
-                            fontWeight: 'bold',
-                            animation: 'shadow-pulse 1.5s infinite'
-                        }}
-                    >
-                        Get In Touch
-                    </Typography>
-                    <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
-                        Contact Us
-                    </Typography>
-                    <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
-                        Need help? We got you.
-                    </Typography>
-                </Box>
-            </motion.div>
-
+            <ApproachSection
+                header="Get In Touch"
+                title="Contact Us"
+                description="Need help? We got you."
+            />
             <Container maxWidth="lg">
                 <Grid container spacing={4} sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'flex-start' }}>
                     <Grid item xs={12} md={6}>
@@ -127,13 +105,46 @@ const ContactSection = () => {
                                             display: 'flex',
                                             alignItems: 'center',
                                             transition: 'color 0.3s ease, transform 0.3s ease',
+                                            flexWrap: 'wrap',  // Ensures the content wraps properly on 
                                         }}
-                                        className="email-link"
+                                        className="email-link my-3"
                                     >
-                                        <Email sx={{ verticalAlign: 'middle', mr: 1, transition: 'transform 0.3s ease' }} />
-                                        contact@acecloud.ca
+                                        <Email sx={{
+                                            verticalAlign: 'middle',
+                                            mr: 1,
+                                            transition: 'transform 0.3s ease',
+                                            fontSize: { xs: '1.2rem', sm: '1.5rem' }  // Adjusts icon size based on screen size
+                                        }} />
+                                        <span style={{ fontSize: '1rem', paddingRight: '10px' }}>
+                                            contact@acecloud.ca
+                                        </span>
+                                    </a>
+
+                                    {/* Phone Number Section */}
+                                    <a
+                                        href="tel:+16477956041"
+                                        style={{
+                                            textDecoration: 'none',
+                                            color: 'inherit',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            transition: 'color 0.3s ease, transform 0.3s ease',
+                                            flexWrap: 'wrap',
+                                        }}
+                                        className="phone-link"
+                                    >
+                                        <Phone sx={{
+                                            verticalAlign: 'middle',
+                                            mr: 1,
+                                            transition: 'transform 0.3s ease',
+                                            fontSize: { xs: '1.2rem', sm: '1.5rem' }  // Adjusts icon size based on screen size
+                                        }} />
+                                        <span style={{ fontSize: '1rem', paddingRight: '10px' }}>
+                                            +1 647-795-6041
+                                        </span>
                                     </a>
                                 </Typography>
+
                                 <Typography variant="body1">
                                     <LocationOn sx={{ verticalAlign: 'middle', mr: 1 }} />
                                     Toronto, Canada

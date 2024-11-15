@@ -49,7 +49,7 @@ const HeroImage = styled("img")({
     boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.5)",
 });
 
-export default function PerformanceInsightsSection() {
+export default function WebDesignSection() {
 
     return (
         <SectionContainer>
@@ -67,45 +67,42 @@ export default function PerformanceInsightsSection() {
                             </span>
                         </div>
                     </Box>
-                    <HeroText>Performance Insights <br /> for Your Website</HeroText>
+                    <HeroText>Crafted Web Design for <br /> Exceptional Experiences</HeroText>
                     <SubText>
-                        Monitor your website's speed, user engagement, and key metrics with real-time insights. Make data-driven decisions to boost performance.
+                        Transform your ideas into stunning digital experiences. Our expert design services focus on user-centric interfaces, responsive layouts, and seamless functionality to elevate your online presence.
                     </SubText>
-
                     {/* Hero Image */}
-                    <HeroImage src="/feature/Custom_Websites.svg" alt="Custom Web Design" width={500} height={300} />
+                    <HeroImage src="/feature/Custom_Websites.svg" alt="Custom Web Design" />
                 </motion.div>
             </Container>
             <Box>
                 <TrustedPartners />
             </Box>
             <Container maxWidth='lg'>
+
                 <Box sx={{ mt: 10 }}>
                     <div className="px-2">
                         <div className="w-full">
-                            <div className="pt-10 lg:pt-16" style={{ borderTop: '2px solid rgba(225, 225, 225, 0.1)' }}></div>
+                            <div
+                                className="pt-10 lg:pt-16"
+                                style={{ borderTop: '2px solid rgba(225, 225, 225, 0.1)' }}
+                            ></div>
                         </div>
                         <div className="mb-5 lg:mb-20">
                             <div className="w-full">
                                 <h2 className="lg:text-[8rem] font-sans-primary tracking-tight text-gray-600 dark:text-grayDark-100 leading-none text-balance">
-                                    Performance Insights.
+                                    Web Design.
                                 </h2>
                             </div>
                         </div>
                         <div className="w-full flex justify-between">
                             <div className="px-2 w-full mb-5 lg:mb-0 lg:w-7/16">
                                 <h2 className="text-xl md:text-2.5xl xl:text-3xl 4xl:text-4xl font-sans-primary tracking-tight text-[#BABABA] dark:text-grayDark-100 leading-tight text-balance pr-10 lg:pr-0">
-                                    Optimize your website's performance and gain valuable insights to improve user experience.
+                                    Transform your ideas into stunning digital experiences with our expert web design services.
                                 </h2>
                             </div>
                             <div className="px-2 lg:px-3 xl:px-4 w-full mb-5 lg:w-8/16 4xl:w-7/16 text-[#BABABA]">
-                                {[
-                                    "Page Load Speed Optimization",
-                                    "Real-Time Analytics",
-                                    "Core Web Vitals Monitoring",
-                                    "Performance Scoring & Insights",
-                                    "Content Delivery Network (CDN) Integration"
-                                ].map((service, index) => (
+                                {["Custom Design", "User-Centric UI/UX", "Responsive Layouts", "SEO Optimization", "Brand Identity"].map((feature, index) => (
                                     <a
                                         key={index}
                                         className="w-full flex items-center justify-between border-b border-solid border-gray-100 py-4 group dark:border-grayDark-300 dark:text-white xl:hover:border-gray-600 lg:dark:hover:border-grayDark-100"
@@ -113,7 +110,7 @@ export default function PerformanceInsightsSection() {
                                         <div className="inline-flex items-center space-x-6">
                                             <div className="font-light relative z-10">{`0${index + 1}`}</div>
                                             <div className="text-lg transition-transform transform 4xl:text-xl xl:group-hover:translate-x-2">
-                                                {service}
+                                                {feature}
                                             </div>
                                         </div>
                                         <div className="flex-shrink-0 w-7 h-7 bg-primary-600 rounded-full flex items-center justify-center dark:bg-grayDark-400 xl:hidden">

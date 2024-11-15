@@ -7,8 +7,7 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import banner from '@/public/banner/03.png';
-
-const WEB3FORMS_ACCESS_KEY = '9d818505-7ca6-4f44-8b21-5fae7a9a2c1d';
+import ApproachSection from '../components/SectionTitle/SectionTitle';
 
 interface FormValues {
     email: string;
@@ -23,7 +22,7 @@ export default function Unsubscribe() {
         try {
             const response = await axios.post('https://api.web3forms.com/submit',
                 JSON.stringify({
-                    access_key: WEB3FORMS_ACCESS_KEY,
+                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_NEWSLETTER,
                     subject: 'Unsubscription Request Ace Cloud',
                     email: data.email,
                     from_name: data.email,
@@ -40,7 +39,7 @@ export default function Unsubscribe() {
                 Swal.fire({
                     icon: 'success',
                     title: 'Successfully Unsubscribed',
-                    text: 'You will no longer receive our newsletters.',
+                    text: 'You have successfully been removed from our mailing list.',
                     confirmButtonColor: '#0DCCD7',
                 });
                 reset();
@@ -48,7 +47,7 @@ export default function Unsubscribe() {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
-                    text: 'Unable to process your request. Please try again later.',
+                    text: 'There was an issue with your unsubscription request. Please try again later.',
                     confirmButtonColor: '#0DCCD7',
                 });
             }
@@ -56,7 +55,7 @@ export default function Unsubscribe() {
             Swal.fire({
                 icon: 'error',
                 title: 'Error',
-                text: 'An error occurred while processing your request. Please try again.',
+                text: 'An unexpected error occurred while processing your request. Please try again.',
                 confirmButtonColor: '#0DCCD7',
             });
         } finally {
@@ -65,56 +64,18 @@ export default function Unsubscribe() {
     };
 
     return (
-        <Box
-            sx={{
-                position: 'relative',
-                background: `url(${banner.src})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                color: 'white',
-                textAlign: 'center',
-                minHeight: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                pt: 10,
-                pb: 10,
-            }}
-        >
-            {/* Overlay */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    height: '100%',
-                    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-                    zIndex: 1,
-                }}
-            />
-
-            {/* Main Content */}
-            <Container maxWidth="sm" sx={{ zIndex: 2 }}>
+        <Box sx={{ position: 'relative', color: 'white', textAlign: 'center', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', pt: 10, pb: 10 }}>
+            <Container maxWidth="sm">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
                 >
-                    <Typography
-                        variant="h4"
-                        component="h1"
-                        sx={{
-                            fontWeight: 'bold',
-                            letterSpacing: '2px',
-                            marginBottom: '24px',
-                            color: '#FFF',
-                            textTransform: 'uppercase',
-                        }}
-                    >
-                        Unsubscribe from our Mailing List
-                    </Typography>
-
+                    <ApproachSection
+                        header="Unsubscribe"
+                        title="Unsubscribe from Our Newsletter"
+                        description="We understand that preferences change. If you'd no longer like to receive updates, please enter your email address below to be removed from our mailing list. We hope to stay in touch in the future!"
+                    />
                     <Box
                         bgcolor="rgba(30, 30, 30, 0.9)"
                         p={4}
@@ -124,6 +85,7 @@ export default function Unsubscribe() {
                             backdropFilter: 'blur(6px)',
                         }}
                     >
+
                         <form onSubmit={handleSubmit(onSubmit)} noValidate>
                             <motion.div
                                 initial={{ opacity: 0, y: 30 }}
@@ -135,10 +97,10 @@ export default function Unsubscribe() {
                                     fullWidth
                                     variant="outlined"
                                     {...register('email', {
-                                        required: 'Email is required',
+                                        required: 'Please enter your email address.',
                                         pattern: {
                                             value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                                            message: 'Please enter a valid email address',
+                                            message: 'Please enter a valid email address.',
                                         },
                                     })}
                                     error={!!errors.email}
@@ -150,12 +112,12 @@ export default function Unsubscribe() {
                                         mb: 3,
                                         '& .MuiOutlinedInput-root': {
                                             '& fieldset': { borderColor: '#555' },
-                                            '&:hover fieldset': { borderColor: '#0DCCD7' },
-                                            '&.Mui-focused fieldset': { borderColor: '#0DCCD7' },
+                                            '&:hover fieldset': { borderColor: 'rgba(225, 225, 225, 0.1)' },
+                                            '&.Mui-focused fieldset': { borderColor: 'rgba(225, 225, 225, 0.1)' },
                                         },
                                         '& .MuiInputLabel-root': { color: '#999' },
-                                        '&:hover .MuiInputLabel-root': { color: '#0DCCD7' },
-                                        '& .MuiInputLabel-root.Mui-focused': { color: '#0DCCD7' },
+                                        '&:hover .MuiInputLabel-root': { color: '' },
+                                        '& .MuiInputLabel-root.Mui-focused': { color: 'gray' },
                                     }}
                                 />
                             </motion.div>
@@ -171,14 +133,10 @@ export default function Unsubscribe() {
                                     type="submit"
                                     disabled={loading}
                                     sx={{
-                                        backgroundColor: '#0DCCD7',
-                                        color: 'white',
-                                        textTransform: 'uppercase',
-                                        borderRadius: '20px',
-                                        padding: '12px 0',
-                                        '&:hover': {
-                                            backgroundColor: '#00A5D4',
-                                        },
+                                        backgroundColor: '#fff',
+                                        borderRadius: '8px',
+                                        textTransform: 'none',
+                                        color: 'black',
                                     }}
                                 >
                                     {loading ? <CircularProgress size={24} sx={{ color: '#FFF' }} /> : 'Unsubscribe'}

@@ -3,12 +3,11 @@
 import { Container, Card, CardContent, Typography, Box, Button, Grid } from '@mui/material';
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
 import ApproachSection from '../SectionTitle/SectionTitle';
-import p1 from '@/public/projects/p1.jpeg';
-import p2 from '@/public/projects/p2.jpeg';
-import p3 from '@/public/projects/p3.jpeg';
-import p4 from '@/public/projects/p4.jpeg';
+import p1 from '@/public/projects/p1.jpg';
+import p2 from '@/public/projects/p2.jpg';
+import p3 from '@/public/projects/p3.jpg';
+import p4 from '@/public/projects/p4.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -26,7 +25,7 @@ const staggerContainer = {
 
 const cardData = [
     {
-        title: "Advanced Online Marketplace",
+        title: "Stroykal - Online Toolkit marketplace",
         description: "A scalable marketplace featuring multi-vendor support, real-time tracking, and secure payments, built for robust e-commerce functionality.",
         image: p1,
         date: "20 July 2021",
@@ -34,7 +33,7 @@ const cardData = [
         link: "#"
     },
     {
-        title: "Serene Spaces - Home Decor",
+        title: "Skintonia - Beauty and Wellness",
         description: "A modern decor platform with an interactive gallery, virtual room designer, and curated furniture store for an inspiring shopping experience.",
         image: p2,
         date: "15 June 2022",
@@ -42,7 +41,7 @@ const cardData = [
         link: "#"
     },
     {
-        title: "Task Management App",
+        title: "Nutrimerchant - Baby and Kid Food",
         description: "Efficient task management with add, update, delete features, and calendar view, designed for productivity.",
         image: p3,
         date: "10 September 2022",
@@ -50,7 +49,7 @@ const cardData = [
         link: "#"
     },
     {
-        title: "Weather Forecast App",
+        title: "Panda Commerce - Online Shopping",
         description: "Provides real-time weather updates and forecasts, designed for accurate daily insights.",
         image: p4,
         date: "5 January 2023",
@@ -67,7 +66,6 @@ const staggerItem = {
 const BlogSection: React.FC = () => {
     const [hoveredCard, setHoveredCard] = useState<number | null>(null);
     const [glowPosition, setGlowPosition] = useState<{ x: string; y: string }>({ x: '50%', y: '50%' });
-    const router = useRouter();
 
     const handleMouseMove = useCallback(
         (e: React.MouseEvent) => {

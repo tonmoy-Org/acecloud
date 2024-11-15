@@ -91,7 +91,7 @@ function Footer() {
                         {/* Navigation Links */}
                         <div className="grid grid-cols-2 lg:mt-0 mt-10 md:grid-cols-5 gap-5 mx-auto">
                             <FooterLinkSection title="Follow Us" links={[
-                                { name: 'Instagram', href: 'https://www.instagram.com/acecloud.ca/' },
+                                { name: 'Linkedin', href: 'https://ca.linkedin.com/company/acecloud-ca' },
                                 { name: 'Dribbble', href: 'https://dribbble.com/AceCloud' },
                                 { name: 'Behance', href: 'https://www.behance.net/AceCloud_ca' }
                             ]} />

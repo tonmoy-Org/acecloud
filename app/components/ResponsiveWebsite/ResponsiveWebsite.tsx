@@ -8,6 +8,7 @@ import { styled } from "@mui/system";
 import Link from 'next/link';
 import TrustedPartners from '../IndustrySection/IndustrySection';
 import GlowingSection from '../GlowingSection/GlowingSection';
+import CommonLine from "../CommonLine/CommonLine";
 
 // Styles
 const SectionContainer = styled(Box)({
@@ -130,6 +131,11 @@ export default function ResponsiveWebsite() {
                         </div>
                     </div>
                 </Box>
+            </Container>
+            <Box sx={{ mt: 2 }}>
+                <CommonLine />
+            </Box>
+            <Container maxWidth='lg'>
                 <Box sx={{ mt: 2 }}>
                     <GlowingSection />
                 </Box>
