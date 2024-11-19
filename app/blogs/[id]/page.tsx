@@ -67,8 +67,8 @@ const BlogDetails: React.FC = () => {
     }
 
     return (
-        <Container sx={{ pt: 20, pb: 10 }}>
-            <Card sx={{ backgroundColor: 'hsl(220, 65%, 3.52%)', color: 'white', maxWidth: '75%', mx: 'auto' }}>
+        <Container maxWidth='lg' sx={{ pt: 20, pb: 10 }}>
+            <Card sx={{ backgroundColor: 'hsl(220, 65%, 3.52%)', color: 'white', maxWidth: { xs: '100%', md: '70%' }, mx: 'auto' }}>
                 <Typography
                     color='#FFD700'
                     gutterBottom

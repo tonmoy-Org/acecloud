@@ -172,49 +172,110 @@ const ResponsiveAppBar = () => {
                             </AccordionSummary>
                             <AccordionDetails>
                                 <ul className="flex flex-col space-y-1 p-2">
-                                    <li className="hover:bg-[#262626] p-1 rounded-md">
-                                        <Link prefetch={false} href="/feature/customwebpage" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link prefetch={false} href="/feature/customwebpage"
+                                            onClick={handleDrawerClose}
+                                            className="flex items-center  py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Custom Website <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Create a custom website with your own domain name and branding
+                                                </span>
                                             </span>
+                                            <br />
                                         </Link>
-                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
-                                            Create a custom website with your own domain name and branding
-                                        </span>
                                     </li>
-                                    <li className="hover:bg-[#262626] p-1 rounded-md">
-                                        <a href="/feature-2" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <HttpsIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link onClick={handleDrawerClose} prefetch={false} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Secure Hosting <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Ensure your website is always accessible with reliable hosting solutions
+                                                </span>
                                             </span>
-                                        </a>
-                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
-                                            Ensure your website is always accessible with reliable hosting solutions
-                                        </span>
+                                            <br />
+                                        </Link>
                                     </li>
-                                    <li className="hover:bg-[#262626] p-1 rounded-md">
-                                        <a href="/feature-3" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <InsightsIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link onClick={handleDrawerClose} prefetch={false} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Performance Insights <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Get real-time performance insights to improve your website's speed and user experience
+                                                </span>
                                             </span>
-                                        </a>
-                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
-                                            Get real-time performance insights to improve your website's speed and user experience
-                                        </span>
+                                            <br />
+                                        </Link>
                                     </li>
-                                    <li className="hover:bg-[#262626] p-1 rounded-md">
-                                        <a href="/feature-4" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <TvIcon className="w-5 h-5 mr-3 text-gray-500" /> {/* Increased margin */}
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link onClick={handleDrawerClose} prefetch={false} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Responsive Design <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Ensure your website looks great on all devices with responsive design features
+                                                </span>
                                             </span>
-                                        </a>
-                                        <span className="line-clamp-1 px-2 text-[#A3A3A3]">
-                                            Ensure your website looks great on all devices with responsive design features
-                                        </span>
+                                            <br />
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </AccordionDetails>
+                        </Accordion>
+                    </li>
+
+                </ListItem>
+                <ListItem disablePadding>
+                    <li className="relative group">
+                        <Accordion sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)', bgcolor: "hsl(220, 65%, 3.52%)", }}>
+                            <AccordionSummary
+                                expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                className="flex justify-between"
+                            >
+                                <Typography className="text-sm font-medium text-neutral-400">Service</Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <ul className="flex flex-col space-y-1 p-2">
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link onClick={handleDrawerClose} prefetch={false} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                Web Design <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Deliver your business to a wider audience
+                                                </span>
+                                            </span>
+                                            <br />
+                                        </Link>
+                                    </li>
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link onClick={handleDrawerClose} prefetch={false} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                Branding <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Creating brands your proud of
+                                                </span>
+                                            </span>
+                                            <br />
+                                        </Link>
+                                    </li>
+                                    <li className='hover:bg-[#262626] p-1 rounded-md'>
+                                        <Link onClick={handleDrawerClose} prefetch={false} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                            <span className="text-[#F5F5F5] font-semibold">
+                                                SEO <br />
+                                                <span className='line-clamp-1 text-[#A3A3A3]'>
+                                                    Get your brand seen online
+                                                </span>
+                                            </span>
+                                            <br />
+                                        </Link>
                                     </li>
                                 </ul>
                             </AccordionDetails>

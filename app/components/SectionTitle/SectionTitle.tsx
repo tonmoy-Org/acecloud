@@ -34,7 +34,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ header, title, descri
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center text-3xl md:text-[2.5rem] font-bold text-white leading-normal"
+                className="text-center text-[2rem] md:text-[2.5rem] font-bold text-white leading-normal"
             >
                 {title}
             </motion.h2>
@@ -42,7 +42,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ header, title, descri
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="mt-2 text-center text-lg max-w-lg"
+                className="mt-2 text-center text-[15px] max-w-lg"
                 style={{ color: 'hsl(220 10% 54.4%)' }}
             >
                 {description}

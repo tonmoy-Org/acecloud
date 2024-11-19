@@ -60,7 +60,7 @@ export default function Pricing() {
                                     <Box sx={{ bgcolor: "hsl(0, 0%, 8%)", p: 3 }}>
                                         <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: 17 }}>
                                             <span className='text-xl'>
-                                                Starter
+                                                Besic
                                             </span> <br />
                                             Perfect for new businesses
                                         </Typography>
@@ -132,7 +132,7 @@ export default function Pricing() {
                                     <Box sx={{ bgcolor: "hsl(0, 0%, 8%)", p: 3 }}>
                                         <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: 17 }}>
                                             <span className='text-xl text-white'>
-                                                Pro
+                                                Standard
                                             </span> <br />
                                             Ideal for growing brands
                                         </Typography>

@@ -129,7 +129,7 @@ const BlogSection: React.FC = () => {
                                         }}
                                     >
                                         <Box sx={{ position: 'relative', height: 280 }}>
-                                            <Image alt={card.title} src={card.image} style={{ width: '100%', height: '100%', padding: '10px' }} />
+                                            <Image alt={card.title} src={card.image} />
                                         </Box>
                                         <CardContent>
                                             <Typography sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.2rem', md: '1.8rem' } }}>

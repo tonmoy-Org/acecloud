@@ -4,6 +4,7 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+
 const TeamSection = dynamic(() => import("../components/MeetOurTeam/MeetOurTeam"));
 const GlowingSection = dynamic(() => import("../components/GlowingSection/GlowingSection"));
 const FAQSection = dynamic(() => import("../components/FAQSection/FAQSection"));
@@ -31,12 +32,12 @@ const AboutUs: React.FC = () => {
                 sx={{
                     color: "white",
                     textAlign: "center",
-                    py: 8,
-                    px: 4,
+                    py: { xs: 4, md: 8 },
+                    px: { xs: 2, md: 4 },
                     backgroundColor: "transparent",
                 }}
             >
-                <motion.div className="flex flex-col justify-center items-center lg:h-screen pb-10 pt-10 px-8">
+                <motion.div className="flex flex-col justify-center items-center lg:h-screen pb-10 pt-10 px-4">
                     <Box sx={{ my: 2 }}>
                         <Box className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] select-none focus:outline-none">
                             <Box
@@ -46,22 +47,19 @@ const AboutUs: React.FC = () => {
                             <Button
                                 component="span"
                                 className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl"
-                                sx={{ position: "relative", zIndex: 1, textTransform: 'none !important' }}
+                                sx={{ position: "relative", zIndex: 1, textTransform: "none" }}
                             >
                                 About Us
                             </Button>
                         </Box>
                     </Box>
-                    <Grid container spacing={4} justifyContent="center" alignItems="center">
+                    <Grid container spacing={2} justifyContent="center" alignItems="center">
                         <Grid item xs={12} md={8}>
                             <motion.div initial="hidden" animate="visible">
                                 <motion.h1 variants={textAnimation} custom={0}>
                                     <Typography
                                         sx={{
-                                            fontSize: {
-                                                xs: "2.4rem",
-                                                lg: "3rem",
-                                            },
+                                            fontSize: { xs: "1.8rem", md: "2.5rem", lg: "3rem" },
                                             fontWeight: "bold",
                                         }}
                                     >
@@ -69,9 +67,10 @@ const AboutUs: React.FC = () => {
                                     </Typography>
                                 </motion.h1>
                                 <motion.p
-                                    className="text-sm md:text-[17px] mb-8 tracking-wide leading-relaxed max-w-2xl mx-auto text-[#BABABA]"
+                                    className="text-sm md:text-[17px] mb-8 tracking-wide leading-relaxed lg:max-w-2xl mx-auto text-[#BABABA]"
                                     variants={textAnimation}
                                     custom={1}
+                                    style={{ paddingLeft: "10px", paddingRight: "10px" }}
                                 >
                                     AceCould helps businesses build and manage custom websites with ease, offering scalable solutions for a seamless web presence.
                                 </motion.p>
@@ -80,7 +79,7 @@ const AboutUs: React.FC = () => {
                                         variant="h6"
                                         sx={{
                                             fontWeight: "bold",
-                                            mt: 3,
+                                            mt: { xs: 2, md: 3 },
                                         }}
                                     >
                                         The Evolution of AceCould: From Idea to Innovation
@@ -92,29 +91,36 @@ const AboutUs: React.FC = () => {
                                             color: "#BABABA",
                                             maxWidth: "600px",
                                             mx: "auto",
+                                            fontSize: { xs: "0.9rem", md: "1rem" },
                                         }}
                                     >
                                         We’ve been working on AceCould for the past 2 years, empowering businesses with customizable, scalable solutions for their web presence. Join us on this journey to bring innovation to your business.
                                     </Typography>
                                 </motion.div>
-                                <Box mt={4} display="flex" justifyContent="center" gap={2}>
+                                <Box mt={4} display="flex" justifyContent="center" gap={2} flexWrap="wrap">
                                     <Button
                                         type="submit"
-                                        sx={{ textTransform: 'none' }}
+                                        sx={{
+                                            textTransform: "none",
+                                            px: { xs: 3, md: 4 },
+                                            py: { xs: 1, md: 1.5 },
+                                        }}
                                         variant="outlined"
                                         className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] bg-[#1D4ED8] border-[#1D4ED8] rounded-lg animated-border"
                                     >
-                                        <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg"></span>
                                         <span className="relative z-10">Learn More</span>
                                     </Button>
                                     <Button
-                                        sx={{ textTransform: 'none !important' }}
+                                        sx={{
+                                            textTransform: "none !important",
+                                            px: { xs: 3, md: 4 },
+                                            py: { xs: 1, md: 1.5 },
+                                        }}
                                         variant="outlined"
                                         component={Link}
                                         href="/contact-us"
                                         className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] border-[#1D4ED8] rounded-lg animated-border"
                                     >
-                                        <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg group-hover:translate-x-0"></span>
                                         <span className="relative z-10">Get in Touch</span>
                                     </Button>
                                 </Box>
@@ -123,16 +129,17 @@ const AboutUs: React.FC = () => {
                     </Grid>
                 </motion.div>
             </Box>
-            <Box sx={{ my: 2 }}>
+            {/* Other Sections */}
+            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
                 <TeamSection />
             </Box>
-            <Box sx={{ my: 2 }}>
+            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
                 <OurApproach />
             </Box>
-            <Box sx={{ my: 2 }}>
+            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
                 <FAQSection />
             </Box>
-            <Box sx={{ my: 2 }}>
+            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
                 <GlowingSection />
             </Box>
         </Box>

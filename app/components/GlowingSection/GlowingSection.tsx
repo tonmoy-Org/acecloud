@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Container } from '@mui/material';
+import { Button } from '@mui/material';
 import { useAnimate, useInView, motion } from 'framer-motion';
 import Link from 'next/link';
 import React, { useEffect } from 'react';
@@ -16,7 +16,7 @@ const GlowingSection = () => {
     }, [isInView])
 
     return (
-        <Container>
+        <>
             <div
                 ref={scope}
                 className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden w-full rounded-md z-0 lg:mt-28"
@@ -66,7 +66,7 @@ const GlowingSection = () => {
                 </div>
 
                 <div
-                    className={`relative z-50 flex -translate-y-80 flex-col items-center px-5`}>
+                    className={`relative z-50 flex -translate-y-80 flex-col items-center`}>
                     <div className="flex flex-col items-center justify-center relative w-full text-center">
                         <motion.div
                             initial={{ opacity: 0, y: 60 }}
@@ -74,7 +74,7 @@ const GlowingSection = () => {
                             transition={{ duration: 0.6, ease: "easeOut" }}
                             viewport={{ once: false, amount: 0.4 }}
                         >
-                            <h2 className="text-4xl lg:text-5xl xl:text-6xl lg:!leading-snug font-semibold lg:mt-8 text-white">
+                            <h2 className="text-3xl lg:text-5xl xl:text-6xl lg:!leading-snug font-semibold lg:mt-8 text-white">
                                 Boost Your Agency's Performance <br />
                                 with <span className="text-[#1D4ED8]">AceCloud</span>
                             </h2>
@@ -90,7 +90,7 @@ const GlowingSection = () => {
                             >
                                 <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg group-hover:translate-x-0"></span>
                                 <span className="relative z-10">
-                                    Start Transforming Your Agency Today
+                                    Start Transforming Your Agency
                                 </span>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -112,7 +112,7 @@ const GlowingSection = () => {
                     </div>
                 </div>
             </div>
-        </Container>
+        </>
     );
 };
 

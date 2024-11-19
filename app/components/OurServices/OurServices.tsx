@@ -123,6 +123,8 @@ export default function OurServices() {
                                             },
                                             transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease',
                                             position: 'relative',
+                                            width: { xs: '98%', md: '100%' },
+                                            mx: 'auto',
                                         }}
                                     >
                                         <CardContent sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

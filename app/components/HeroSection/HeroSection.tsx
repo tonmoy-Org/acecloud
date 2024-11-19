@@ -7,7 +7,6 @@ import { Box, Typography } from '@mui/material';
 import banner from '@/public/banner/01.png';
 import './HeroSection.css';
 import NextLink from 'next/link';  // Alias for next/link
-import { Link } from 'react-scroll';
 
 
 export default function HeroSection() {
@@ -90,7 +89,7 @@ export default function HeroSection() {
               <Typography
                 sx={{
                   fontSize: {
-                    xs: '2.4rem',
+                    xs: '2rem',
                     lg: '4rem',
                   },
                   fontWeight: 'bold',

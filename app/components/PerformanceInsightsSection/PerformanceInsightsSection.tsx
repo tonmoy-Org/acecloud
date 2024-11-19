@@ -1,136 +1,44 @@
 "use client";
 
-
-import { Container, Typography, Box } from "@mui/material";
-import { motion } from "framer-motion";
-import { styled } from "@mui/system";
-
-import Link from 'next/link';
+import { Container, Box } from "@mui/material";
 import TrustedPartners from '../IndustrySection/IndustrySection';
 import GlowingSection from '../GlowingSection/GlowingSection';
 import CommonLine from "../CommonLine/CommonLine";
-
-// Styles
-const SectionContainer = styled(Box)({
-    backgroundImage: "",
-    color: "hsl(0, 0%, 98%)",
-    paddingTop: "150px",
-    alignItems: "center",
-});
-
-const HeroText = styled(Typography)({
-    fontSize: "3rem",
-    fontWeight: "bold",
-    textAlign: "center",
-    marginBottom: "1rem",
-    color: "hsl(0, 0%, 100%)",
-    letterSpacing: "1px",
-});
-
-const SubText = styled(Typography)({
-    fontSize: "1.2rem",
-    textAlign: "center",
-    maxWidth: "800px",
-    margin: "0 auto 2.5rem auto",
-    color: "#BABABA",
-});
+import CustomHero from "../CustomHero/CustomHero";
+import HeroInsights from "../HeroInsights/HeroInsights";
 
 
-
-
-
-
-const HeroImage = styled("img")({
-    width: "100%",
-    maxWidth: "850px",
-    margin: "2rem auto",
-    display: "block",
-    borderRadius: "5px",
-    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.5)",
-});
 
 export default function PerformanceInsightsSection() {
 
     return (
-        <SectionContainer>
+        <Box sx={{ mt: { xs: 15, md: 15 } }}>
             <Container maxWidth='lg'>
-                <motion.div
-                    initial={{ opacity: 0, y: 80 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.7, ease: "easeOut" }}
-                >
-                    <Box textAlign="center" sx={{ my: 2 }}>
-                        <div className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] focus:outline-none select-none">
-                            <span className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#6d28d9_0%,#d8b4fe_50%,#6d28d9_100%)]"></span>
-                            <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
-                                <Link href="/contact-us" className="text-white">Start Building Now</Link>
-                            </span>
-                        </div>
-                    </Box>
-                    <HeroText>Performance Insights <br /> for Your Website</HeroText>
-                    <SubText>
-                        Monitor your website's speed, user engagement, and key metrics with real-time insights. Make data-driven decisions to boost performance.
-                    </SubText>
+                <CustomHero
+                    title="Performance Insights for Your Website"
+                    subtitle="Monitor your website's speed, user engagement, and key metrics with real-time insights. Make data-driven decisions to boost performance."
+                    linkHref="/contact-us"
+                    linkText="Start Building Now"
+                    imageSrc="/feature/Custom_Websites.svg"
+                    imageAlt="Custom Web Design"
+                />
 
-                    {/* Hero Image */}
-                    <HeroImage src="/feature/Custom_Websites.svg" alt="Custom Web Design" width={500} height={300} />
-                </motion.div>
             </Container>
             <Box>
                 <TrustedPartners />
             </Box>
             <Container maxWidth='lg'>
-                <Box sx={{ mt: 10 }}>
-                    <div className="px-2">
-                        <div className="w-full">
-                            <div className="pt-10 lg:pt-16" style={{ borderTop: '2px solid rgba(225, 225, 225, 0.1)' }}></div>
-                        </div>
-                        <div className="mb-5 lg:mb-20">
-                            <div className="w-full">
-                                <h2 className="lg:text-[8rem] font-sans-primary tracking-tight text-gray-600 dark:text-grayDark-100 leading-none text-balance">
-                                    Performance Insights.
-                                </h2>
-                            </div>
-                        </div>
-                        <div className="w-full flex justify-between">
-                            <div className="px-2 w-full mb-5 lg:mb-0 lg:w-7/16">
-                                <h2 className="text-xl md:text-2.5xl xl:text-3xl 4xl:text-4xl font-sans-primary tracking-tight text-[#BABABA] dark:text-grayDark-100 leading-tight text-balance pr-10 lg:pr-0">
-                                    Optimize your website's performance and gain valuable insights to improve user experience.
-                                </h2>
-                            </div>
-                            <div className="px-2 lg:px-3 xl:px-4 w-full mb-5 lg:w-8/16 4xl:w-7/16 text-[#BABABA]">
-                                {[
-                                    "Page Load Speed Optimization",
-                                    "Real-Time Analytics",
-                                    "Core Web Vitals Monitoring",
-                                    "Performance Scoring & Insights",
-                                    "Content Delivery Network (CDN) Integration"
-                                ].map((service, index) => (
-                                    <a
-                                        key={index}
-                                        className="w-full flex items-center justify-between border-b border-solid border-gray-100 py-4 group dark:border-grayDark-300 dark:text-white xl:hover:border-gray-600 lg:dark:hover:border-grayDark-100"
-                                    >
-                                        <div className="inline-flex items-center space-x-6">
-                                            <div className="font-light relative z-10">{`0${index + 1}`}</div>
-                                            <div className="text-lg transition-transform transform 4xl:text-xl xl:group-hover:translate-x-2">
-                                                {service}
-                                            </div>
-                                        </div>
-                                        <div className="flex-shrink-0 w-7 h-7 bg-primary-600 rounded-full flex items-center justify-center dark:bg-grayDark-400 xl:hidden">
-                                            <svg
-                                                className="w-2.5 h-2.5 fill-current text-gray-600 dark:text-grayDark-100"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 384 512"
-                                            >
-                                                <path d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z" />
-                                            </svg>
-                                        </div>
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </Box>
+                <HeroInsights
+                    title="Performance Insights."
+                    subtitle="Optimize your website's performance and gain valuable insights to improve user experience."
+                    services={[
+                        "Page Load Speed Optimization",
+                        "Real-Time Analytics",
+                        "Core Web Vitals Monitoring",
+                        "Performance Scoring & Insights",
+                        "Content Delivery Network (CDN) Integration",
+                    ]}
+                />
             </Container>
             <Box sx={{ mt: 2 }}>
                 <CommonLine />
@@ -140,6 +48,6 @@ export default function PerformanceInsightsSection() {
                     <GlowingSection />
                 </Box>
             </Container>
-        </SectionContainer>
+        </Box>
     );
 }

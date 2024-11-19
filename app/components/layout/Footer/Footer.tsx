@@ -162,13 +162,13 @@ function Footer() {
                     </div>
 
                     {/* Copyright */}
-                    <div className="mt-2 pt-2 md:pt-4 w-full">
+                    <div className="lg:mt-2 py-10 md:pt-4 w-full">
                         <p className="text-sm text-gray-400">© 2024 AceCloud All rights reserved.</p>
                     </div>
 
                     {/* Glowing Gradient Text */}
                     <div onMouseMove={handleMouseMove}
-                        onMouseLeave={handleMouseLeave} className="h-[20.5rem] w-full mt-4">
+                        onMouseLeave={handleMouseLeave} className="lg:h-[20.5rem] h-[10rem] w-full mt-4">
                         <svg width="100%" height="100%" viewBox="0 0 300 100" xmlns="http://www.w3.org/2000/svg" className="select-none">
                             <defs>
                                 {/* Create a radial gradient for a small, circular glow effect */}

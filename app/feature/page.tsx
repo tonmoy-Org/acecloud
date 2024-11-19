@@ -43,9 +43,20 @@ const Services: React.FC = () => {
                 </div>
                 <Box py={6} sx={{ color: 'white' }}>
                     <Box>
-                        <Typography sx={{ fontSize: 45, fontWeight: 'bold', mb: 4, width: 900 }}>
-                            Why choose AceCloud.ca as the <span style={{ color: '#1D4ED8' }}>lead generation software</span> for your agency?
+                        <Typography
+                            variant="h4"
+                            sx={{
+                                fontSize: { xs: 20, md: 45 },
+                                fontWeight: 'bold',
+                                mb: 4,
+                                maxWidth: { md: 900 }
+                            }}
+                        >
+                            Why choose AceCloud.ca as the
+                            <span style={{ color: '#1D4ED8' }}> lead generation software </span>
+                            for your agency?
                         </Typography>
+
                         <Grid container spacing={4} justifyContent="center" sx={{ mt: { xs: 0, md: 8 } }}>
                             {/* Item 1: Growth-friendly Pricing */}
                             <Grid item xs={12} md={4}>
