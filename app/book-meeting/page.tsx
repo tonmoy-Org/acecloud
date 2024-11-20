@@ -2,10 +2,9 @@
 
 import React, { useEffect } from 'react';
 import { Box, Container } from '@mui/material';
-import CustomHero from '../components/CustomHero/CustomHero';
+import CustomHero from '@/app/components/CustomHero/CustomHero';
 
 const BookMeeting: React.FC = () => {
-    // Load the Calendly widget script
     useEffect(() => {
         const script = document.createElement('script');
         script.src = 'https://assets.calendly.com/assets/external/widget.js';

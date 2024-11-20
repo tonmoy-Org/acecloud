@@ -40,14 +40,14 @@ const CustomHero: React.FC<CustomHeroProps> = ({ title, subtitle, linkHref, link
                 </div>
             </Box>
             <Box sx={{ width: { xs: 330, md: 700 }, mx: 'auto' }}>
-                <Typography
-                    className="text-2xl lg:text-5xl lg:!leading-snug font-semibold lg:mt-8 text-white text-center py-2"
+                <p
+                    className="text-2xl lg:text-5xl lg:!leading-snug font-semibold lg:mt-3 text-white text-center py-2"
                 >
                     {title}
-                </Typography>
-                <Typography className="text-[14px] lg:text-xl lg:!leading-snug lg:mt-3 text-[#BABABA] text-center py-2">
+                </p>
+                <p className="text-[14px] lg:text-xl lg:!leading-snug lg:mt-3 text-[#BABABA] text-center py-2">
                     {subtitle}
-                </Typography>
+                </p>
             </Box>
             {/* Hero Image */}
             <HeroImage src={imageSrc} alt={imageAlt} />
