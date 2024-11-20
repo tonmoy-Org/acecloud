@@ -17,8 +17,16 @@ import { motion } from 'framer-motion';
 import logo from '@/public/logo/acecloud.png';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import LinkIcon from '@mui/icons-material/Link';
+import HttpsIcon from '@mui/icons-material/Https';
+import InsightsIcon from '@mui/icons-material/Insights';
+import LanguageIcon from '@mui/icons-material/Language';
+import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import TvIcon from '@mui/icons-material/Tv';
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import feature from '@/public/feature/1661180166860.png';
+import service from '@/public/feature/service.jpg';
 
 
 const ResponsiveAppBar = () => {
@@ -81,6 +89,12 @@ const ResponsiveAppBar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    const [expanded, setExpanded] = useState<string | false>(false);
+
+    const handleAccordionChange = (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+        setExpanded(isExpanded ? panel : false);
+    };
 
     const drawer = (
         <Box sx={{ textAlign: 'center', bgcolor: 'hsl(220, 65%, 3.52%)', height: '100%', color: 'white' }}>
@@ -154,7 +168,10 @@ const ResponsiveAppBar = () => {
                 </ListItem>
                 <ListItem disablePadding>
                     <li className="relative group">
-                        <Accordion sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)', bgcolor: "hsl(220, 65%, 3.52%)", }}>
+                        <Accordion
+                            expanded={expanded === 'panel1'}
+                            onChange={handleAccordionChange('panel1')}
+                            sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)', bgcolor: "hsl(220, 65%, 3.52%)", }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
                                 aria-controls="panel1a-content"
@@ -166,9 +183,7 @@ const ResponsiveAppBar = () => {
                             <AccordionDetails>
                                 <ul className="flex flex-col space-y-1 p-2">
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link prefetch={true} href="/feature/customwebpage"
-                                            onClick={handleDrawerClose}
-                                            className="flex items-center  py-1 text-sm text-gray-700">
+                                        <Link prefetch={true} href="/feature/customwebpage" className="flex items-center  py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Custom Website <br />
@@ -180,8 +195,8 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={true} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                        <Link prefetch={true} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
+                                            <HttpsIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Secure Hosting <br />
                                                 <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -192,8 +207,8 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={true} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                        <Link prefetch={true} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
+                                            <InsightsIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Performance Insights <br />
                                                 <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -204,8 +219,8 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={true} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                        <Link prefetch={true} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
+                                            <TvIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Responsive Design <br />
                                                 <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -223,7 +238,10 @@ const ResponsiveAppBar = () => {
                 </ListItem>
                 <ListItem disablePadding>
                     <li className="relative group">
-                        <Accordion sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)', bgcolor: "hsl(220, 65%, 3.52%)", }}>
+                        <Accordion
+                            expanded={expanded === 'panel2'}
+                            onChange={handleAccordionChange('panel2')}
+                            sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)', bgcolor: "hsl(220, 65%, 3.52%)", }}>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon sx={{ color: "white" }} />}
                                 aria-controls="panel1a-content"
@@ -235,8 +253,8 @@ const ResponsiveAppBar = () => {
                             <AccordionDetails>
                                 <ul className="flex flex-col space-y-1 p-2">
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={true} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                        <Link prefetch={true} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <LanguageIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Web Design <br />
                                                 <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -247,8 +265,8 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={true} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                        <Link prefetch={true} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <BrandingWatermarkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Branding <br />
                                                 <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -259,8 +277,8 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={true} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                            <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                        <Link prefetch={true} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                            <TravelExploreIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 SEO <br />
                                                 <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -376,10 +394,11 @@ const ResponsiveAppBar = () => {
                                 >
 
                                     <div className="flex w-full gap-2">
-                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-md"
+                                        <div className="w-2/4 p-4 relative bg-[#262626] rounded-md"
                                         >
-                                            <div className='absolute bottom-3'>
-                                                <h1 className="text-lg font-bold">ALL Features</h1>
+                                            <div className='absolute bottom-3 left-4 right-0'>
+                                                <Image className='w-44 h-full mb-4' src={feature} alt="Feature" />
+                                                <h1 className="text-lg font-bold"><Link href='feature'>All Features</Link></h1>
                                                 <p className="text-sm text-[#A3A3A3]">
                                                     Build dynamic websites, enhance performance, and scale effortlessly.
                                                 </p>
@@ -402,7 +421,7 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <Link prefetch={true} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <HttpsIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Secure Hosting <br />
                                                             <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -414,7 +433,7 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <Link prefetch={true} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <InsightsIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Performance Insights <br />
                                                             <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -426,7 +445,7 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <Link prefetch={true} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <TvIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Responsive Design <br />
                                                             <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -457,12 +476,12 @@ const ResponsiveAppBar = () => {
                                     style={{ backgroundColor: 'hsl(220, 65%, 3.52%)', border: '1px solid rgba(225, 225, 225, 0.1)' }}
                                 >
 
-                                    <div className="flex w-full gap-2">
+                                    <div className="flex w-full gap-2 h-56">
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <Link prefetch={true} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <LanguageIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Web Design <br />
                                                             <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -474,7 +493,7 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <Link prefetch={true} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <BrandingWatermarkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Branding <br />
                                                             <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -486,7 +505,7 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
                                                     <Link prefetch={true} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
-                                                        <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
+                                                        <TravelExploreIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             SEO <br />
                                                             <span className='line-clamp-1 text-[#A3A3A3]'>
@@ -498,10 +517,11 @@ const ResponsiveAppBar = () => {
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div className="w-2/5 p-4 relative bg-[#262626] rounded-md"
+                                        <div className="w-2/4 p-4 relative bg-[#262626] rounded-md"
                                         >
-                                            <div className='absolute bottom-3'>
-                                                <h1 className="text-lg font-bold">View all Services</h1>
+                                            <div className='absolute bottom-3 left-6 right-0'>
+                                                <Image className='w-52 h-full mb-4' src={service} alt="Service" />
+                                                <h1 className="text-lg font-bold"><Link href='services-us'>All Services</Link></h1>
                                                 <p className="text-sm text-[#A3A3A3]">
                                                     We dont stop there, check out all
                                                     the services we offer here at Shape

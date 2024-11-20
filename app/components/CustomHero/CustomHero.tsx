@@ -30,6 +30,7 @@ const CustomHero: React.FC<CustomHeroProps> = ({ title, subtitle, linkHref, link
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
         >
             <Box textAlign="center" sx={{ my: 2 }}>
                 <div className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] focus:outline-none select-none">
@@ -39,13 +40,13 @@ const CustomHero: React.FC<CustomHeroProps> = ({ title, subtitle, linkHref, link
                     </span>
                 </div>
             </Box>
-            <Box sx={{ width: { xs: 330, md: 700 }, mx: 'auto' }}>
+            <Box sx={{ width: { xs: 330, md: 700 }, mx: 'auto', mb: { xs: 4, md: 6} }}>
                 <p
-                    className="text-2xl lg:text-5xl lg:!leading-snug font-semibold lg:mt-3 text-white text-center py-2"
+                    className="text-[2rem] md:text-[2.5rem] lg:!leading-snug font-semibold lg:mt-3 text-white text-center"
                 >
                     {title}
                 </p>
-                <p className="text-[14px] lg:text-xl lg:!leading-snug lg:mt-3 text-[#BABABA] text-center py-2">
+                <p className="text-[1rem] lg:text-[1.125rem] lg:!leading-snug lg:mt-3 text-[#BABABA] text-center">
                     {subtitle}
                 </p>
             </Box>

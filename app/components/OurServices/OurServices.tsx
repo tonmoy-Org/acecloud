@@ -91,7 +91,7 @@ export default function OurServices() {
                         </motion.div>
                     </Box>
                     <Box>
-                        <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500 }}>
+                        <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500, fontSize: { xs: '.875rem', md: '1.125rem' } }}>
                             Empowering brands through tailor-made solutions from design to development. Let us elevate your digital journey with precision and creativity.
                         </Typography>
                     </Box>
@@ -143,10 +143,10 @@ export default function OurServices() {
                                             >
                                                 {service.icon}
                                             </Box>
-                                            <Typography variant="h6" component="div" sx={{ fontWeight: 700, mb: 1 }}>
+                                            <Typography sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1rem', md: '1.25rem' } }}>
                                                 {service.title}
                                             </Typography>
-                                            <Typography variant="body2" sx={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center' }}>
+                                            <Typography  sx={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center', fontSize: '.875rem' }}>
                                                 {service.description}
                                             </Typography>
                                         </CardContent>

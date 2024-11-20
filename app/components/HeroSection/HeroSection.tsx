@@ -80,7 +80,7 @@ export default function HeroSection() {
 
 
             <motion.p
-              className="text-sm md:text-xl mb-8 tracking-wide leading-relaxed max-w-2xl mx-auto text-[#BABABA]"
+              className="text-sm md:text-[1.25rem] leading-7 mb-8 tracking-wide max-w-2xl mx-auto text-[#BABABA]"
               variants={textAnimation}
               custom={1}
             >
@@ -90,7 +90,7 @@ export default function HeroSection() {
               variants={textAnimation}
               custom={1}
             >
-              <Box sx={{ my: 2 }}>
+              <Box>
                 <div className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] focus:outline-none select-none">
                   <span className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#6d28d9_0%,#d8b4fe_50%,#6d28d9_100%)]"></span>
                   <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">

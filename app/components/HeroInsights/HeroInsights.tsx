@@ -19,14 +19,14 @@ const HeroInsights: React.FC<HeroInsightsProps> = ({ title, subtitle, services }
                 </div>
                 <div className="mb-5 lg:mb-20">
                     <div className="w-full">
-                        <h2 className="lg:text-[8rem] text-[2rem] font-sans-primary tracking-tight text-gray-600 dark:text-grayDark-100 leading-none text-balance">
+                        <h2 className="lg:text-[5.5rem] text-[2rem] font-sans-primary tracking-tight text-gray-600 dark:text-grayDark-100 leading-none text-balance">
                             {title}
                         </h2>
                     </div>
                 </div>
                 <div className="w-full lg:flex justify-between">
                     <div className="w-full mb-5 lg:mb-0 lg:w-7/16">
-                        <h2 className="text-[15px] md:text-2.5xl xl:text-3xl 4xl:text-4xl font-sans-primary tracking-tight text-[#BABABA] dark:text-grayDark-100 leading-tight text-balance lg:pr-0">
+                        <h2 className="text-[15px] md:text-[1.5rem] font-sans-primary tracking-tight text-[#BABABA] dark:text-grayDark-100 leading-tight text-balance lg:pr-0">
                             {subtitle}
                         </h2>
                     </div>
@@ -38,7 +38,7 @@ const HeroInsights: React.FC<HeroInsightsProps> = ({ title, subtitle, services }
                             >
                                 <div className="inline-flex items-center space-x-6">
                                     <div className="font-light relative z-10">{`0${index + 1}`}</div>
-                                    <div className="text-lg transition-transform transform 4xl:text-xl xl:group-hover:translate-x-2">
+                                    <div className="text-[15px] md:text-[1.125rem] transition-transform transform xl:group-hover:translate-x-2">
                                         {service}
                                     </div>
                                 </div>

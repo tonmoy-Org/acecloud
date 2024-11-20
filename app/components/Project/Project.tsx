@@ -25,36 +25,28 @@ const staggerContainer = {
 
 const cardData = [
     {
-        title: "Stroykal - Online Toolkit marketplace",
-        description: "A scalable marketplace featuring multi-vendor support, real-time tracking, and secure payments, built for robust e-commerce functionality.",
+        title: "Nova Ukraine is a nonprofit organization",
+        description: "We are a nonprofit organization that provides support and resources to Ukrainian refugees and immigrants. Our mission is to help these individuals integrate into their new communities and contribute to society.",
         image: p1,
-        date: "20 July 2021",
-        buttonText: "Learn More",
         link: "#"
     },
     {
         title: "Skintonia - Beauty and Wellness",
         description: "A modern decor platform with an interactive gallery, virtual room designer, and curated furniture store for an inspiring shopping experience.",
         image: p2,
-        date: "15 June 2022",
-        buttonText: "Learn More",
         link: "#"
     },
     {
         title: "Nutrimerchant - Baby and Kid Food",
         description: "Efficient task management with add, update, delete features, and calendar view, designed for productivity.",
         image: p3,
-        date: "10 September 2022",
-        buttonText: "Learn More",
-        link: "#"
+        link: "https://nutrimerchantint.com/"
     },
     {
-        title: "Panda Commerce - Online Shopping",
-        description: "Provides real-time weather updates and forecasts, designed for accurate daily insights.",
+        title: "MilanoStore strives to provide a unique shopping experience",
+        description: "Our goal is to combine style, authenticity, and affordability, ensuring that everyone can enjoy the luxury of exclusive footwear without compromise",
         image: p4,
-        date: "5 January 2023",
-        buttonText: "Learn More",
-        link: "#"
+        link: "https://milanostore.be/"
     },
 ];
 
@@ -125,33 +117,22 @@ const BlogSection: React.FC = () => {
                                             ...glowStyle,
                                             backgroundColor: 'hsl(0, 0%, 3.9%)',
                                             border: '1px solid rgba(225, 225, 225, 0.1)',
-                                            height: { xs: '100%', md: 520 }
+                                            height: { xs: '100%', md: 'auto' },
                                         }}
                                     >
-                                        <Box sx={{ position: 'relative', height: 280 }}>
+                                        <Box sx={{ position: 'relative' }}>
                                             <Image alt={card.title} src={card.image} />
                                         </Box>
                                         <CardContent>
                                             <Typography sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1.2rem', md: '1.8rem' } }}>
                                                 {card.title}
                                             </Typography>
-                                            <Typography variant="body2" sx={{ color: 'hsl(220, 10%, 60%)', mb: 3 }}>
+                                            <Typography sx={{ color: 'hsl(220, 10%, 60%)', mb: 3, fontSize: '.875rem' }}>
                                                 <span className='line-clamp-2'>{card.description}</span>
                                             </Typography>
-                                            <Button
-                                                sx={{ textTransform: 'none !important' }}
-                                                variant="outlined"
-                                                component={Link}
-                                                href={card.link}
-                                                className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] border-[#1D4ED8] rounded-lg animated-border"
-                                            >
-                                                <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg group-hover:translate-x-0"></span>
-                                                <span className="relative z-10">{card.buttonText}</span>
-                                            </Button>
                                         </CardContent>
                                         <Box sx={{ display: 'flex', justifyContent: 'space-between', color: 'hsl(220, 10%, 60%)', p: 2 }}>
-                                            <Typography variant="body2">{card.date}</Typography>
-                                            <Button href="#" sx={{ color: '#1D4ED8', textTransform: 'none' }}>Visit Website</Button>
+                                            <Button href={card.link} sx={{ color: '#1D4ED8', textTransform: 'none' }}>Visit Website</Button>
                                         </Box>
                                     </Card>
                                 </motion.div>

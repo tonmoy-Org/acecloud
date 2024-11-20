@@ -76,7 +76,7 @@ export default function FAQSection() {
                         <Typography className="text-[2rem] md:text-[2.5rem] font-bold text-white leading-normal">
                             Frequently Asked Questions
                         </Typography>
-                        <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
+                        <Typography className="mt-2 text-center text-[1rem] lg:text-[1.125rem] max-w-lg leading-7 mx-auto">
                             Here are some of the most common questions we get asked. If you have a question that isn't answered here, feel free to reach out to us.
                         </Typography>
                     </Box>

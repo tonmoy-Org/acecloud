@@ -58,11 +58,13 @@ export default function Pricing() {
                             >
                                 <CardContent sx={{ textAlign: 'start', height: '100%', padding: '0px !important', }}>
                                     <Box sx={{ bgcolor: "hsl(0, 0%, 8%)", p: 3 }}>
-                                        <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: 17 }}>
-                                            <span className='text-xl'>
+                                        <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: '.875rem' }}>
+                                            <span className='text-xl leading-normal'>
                                                 Basic
                                             </span> <br />
-                                            Perfect for new businesses
+                                            <span>
+                                                Perfect for new businesses
+                                            </span>
                                         </Typography>
                                         <Typography variant="h4" sx={{ color: 'white', fontWeight: 'bold', mb: 2 }}>
                                             $299/month
@@ -101,7 +103,7 @@ export default function Pricing() {
                                         variant="contained"
                                         fullWidth
                                         component={Link}
-                                        href='https://buy.stripe.com/bIY29c0OfaSb5r2dQU'
+                                        href='https://buy.stripe.com/bIY7tw1Sj0dx7zabIK'
                                         passHref
                                         sx={{
                                             backgroundColor: '#1D4ED8',
@@ -130,11 +132,11 @@ export default function Pricing() {
                             >
                                 <CardContent sx={{ textAlign: 'start', height: '100%', padding: '0px !important', }}>
                                     <Box sx={{ bgcolor: "hsl(0, 0%, 8%)", p: 3 }}>
-                                        <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: 17 }}>
-                                            <span className='text-xl text-white'>
+                                        <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: '.875rem' }}>
+                                            <span className='text-xl leading-normal text-white'>
                                                 Standard
                                             </span> <br />
-                                            Ideal for growing brands
+                                            <span>Ideal for growing brands</span>
                                         </Typography>
                                         <Typography variant="h4" sx={{ color: 'white', fontWeight: 'bold', mb: 2 }}>
                                             $799/month
@@ -181,7 +183,7 @@ export default function Pricing() {
                                         variant="contained"
                                         fullWidth
                                         component={Link}
-                                        href='https://buy.stripe.com/bIY7tw1Sj0dx7zabIK'
+                                        href='https://buy.stripe.com/bIY29c0OfaSb5r2dQU'
                                         passHref
                                         sx={{
                                             backgroundColor: 'white',
@@ -210,11 +212,11 @@ export default function Pricing() {
 
                                 <CardContent sx={{ textAlign: 'start', height: '100%', padding: '0px !important', }}>
                                     <Box sx={{ bgcolor: "hsl(0, 0%, 8%)", p: 3 }}>
-                                        <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: 17 }}>
-                                            <span className='text-xl'>
+                                        <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: '.875rem' }}>
+                                            <span className='text-xl leading-normal'>
                                                 Enterprise
                                             </span> <br />
-                                            For large organizations with custom needs
+                                            <span> For large organizations with custom needs</span>
                                         </Typography>
                                         <Typography variant="h4" sx={{ color: 'white', fontWeight: 'bold', mb: 2 }}>
                                             $1999/month

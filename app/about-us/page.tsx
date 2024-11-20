@@ -1,133 +1,101 @@
 "use client";
 
-import { Box, Grid, Typography, Button } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
 const TeamSection = dynamic(() => import("../components/MeetOurTeam/MeetOurTeam"));
 const GlowingSection = dynamic(() => import("../components/GlowingSection/GlowingSection"));
 const FAQSection = dynamic(() => import("../components/FAQSection/FAQSection"));
 const OurApproach = dynamic(() => import("../components/OurApproach/OurApproach"));
 
-// Variants for text animations
-const textAnimation = {
-    hidden: { opacity: 0, y: 50 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: i * 0.3,
-            duration: 0.8,
-            ease: "easeOut",
-        },
-    }),
-};
+
 
 const AboutUs: React.FC = () => {
     return (
-        <Box>
-            {/* About Us Content */}
+        <Container maxWidth="lg">
             <Box
                 sx={{
-                    color: "white",
-                    textAlign: "center",
                     py: { xs: 4, md: 8 },
                     px: { xs: 2, md: 4 },
-                    backgroundColor: "transparent",
+                    mt: { xs: 6, md: 10 },
                 }}
             >
-                <motion.div className="flex flex-col justify-center items-center lg:h-screen pb-10 pt-10 px-4">
-                    <Box sx={{ my: 2 }}>
-                        <Box className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] select-none focus:outline-none">
-                            <Box
-                                component="span"
-                                className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#1D4ED8_0%,#d8b4fe_50%,#1D4ED8_100%)]"
-                            ></Box>
-                            <Button
-                                component="span"
-                                className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl"
-                                sx={{ position: "relative", zIndex: 1, textTransform: "none" }}
-                            >
-                                About Us
-                            </Button>
-                        </Box>
+                <motion.div
+                    initial={{ opacity: 0, y: 80 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, ease: "easeOut" }}
+                    viewport={{ once: true, amount: 0.4 }}
+                    className="text-center"
+                >
+                    <Box textAlign="center" sx={{ my: 2 }}>
+                        <div className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] focus:outline-none select-none">
+                            <span className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#6d28d9_0%,#d8b4fe_50%,#6d28d9_100%)]"></span>
+                            <span className="inline-flex h-full w-full items-center justify-center rounded-full bg-slate-950 px-4 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                                <Link href='' className="text-white">About</Link>
+                            </span>
+                        </div>
                     </Box>
-                    <Grid container spacing={2} justifyContent="center" alignItems="center">
-                        <Grid item xs={12} md={8}>
-                            <motion.div initial="hidden" animate="visible">
-                                <motion.h1 variants={textAnimation} custom={0}>
-                                    <Typography
-                                        sx={{
-                                            fontSize: { xs: "1.8rem", md: "2.5rem", lg: "3rem" },
-                                            fontWeight: "bold",
-                                        }}
-                                    >
-                                        Tailored Web Solutions for Your Business
-                                    </Typography>
-                                </motion.h1>
-                                <motion.p
-                                    className="text-sm md:text-[17px] mb-8 tracking-wide leading-relaxed lg:max-w-2xl mx-auto text-[#BABABA]"
-                                    variants={textAnimation}
-                                    custom={1}
-                                    style={{ paddingLeft: "10px", paddingRight: "10px" }}
-                                >
-                                    AceCould helps businesses build and manage custom websites with ease, offering scalable solutions for a seamless web presence.
-                                </motion.p>
-                                <motion.div variants={textAnimation} custom={2}>
-                                    <Typography
-                                        variant="h6"
-                                        sx={{
-                                            fontWeight: "bold",
-                                            mt: { xs: 2, md: 3 },
-                                        }}
-                                    >
-                                        The Evolution of AceCould: From Idea to Innovation
-                                    </Typography>
-                                    <Typography
-                                        variant="body1"
-                                        sx={{
-                                            mt: 2,
-                                            color: "#BABABA",
-                                            maxWidth: "550px",
-                                            mx: "auto",
-                                            fontSize: { xs: "0.9rem", md: "1rem" },
-                                        }}
-                                    >
-                                        We’ve been working on AceCould for the past 2 years, empowering businesses with customizable, scalable solutions for their web presence. Join us on this journey to bring innovation to your business.
-                                    </Typography>
-                                </motion.div>
-                                <Box mt={4} display="flex" justifyContent="center" gap={2} flexWrap="wrap">
-                                    <Button
-                                        type="submit"
-                                        sx={{
-                                            textTransform: "none",
-                                            px: { xs: 3, md: 4 },
-                                            py: { xs: 1, md: 1.5 },
-                                        }}
-                                        variant="outlined"
-                                        className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] bg-[#1D4ED8] border-[#1D4ED8] rounded-lg animated-border"
-                                    >
-                                        <span className="relative z-10">Learn More</span>
-                                    </Button>
-                                    <Button
-                                        sx={{
-                                            textTransform: "none !important",
-                                            px: { xs: 3, md: 4 },
-                                            py: { xs: 1, md: 1.5 },
-                                        }}
-                                        variant="outlined"
-                                        component={Link}
-                                        href="/contact-us"
-                                        className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] border-[#1D4ED8] rounded-lg animated-border"
-                                    >
-                                        <span className="relative z-10">Get in Touch</span>
-                                    </Button>
-                                </Box>
-                            </motion.div>
-                        </Grid>
-                    </Grid>
+                    <Box sx={{ width: { xs: 330, md: 700 }, mx: 'auto', mb: { xs: 4, md: 0 } }}>
+                        <p
+                            className="text-[2rem] md:text-[2.5rem] lg:!leading-snug font-semibold lg:mt-3 text-white text-center"
+                        >
+                            Tailored Web Solutions for Your Business
+                        </p>
+                        <p className="text-[1rem] lg:text-[1.125rem] lg:!leading-snug lg:mt-3 text-[#BABABA] text-center">
+                            AceCould helps businesses build and manage custom websites with ease, offering scalable solutions for a seamless web presence.
+                        </p>
+                    </Box>
+                    <Button
+                        sx={{ textTransform: 'none !important', my: 4 }}
+                        variant="outlined"
+                        component={Link}
+                        href="/book-meeting"
+                        className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] border-[#1D4ED8] rounded-lg animated-border"
+                    >
+                        <span className="absolute inset-0 transition-all duration-200 transform -translate-x-full rounded-lg group-hover:translate-x-0"></span>
+                        <span className="relative z-10">
+                            Start Transforming Your Agency
+                        </span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="lucide lucide-arrow-right w-4 h-4 ml-2"
+                        >
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </Button>
                 </motion.div>
+                <Box sx={{ py: { xs: 5, md: 10 } }}>
+                    .                 <Box>
+                        <motion.div
+                            initial={{ opacity: 0, y: 100 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            viewport={{ once: true, amount: 0.4 }}
+                        >
+                            <Typography
+                                className="text-3xl md:text-[4.5rem] font-bold text-white leading-snug"
+                            >
+                                The Evolution of AceCloud: From Idea to Innovation
+                            </Typography>
+                        </motion.div>
+                    </Box>
+                    <Box>
+                        <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500, fontSize: { xs: '.875rem', md: '1.125rem' } }}>
+                            We've been working on AceCloud for the past 2 years, helping businesses create customizable, scalable solutions for their web presence
+                        </Typography>
+                    </Box>
+                </Box>
+
             </Box>
             {/* Other Sections */}
             <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
@@ -142,7 +110,7 @@ const AboutUs: React.FC = () => {
             <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
                 <GlowingSection />
             </Box>
-        </Box>
+        </Container>
     );
 };
 

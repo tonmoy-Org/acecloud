@@ -22,7 +22,7 @@ export default function HighlightSection() {
             }}
         >
             <div className="rte text-center relative z-10 text-white">
-                <h2 className="text-3xl font-bold">
+                <h2 className="text-[1.25rem] md:text-[2.5rem] font-bold text-white leading-normal">
                     The results speak for themselves
                 </h2>
                 <p className="text-lg mt-2"

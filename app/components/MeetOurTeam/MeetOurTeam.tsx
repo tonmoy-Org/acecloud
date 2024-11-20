@@ -9,6 +9,7 @@ import t2 from '@/public/team/T2.png';
 import t3 from '@/public/team/T3.png';
 import t4 from '@/public/team/T4.png';
 import t5 from '@/public/team/T5.png';
+import ApproachSection from '../SectionTitle/SectionTitle';
 
 // Team data without social links
 const team = [
@@ -41,38 +42,15 @@ const team = [
 
 export default function TeamSection() {
     return (
-        <Box sx={{ pb: 15 }}>
+        <Box sx={{ pb: { xs: 6, md: 10 } }}>
             <Container>
-                <motion.div
-                    initial={{ opacity: 0, y: 100 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.4 }}
-                >
-                    <Box sx={{ textAlign: 'center', pb: 3 }}>
-                        <Typography
-                            color='#FFD700'
-                            gutterBottom
-                            sx={{
-                                textTransform: 'uppercase',
-                                fontSize: '14px',
-                                fontWeight: 'bold',
-                                animation: 'shadow-pulse 1.5s infinite'
-                            }}
-                        >
-                            Team
-                        </Typography>
-                        <Typography variant='h4' component='h1' sx={{ color: '#FFFFFF', fontWeight: 800, mb: 2 }}>
-                            Meet Our Team
-                        </Typography>
-                        <Typography sx={{ color: 'hsl(220 10% 54.4%)', maxWidth: '600px', margin: '20px auto' }}>
-                            We are passionate about our work and dedicated to your success. Meet the professionals
-                            who are driving our company forward and are ready to take your business to the next level.
-                        </Typography>
-                    </Box>
-                </motion.div>
+                <ApproachSection
+                    header="Team"
+                    title="Meet Our Team"
+                    description="We are passionate about our work and dedicated to your success. Meet the professionals who are driving our company forward and are ready to take your business to the next level."
+                />
                 {/* Team Grid */}
-                <Grid container spacing={5}>
+                <Grid container spacing={3}>
                     {team.map((member, index) => (
                         <Grid item xs={12} sm={6} md={3} key={index}>
                             <motion.div
@@ -100,12 +78,13 @@ export default function TeamSection() {
                                 <Card
                                     sx={{
                                         mx: "auto",
-                                        maxWidth: 360,
+                                        maxWidth: 380,
                                         overflow: 'hidden',
                                         boxShadow: '0 10px 20px rgba(0, 0, 0, 0.5)',
                                         backgroundColor: '#222',
                                         color: '#fff',
                                         position: 'relative',
+                                        height: 'auto',
                                     }}
                                 >
                                     {/* Team Member Image with Glow Effect */}

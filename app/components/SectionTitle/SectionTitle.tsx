@@ -14,7 +14,7 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ header, title, descri
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.4 }}
             className="flex flex-col items-center justify-center w-full py-8 max-w-xl mx-auto mb-8 px-2"
         >
             <Typography
@@ -29,12 +29,12 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ header, title, descri
             >
                 {header}
             </Typography>
-            {/* Use the SectionTitle component for the title */}
             <motion.h2
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="text-center text-[2rem] md:text-[2.5rem] font-bold text-white leading-normal"
+                viewport={{ once: true, amount: 0.4 }}
+                className="text-center text-[2rem] md:text-[2.5rem] font-bold text-white"
             >
                 {title}
             </motion.h2>
@@ -42,7 +42,8 @@ const ApproachSection: React.FC<ApproachSectionProps> = ({ header, title, descri
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="mt-2 text-center text-[15px] max-w-lg"
+                viewport={{ once: true, amount: 0.4 }}
+                className="mt-2 text-center text-[1rem] lg:text-[1.125rem] max-w-lg leading-7"
                 style={{ color: 'hsl(220 10% 54.4%)' }}
             >
                 {description}
