@@ -60,7 +60,7 @@ export default function Pricing() {
                                     <Box sx={{ bgcolor: "hsl(0, 0%, 8%)", p: 3 }}>
                                         <Typography sx={{ color: '#A3A3A3', mb: 1.5, fontSize: 17 }}>
                                             <span className='text-xl'>
-                                                Besic
+                                                Basic
                                             </span> <br />
                                             Perfect for new businesses
                                         </Typography>
@@ -101,7 +101,7 @@ export default function Pricing() {
                                         variant="contained"
                                         fullWidth
                                         component={Link}
-                                        href='https://buy.stripe.com/bIY7tw1Sj0dx7zabIK'
+                                        href='https://buy.stripe.com/bIY29c0OfaSb5r2dQU'
                                         passHref
                                         sx={{
                                             backgroundColor: '#1D4ED8',
@@ -181,7 +181,7 @@ export default function Pricing() {
                                         variant="contained"
                                         fullWidth
                                         component={Link}
-                                        href='https://buy.stripe.com/9AQeVYfJ9e4naLm003'
+                                        href='https://buy.stripe.com/bIY7tw1Sj0dx7zabIK'
                                         passHref
                                         sx={{
                                             backgroundColor: 'white',

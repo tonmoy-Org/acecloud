@@ -1,10 +1,11 @@
 'use client';
 
-import { Container, Card, CardContent, CardMedia, Typography } from '@mui/material';
+import { Container, Card, CardContent, CardMedia, Typography, CardActions } from '@mui/material';
 import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 const ApproachSection = dynamic(() => import('../SectionTitle/SectionTitle'));
 
@@ -66,6 +67,14 @@ const cardData = [
 ];
 
 
+// Function to calculate reading time (in minutes)
+const calculateReadingTime = (text: string) => {
+    const words = text.split(' ').length;
+    const readingSpeed = 200; // Average reading speed (words per minute)
+    const time = Math.ceil(words / readingSpeed);
+    return time; // Returns time in minutes
+};
+
 const staggerItem = {
     hidden: { opacity: 0, y: 100 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
@@ -87,17 +96,18 @@ const BlogSection: React.FC = () => {
 
     const handleMouseEnter = (index: number) => {
         setHoveredCard(index);
+
+        // Prefetch the details page
+        router.prefetch(`/blogs/${cardData[index].id}`);
     };
 
     const handleMouseLeave = () => {
         setHoveredCard(null);
     };
 
-    const handleCardClick = (index: number) => {
-        router.push(`/blogs/${index}`);
+    const handleCardClick = (id: string) => {
+        router.push(`/blogs/${id}`);
     };
-
-
 
     return (
         <Container sx={{ pt: 10, pb: 20 }}>
@@ -121,13 +131,13 @@ const BlogSection: React.FC = () => {
                         }),
                         [glowPosition, isHovered]
                     );
-
+                    const readingTime = calculateReadingTime(card.description);
                     return (
                         <motion.div
                             key={card.id}
                             variants={staggerItem}
                             onMouseMove={handleMouseMove}
-                            onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseEnter={() => handleMouseEnter(index)} // Prefetch on hover
                             onMouseLeave={handleMouseLeave}
                             onClick={() => handleCardClick(card.id)} // Redirect to details page
                             style={{ cursor: 'pointer' }}
@@ -137,7 +147,7 @@ const BlogSection: React.FC = () => {
                                     width: 350,
                                     height: '100%',
                                     position: 'relative',
-                                    color: 'white', // Set text color to white
+                                    color: 'white',
                                     ...glowStyle,
                                     backgroundColor: 'hsl(0, 0%, 3.9%)',
                                     padding: 1
@@ -151,6 +161,12 @@ const BlogSection: React.FC = () => {
                                     alt={card.title}
                                     sx={{ padding: 2, height: 230, width: '100%' }}
                                 />
+                                <CardActions sx={{display: 'flex', justifyContent: 'right' }}>
+                                    <Typography variant="body2" sx={{ color: 'white', mt: 1,}}>
+                                        {readingTime} min read
+                                        <BookmarkIcon sx={{ color: 'white', ml: 1 }} />
+                                    </Typography>
+                                </CardActions>
                                 <CardContent>
                                     <Typography sx={{ color: 'white', fontSize: 18, fontWeight: 600 }}>
                                         {card.title}
@@ -159,6 +175,7 @@ const BlogSection: React.FC = () => {
                                         {card.shortDescription}
                                     </Typography>
                                 </CardContent>
+
                             </Card>
                         </motion.div>
                     );
@@ -169,3 +186,4 @@ const BlogSection: React.FC = () => {
 };
 
 export default BlogSection;
+

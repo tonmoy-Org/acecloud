@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: 'Terms & Conditions | AceCloud',
-    description: "AceCloud | Elevating digital experiences through innovation and expertise.",
+    description: "Read the Terms & Conditions for using AceCloud's services. Understand the legal agreements and policies that govern your use of our platform and services.",
 }
 
 const layout = ({
@@ -14,6 +14,5 @@ const layout = ({
         <div>{children}</div>
     )
 }
-
 
 export default layout;

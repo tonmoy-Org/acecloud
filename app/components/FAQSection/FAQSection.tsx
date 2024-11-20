@@ -9,14 +9,14 @@ import { motion } from 'framer-motion';
 export default function FAQSection() {
     const faqs = [
         {
-            question: "How does Acecloud assist with cloud solutions?",
+            question: "How does AceCloud assist with cloud solutions?",
             answer:
-                "Acecloud specializes in tailored cloud solutions to support your business needs. Our team analyzes your requirements and builds a customized cloud infrastructure for improved performance and scalability.",
+                "AceCloud specializes in tailored cloud solutions to support your business needs. Our team analyzes your requirements and builds a customized cloud infrastructure for improved performance and scalability.",
         },
         {
-            question: "What services does Acecloud offer?",
+            question: "What services does AceCloud offer?",
             answer:
-                "Acecloud offers a range of services, including cloud migration, infrastructure management, cybersecurity, and data backup solutions. Our goal is to ensure seamless cloud integration and reliable support.",
+                "AceCloud offers a range of services, including cloud migration, infrastructure management, cybersecurity, and data backup solutions. Our goal is to ensure seamless cloud integration and reliable support.",
         },
         {
             question: "How does pricing work for cloud services?",
@@ -26,22 +26,22 @@ export default function FAQSection() {
         {
             question: "Can I upgrade my cloud resources as my business grows?",
             answer:
-                "Yes, Acecloud provides scalable solutions, allowing you to adjust resources as needed. Whether your needs increase or decrease, we’ll make sure your infrastructure adapts accordingly.",
+                "Yes, AceCloud provides scalable solutions, allowing you to adjust resources as needed. Whether your needs increase or decrease, we’ll make sure your infrastructure adapts accordingly.",
         },
         {
-            question: "What support does Acecloud offer?",
+            question: "What support does AceCloud offer?",
             answer:
-                "Acecloud offers 24/7 support for all our clients, ensuring prompt assistance for troubleshooting, system updates, and optimizing cloud performance to keep your business running smoothly.",
+                "AceCloud offers 24/7 support for all our clients, ensuring prompt assistance for troubleshooting, system updates, and optimizing cloud performance to keep your business running smoothly.",
         },
         {
-            question: "Will my data be secure on Acecloud's platform?",
+            question: "Will my data be secure on AceCloud's platform?",
             answer:
                 "Absolutely. We follow stringent security protocols and employ the latest cybersecurity measures to ensure your data is protected at all times.",
         },
         {
-            question: "Is Acecloud's infrastructure reliable?",
+            question: "Is AceCloud's infrastructure reliable?",
             answer:
-                "Yes, Acecloud's infrastructure is designed for high availability and resilience, with redundant systems in place to ensure uptime and continuity for your critical operations.",
+                "Yes, AceCloud's infrastructure is designed for high availability and resilience, with redundant systems in place to ensure uptime and continuity for your critical operations.",
         },
         {
             question: "What payment methods do you accept?",

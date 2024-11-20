@@ -115,6 +115,7 @@ const ResponsiveAppBar = () => {
                     onClick={handleDrawerClose}
                     variant="outlined"
                     component={Link}
+                    prefetch={true}
                     href="/book-meeting"
                     sx={{
                         my: 1,
@@ -133,6 +134,7 @@ const ResponsiveAppBar = () => {
                     onClick={handleDrawerClose}
                     variant="outlined"
                     component={Link}
+                    prefetch={true}
                     href="/book-meeting"
                     sx={{
                         my: 1,
@@ -153,6 +155,7 @@ const ResponsiveAppBar = () => {
                 <ListItem disablePadding>
                     <ListItemButton
                         component={Link}
+                        prefetch={true}
                         onClick={handleDrawerClose}
                         href="/"
                     >
@@ -173,7 +176,7 @@ const ResponsiveAppBar = () => {
                             <AccordionDetails>
                                 <ul className="flex flex-col space-y-1 p-2">
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link prefetch={false} href="/feature/customwebpage"
+                                        <Link prefetch={true} href="/feature/customwebpage"
                                             onClick={handleDrawerClose}
                                             className="flex items-center  py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
@@ -187,7 +190,7 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={false} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
+                                        <Link onClick={handleDrawerClose} prefetch={true} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Secure Hosting <br />
@@ -199,7 +202,7 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={false} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
+                                        <Link onClick={handleDrawerClose} prefetch={true} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Performance Insights <br />
@@ -211,7 +214,7 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={false} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
+                                        <Link onClick={handleDrawerClose} prefetch={true} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Responsive Design <br />
@@ -242,7 +245,7 @@ const ResponsiveAppBar = () => {
                             <AccordionDetails>
                                 <ul className="flex flex-col space-y-1 p-2">
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={false} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                        <Link onClick={handleDrawerClose} prefetch={true} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Web Design <br />
@@ -254,7 +257,7 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={false} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                        <Link onClick={handleDrawerClose} prefetch={true} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 Branding <br />
@@ -266,7 +269,7 @@ const ResponsiveAppBar = () => {
                                         </Link>
                                     </li>
                                     <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                        <Link onClick={handleDrawerClose} prefetch={false} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                        <Link onClick={handleDrawerClose} prefetch={true} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                             <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                             <span className="text-[#F5F5F5] font-semibold">
                                                 SEO <br />
@@ -286,6 +289,7 @@ const ResponsiveAppBar = () => {
                 <ListItem disablePadding>
                     <ListItemButton
                         component={Link}
+                        prefetch={true}
                         onClick={handleDrawerClose}
                         href="/about-us"
                         sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
@@ -299,6 +303,7 @@ const ResponsiveAppBar = () => {
                     <ListItemButton
                         onClick={handleDrawerClose}
                         component={Link}
+                        prefetch={true}
                         href="/pricing"
                         sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -310,6 +315,7 @@ const ResponsiveAppBar = () => {
                     <ListItemButton
                         onClick={handleDrawerClose}
                         component={Link}
+                        prefetch={true}
                         href="/blog"
                         sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -321,6 +327,7 @@ const ResponsiveAppBar = () => {
                     <ListItemButton
                         onClick={handleDrawerClose}
                         component={Link}
+                        prefetch={true}
                         href="/blog"
                         sx={{ '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -356,7 +363,7 @@ const ResponsiveAppBar = () => {
                     }}>
                         <Typography variant="h4" noWrap sx={{ textAlign: 'center' }}>
                             <div className="w-32 me-10">
-                                <Link prefetch={false} href="/" passHref>
+                                <Link prefetch={true} href="/" passHref>
                                     <Image src={logo} onClick={() => handleScroll('home', 1400)} alt="Ace Cloud Logo" layout="responsive" />
                                 </Link>
                             </div>
@@ -366,6 +373,7 @@ const ResponsiveAppBar = () => {
                             <div className="relative group">
                                 <Button
                                     component={Link}
+                                    prefetch={true}
                                     href="/feature"
                                     className="hover:text-accent-foreground"
                                     sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
@@ -391,7 +399,7 @@ const ResponsiveAppBar = () => {
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/feature/customwebpage" className="flex items-center  py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/feature/customwebpage" className="flex items-center  py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Custom Website <br />
@@ -403,7 +411,7 @@ const ResponsiveAppBar = () => {
                                                     </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/feature/securehosting" className="flex items-center  py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Secure Hosting <br />
@@ -415,7 +423,7 @@ const ResponsiveAppBar = () => {
                                                     </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/feature/performanceinsights" className="flex items-center  py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Performance Insights <br />
@@ -427,7 +435,7 @@ const ResponsiveAppBar = () => {
                                                     </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/feature/resposiveweb" className="flex items-center  py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Responsive Design <br />
@@ -447,6 +455,7 @@ const ResponsiveAppBar = () => {
                             <div className="relative group">
                                 <Button
                                     component={Link}
+                                    prefetch={true}
                                     href="/services-us"
                                     className="hover:text-accent-foreground"
                                     sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
@@ -462,7 +471,7 @@ const ResponsiveAppBar = () => {
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/services-us/web-design" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Web Design <br />
@@ -474,7 +483,7 @@ const ResponsiveAppBar = () => {
                                                     </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/services-us/branding" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             Branding <br />
@@ -486,7 +495,7 @@ const ResponsiveAppBar = () => {
                                                     </Link>
                                                 </li>
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
-                                                    <Link prefetch={false} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
+                                                    <Link prefetch={true} href="/services-us/seo-page" className="flex items-center px-2 py-1 text-sm text-gray-700">
                                                         <LinkIcon className="w-5 h-5 mr-3 text-gray-500" />
                                                         <span className="text-[#F5F5F5] font-semibold">
                                                             SEO <br />
@@ -515,6 +524,7 @@ const ResponsiveAppBar = () => {
                             </div>
                             <Button
                                 component={Link}
+                                prefetch={true}
                                 href="/about-us"
                                 sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -523,6 +533,7 @@ const ResponsiveAppBar = () => {
                             </Button>
                             <Button
                                 component={Link}
+                                prefetch={true}
                                 href="/blog"
                                 sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -531,6 +542,7 @@ const ResponsiveAppBar = () => {
                             </Button>
                             <Button
                                 component={Link}
+                                prefetch={true}
                                 href="/pricing"
                                 sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -539,6 +551,7 @@ const ResponsiveAppBar = () => {
                             </Button>
                             <Button
                                 component={Link}
+                                prefetch={true}
                                 href="/contact-us"
                                 sx={{ my: 1, mx: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
 
@@ -551,6 +564,7 @@ const ResponsiveAppBar = () => {
                                 sx={{ textTransform: 'none !important' }}
                                 variant="outlined"
                                 component={Link}
+                                prefetch={true}
                                 href="/book-meeting"
                                 className="relative inline-flex items-center justify-center px-4 py-1 overflow-hidden font-medium text-slate-200 border-[1.7px] border-[#1D4ED8] rounded-lg animated-border"
                             >

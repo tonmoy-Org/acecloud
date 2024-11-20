@@ -11,10 +11,10 @@ interface ApproachSectionProps {
 const ApproachSection: React.FC<ApproachSectionProps> = ({ header, title, description }) => {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: false, amount: 0.4 }}
             className="flex flex-col items-center justify-center w-full py-8 max-w-xl mx-auto mb-8 px-2"
         >
             <Typography

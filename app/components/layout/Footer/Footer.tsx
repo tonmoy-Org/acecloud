@@ -1,6 +1,7 @@
 'use client';
 
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import Link from 'next/link';
 import React, { useCallback, useState } from 'react';
 
 
@@ -84,7 +85,7 @@ function Footer() {
                                 With AceCloud <span className="text-white font-semibold">Design</span>, <span className="text-[#1D4ED8] font-semibold">Optimize</span>, <span className="text-white font-semibold">Transform</span>.
                             </p>
                             <span className="mt-4 text-gray-400 text-sm">
-                                Made by <a className="font-semibold text-white hover:underline" href="https://AceCloudagency.com">AceCloud Agency</a>
+                                Made by <a className="font-semibold text-white hover:underline" href="https://aceCloud.ca">AceCloud Agency</a>
                             </span>
                         </div>
 
@@ -207,7 +208,7 @@ const FooterLinkSection = ({ title, links }) => (
         <ul className="mt-4 text-sm space-y-2">
             {links.map((link) => (
                 <li key={link.name}>
-                    <a className="hover:text-[#1D4ED8] transition duration-300" href={link.href}>{link.name}</a>
+                    <Link prefetch={true} href={link.href} className="hover:text-[#1D4ED8] transition duration-300">{link.name}</Link>
                 </li>
             ))}
         </ul>

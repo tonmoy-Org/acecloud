@@ -2,12 +2,11 @@
 
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Box, TextField, Button, Typography, Container, CircularProgress } from '@mui/material';
+import { Box, TextField, Button, Container, CircularProgress } from '@mui/material';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import banner from '@/public/banner/03.png';
-import ApproachSection from '../components/SectionTitle/SectionTitle';
+import CustomHero from '../components/CustomHero/CustomHero';
 
 interface FormValues {
     email: string;
@@ -64,18 +63,22 @@ export default function Unsubscribe() {
     };
 
     return (
-        <Box sx={{ position: 'relative', color: 'white', textAlign: 'center', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', pt: 10, pb: 10 }}>
-            <Container maxWidth="sm">
+        <Box sx={{ pt: 10, pb: 10 }}>
+            <Container maxWidth="lg">
+                <CustomHero
+                    title=" Unsubscribe from Our Newsletter"
+                    subtitle="We understand that preferences change. If you'd no longer like to receive updates, please enter your email address below to be removed from our mailing list. We hope to stay in touch in the future!"
+                    linkHref="/contact-us"
+                    linkText="Start Building Now"
+                    imageSrc=""
+                    imageAlt=""
+                />
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.7, ease: 'easeOut' }}
                 >
-                    <ApproachSection
-                        header="Unsubscribe"
-                        title="Unsubscribe from Our Newsletter"
-                        description="We understand that preferences change. If you'd no longer like to receive updates, please enter your email address below to be removed from our mailing list. We hope to stay in touch in the future!"
-                    />
+
                     <Box
                         bgcolor="rgba(30, 30, 30, 0.9)"
                         p={4}
@@ -83,6 +86,8 @@ export default function Unsubscribe() {
                             borderRadius: '12px',
                             boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.4)',
                             backdropFilter: 'blur(6px)',
+                            maxWidth: { xs: '100%', md: '550px' },
+                            mx: 'auto',
                         }}
                     >
 

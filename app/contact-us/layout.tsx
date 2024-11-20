@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-    title: 'Book a call with us | AceCloud',
-    description: "Schedule a call with AceCloud's expert team to discuss tailored solutions that elevate your digital experiences and transform your business.",
+    title: 'Contact | AceCloud',
+    description: "Get in touch with AceCloud, where we specialize in elevating digital experiences and providing innovative solutions to help businesses succeed in the digital age.",
 }
 
 const layout = ({

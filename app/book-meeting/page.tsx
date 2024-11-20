@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
+import CustomHero from '../components/CustomHero/CustomHero';
 
 const BookMeeting: React.FC = () => {
     // Load the Calendly widget script
@@ -23,30 +24,16 @@ const BookMeeting: React.FC = () => {
                 py: 15,
             }}
         >
-            <Container sx={{ textAlign: 'center', maxWidth: '800px' }}>
-                <Typography
-                    variant="h3"
-                    sx={{
-                        fontWeight: 'bold',
-                        fontSize: { xs: '2.5rem', lg: '3rem' },
-                        mb: 2,
-                        // textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-                    }}
-                >
-                    Book Your Meeting <br /> with AceCloud
-                </Typography>
-                <Typography
-                    variant="body1"
-                    sx={{
-                        fontSize: { xs: '1rem', lg: '1.2rem' },
-                        color: '#E0E7FF',
-                        mb: 4,
-                    }}
-                >
-                    Schedule a meeting with our expert team to discuss <br /> how we can help elevate your agency’s digital journey.
-                </Typography>
+            <Container>
+                <CustomHero
+                    title=" Book Your Meeting with AceCloud"
+                    subtitle=" Schedule a meeting with our expert team to discuss how we can help elevate your agency’s digital journey."
+                    linkHref="/contact-us"
+                    linkText="Start Building Now"
+                    imageSrc=""
+                    imageAlt=""
+                />
             </Container>
-
             <Container sx={{ display: 'flex', justifyContent: 'center' }}>
                 <Box
                     className="calendly-inline-widget"
