@@ -89,7 +89,7 @@ const AboutUs: React.FC = () => {
                                         sx={{
                                             mt: 2,
                                             color: "#BABABA",
-                                            maxWidth: "600px",
+                                            maxWidth: "550px",
                                             mx: "auto",
                                             fontSize: { xs: "0.9rem", md: "1rem" },
                                         }}
