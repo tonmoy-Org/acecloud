@@ -17,14 +17,9 @@ import { motion } from 'framer-motion';
 import logo from '@/public/logo/acecloud.png';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import LinkIcon from '@mui/icons-material/Link';
-import HttpsIcon from '@mui/icons-material/Https';
-import InsightsIcon from '@mui/icons-material/Insights';
-import TvIcon from '@mui/icons-material/Tv';
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-
-const drawerWidth = 240;
 
 const ResponsiveAppBar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
@@ -45,11 +40,6 @@ const ResponsiveAppBar = () => {
         }
     };
 
-    const [isOpen, setIsOpen] = useState(false);
-
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
 
     const handleScroll = (id: string, duration: number = 1000) => {
         const element = document.getElementById(id);
