@@ -13,7 +13,7 @@ function Footer() {
 
 
 
-    const handleMouseMove = useCallback((e) => {
+    const handleMouseMove = useCallback((e: any) => {
         // Calculate the mouse position as a percentage of the viewport dimensions
         const xPos = `${(e.clientX / window.innerWidth) * 100}%`;
         const yPos = `${(e.clientY / window.innerHeight) * 100}%`;
@@ -202,7 +202,12 @@ function Footer() {
     );
 }
 
-const FooterLinkSection = ({ title, links }) => (
+interface FooterLinkSectionProps {
+    title: string;
+    links: { name: string; href: string }[];
+}
+
+const FooterLinkSection: React.FC<FooterLinkSectionProps> = ({ title, links }) => (
     <div>
         <h3 className="text-lg font-medium text-white">{title}</h3>
         <ul className="mt-4 text-sm space-y-2">
@@ -214,5 +219,6 @@ const FooterLinkSection = ({ title, links }) => (
         </ul>
     </div>
 );
+
 
 export default Footer;

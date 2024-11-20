@@ -1,19 +1,16 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 import { Box, Typography } from '@mui/material';
 import banner from '@/public/banner/01.png';
 import './HeroSection.css';
-import NextLink from 'next/link';  // Alias for next/link
+import NextLink from 'next/link';
 
 
 export default function HeroSection() {
-  const [isScrolling, setIsScrolling] = useState(false);
 
-
-  // Variants for staggered animations
   const textAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: (i: number) => ({
@@ -27,37 +24,6 @@ export default function HeroSection() {
     }),
   };
 
-  const iconHoverEffect = {
-    hover: {
-      scale: 1.2,
-      rotate: 360,
-      transition: { duration: 0.6, ease: 'easeInOut' },
-    },
-  };
-
-  // Handle scroll and set state for fading in/out social icons
-  useEffect(() => {
-    let timeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      setIsScrolling(true);
-
-      // Clear the timeout if there's a new scroll event
-      clearTimeout(timeout);
-
-      // Set the timeout to hide the icons after 1 second of no scrolling
-      timeout = setTimeout(() => {
-        setIsScrolling(false);
-      }, 1000);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timeout);
-    };
-  }, []);
 
   return (
     <Box

@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 export default function HighlightSection() {
     const [glowPosition, setGlowPosition] = useState({ x: "50%", y: "0%" });
 
-    const handleMouseMove = useCallback((e) => {
+    const handleMouseMove = useCallback((e: any) => {
         const { clientX, clientY } = e;
         setGlowPosition({
             x: `${clientX}px`,
@@ -25,8 +25,8 @@ export default function HighlightSection() {
                 <h2 className="text-3xl font-bold">
                     The results speak for themselves
                 </h2>
-                <p className="text-lg mt-2" 
-                style={{ color: 'hsl(220 10% 54.4%)' }}
+                <p className="text-lg mt-2"
+                    style={{ color: 'hsl(220 10% 54.4%)' }}
                 >
                     We help the world's most successful brands make great things happen.
                 </p>

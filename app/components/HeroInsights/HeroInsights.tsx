@@ -1,8 +1,13 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import PropTypes from 'prop-types';
 
-const HeroInsights = ({ title, subtitle, services }) => {
+interface HeroInsightsProps {
+    title: string;
+    subtitle: string;
+    services: string[];
+}
+
+const HeroInsights: React.FC<HeroInsightsProps> = ({ title, subtitle, services }) => {
     return (
         <Box sx={{ mt: { xs: 0, md: 10 } }}>
             <div className="px-2">
@@ -43,7 +48,6 @@ const HeroInsights = ({ title, subtitle, services }) => {
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 384 512"
                                     >
-                                        {/* <path d="M328 96h24v288h-48V177.9L81 401l-17 17-33.9-34 17-17 223-223H64V96h264z" /> */}
                                     </svg>
                                 </div>
                             </a>
@@ -53,13 +57,6 @@ const HeroInsights = ({ title, subtitle, services }) => {
             </div>
         </Box>
     );
-};
-
-// Prop Types
-HeroInsights.propTypes = {
-    title: PropTypes.string.isRequired,
-    subtitle: PropTypes.string.isRequired,
-    services: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default HeroInsights;

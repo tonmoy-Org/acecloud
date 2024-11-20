@@ -91,9 +91,10 @@ const MoreBlog: React.FC = () => {
         setHoveredCard(null);
     };
 
-    const handleCardClick = (index: number) => {
-        router.push(`/blogs/${index}`);
+    const handleCardClick = (id: string) => {
+        router.push(`/blogs/${id}`);
     };
+    
 
 
 
