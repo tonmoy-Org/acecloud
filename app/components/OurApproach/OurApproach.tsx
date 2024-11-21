@@ -131,7 +131,7 @@ const OurApproach: FC = () => {
 
 const Card: FC<CardProps> = ({ step, title, description, icon, glowPosition, onMouseMove, isHovered, onMouseEnter, onMouseLeave }) => {
     const glowStyle = useMemo(() => ({
-        background: `radial-gradient(500px at ${glowPosition.x} ${glowPosition.y}, ${isHovered ? 'rgba(168, 85, 247, 0.3)' : 'rgba(168, 85, 247, 0)'}, transparent 60%)`,
+        background: `radial-gradient(300px at ${glowPosition.x} ${glowPosition.y}, ${isHovered ? 'rgba(168, 85, 247, 0.3)' : 'rgba(168, 85, 247, 0)'}, transparent 60%)`,
         transition: 'background 0.3s ease-out', // Smooth transition for glow
     }), [glowPosition, isHovered]);
 

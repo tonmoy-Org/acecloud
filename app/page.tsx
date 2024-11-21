@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Container } from "@mui/material";
 
 import dynamic from 'next/dynamic';
 
@@ -29,7 +29,9 @@ export default function Home() {
         <Pricing />
         <Testimonials />
         <FAQSection />
-        <GlowingSection />
+        <Container>
+          <GlowingSection />
+        </Container>
       </Box>
     </main>
   );

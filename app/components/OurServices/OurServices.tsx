@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import { Card, CardContent, Typography, Grid, Box, Container } from '@mui/material';
 import WebIcon from '@mui/icons-material/Web';
 import BrandingWatermarkIcon from '@mui/icons-material/BrandingWatermark';
@@ -11,6 +11,26 @@ import ApiIcon from '@mui/icons-material/Api';
 import { motion } from 'framer-motion';
 
 export default function OurServices() {
+    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+    const [glowPosition, setGlowPosition] = useState<{ x: string; y: string }>({ x: '50%', y: '50%' });
+
+    const handleMouseMove = useCallback(
+        (e: React.MouseEvent) => {
+            const { clientX, clientY, currentTarget } = e;
+            const { left, top } = currentTarget.getBoundingClientRect();
+            setGlowPosition({ x: `${clientX - left}px`, y: `${clientY - top}px` });
+        },
+        []
+    );
+
+    const handleMouseEnter = (index: number) => {
+        setHoveredCard(index);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredCard(null);
+    };
+
     const services = [
         {
             title: 'Web Design',
@@ -58,7 +78,7 @@ export default function OurServices() {
 
     const staggerItem = {
         hidden: { opacity: 0, y: 100 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
     };
 
     return (
@@ -66,33 +86,48 @@ export default function OurServices() {
             id="service"
             sx={{
                 py: 10,
-                position: 'relative',
-                overflow: 'hidden',
-                background: 'linear-gradient(180deg, hsl(220, 65%, 3.52%), rgba(0, 55, 255, 0.1), hsl(220, 65%, 3.52%))',
             }}
         >
             <Container>
-                <Box sx={{ display: { xs: 'block', lg: 'flex' }, justifyContent: 'space-between', alignItems: 'center', pb: 8, zIndex: 1, position: 'relative' }}>
+                <Box
+                    sx={{
+                        display: { xs: 'block', lg: 'flex' },
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        pb: 8,
+                        zIndex: 1,
+                        position: 'relative',
+                    }}
+                >
                     <Box>
-                        <Typography color='#FFD700' gutterBottom sx={{ textTransform: 'uppercase', fontSize: '14px', fontWeight: 'bold' }}>
+                        <Typography
+                            color="#FFD700"
+                            gutterBottom
+                            sx={{ textTransform: 'uppercase', fontSize: '14px', fontWeight: 'bold' }}
+                        >
                             Our Services
                         </Typography>
                         <motion.div
                             initial={{ opacity: 0, y: 100 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, ease: "easeOut" }}
+                            transition={{ duration: 0.5, ease: 'easeOut' }}
                             viewport={{ once: true, amount: 0.4 }}
                         >
-                            <Typography
-                                className="text-3xl md:text-[2.5rem] font-bold text-white leading-normal"
-                            >
+                            <Typography className="text-3xl md:text-[2.5rem] font-bold text-white leading-normal">
                                 Driving Innovation for Your Business.
                             </Typography>
                         </motion.div>
                     </Box>
                     <Box>
-                        <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)', maxWidth: 500, fontSize: { xs: '.875rem', md: '1.125rem' } }}>
-                            Empowering brands through tailor-made solutions from design to development. Let us elevate your digital journey with precision and creativity.
+                        <Typography
+                            sx={{
+                                color: 'rgba(255, 255, 255, 0.7)',
+                                maxWidth: 500,
+                                fontSize: { xs: '.875rem', md: '1.125rem' },
+                            }}
+                        >
+                            Empowering brands through tailor-made solutions from design to development. Let us elevate
+                            your digital journey with precision and creativity.
                         </Typography>
                     </Box>
                 </Box>
@@ -108,26 +143,45 @@ export default function OurServices() {
                             <Grid item xs={12} sm={6} md={4} key={index}>
                                 <motion.div variants={staggerItem}>
                                     <Card
+                                        onMouseMove={handleMouseMove}
+                                        onMouseEnter={() => handleMouseEnter(index)}
+                                        onMouseLeave={handleMouseLeave}
                                         sx={{
-                                            backgroundColor: '#1a1a1a',
+                                            position: 'relative',
+                                            backgroundColor: 'transparent',
                                             color: 'white',
                                             borderRadius: 1,
                                             p: 3,
                                             boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.15)',
                                             border: '1px solid #333',
-                                            '&:hover': {
-                                                borderColor: '#FFD700',
-                                                transform: 'scale(1.05)',
-                                                boxShadow: '0px 15px 40px rgba(0, 0, 0, 0.25)',
-                                                filter: 'brightness(1.1)',
-                                            },
-                                            transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease',
-                                            position: 'relative',
-                                            width: { xs: '98%', md: '100%' },
+                                            overflow: 'hidden',
                                             mx: 'auto',
                                         }}
                                     >
-                                        <CardContent sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                        {hoveredCard === index && (
+                                            <Box
+                                                sx={{
+                                                    position: 'absolute',
+                                                    top: 0,
+                                                    left: 0,
+                                                    width: '200%',
+                                                    height: '200%',
+                                                    background: `radial-gradient(320px at ${glowPosition.x} ${glowPosition.y}, rgba(168, 85, 247, 0.2), transparent 60%)`,
+                                                    zIndex: 0,
+                                                    pointerEvents: 'none',
+                                                }}
+                                            />
+                                        )}
+                                        <CardContent
+                                            sx={{
+                                                textAlign: 'center',
+                                                display: 'flex',
+                                                flexDirection: 'column',
+                                                alignItems: 'center',
+                                                position: 'relative',
+                                                zIndex: 1,
+                                            }}
+                                        >
                                             <Box
                                                 sx={{
                                                     width: 70,
@@ -136,17 +190,29 @@ export default function OurServices() {
                                                     alignItems: 'center',
                                                     justifyContent: 'center',
                                                     borderRadius: '50%',
-                                                    background: 'linear-gradient(135deg, #00CFFD, #007BFF)', // Blue gradient
+                                                    background: 'linear-gradient(135deg, #00CFFD, #007BFF)',
                                                     mb: 3,
                                                     boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)',
                                                 }}
                                             >
                                                 {service.icon}
                                             </Box>
-                                            <Typography sx={{ fontWeight: 700, mb: 1, fontSize: { xs: '1rem', md: '1.25rem' } }}>
+                                            <Typography
+                                                sx={{
+                                                    fontWeight: 700,
+                                                    mb: 1,
+                                                    fontSize: { xs: '1rem', md: '1.25rem' },
+                                                }}
+                                            >
                                                 {service.title}
                                             </Typography>
-                                            <Typography  sx={{ color: 'rgba(255, 255, 255, 0.7)', textAlign: 'center', fontSize: '.875rem' }}>
+                                            <Typography
+                                                sx={{
+                                                    color: 'rgba(255, 255, 255, 0.7)',
+                                                    textAlign: 'center',
+                                                    fontSize: '.875rem',
+                                                }}
+                                            >
                                                 {service.description}
                                             </Typography>
                                         </CardContent>

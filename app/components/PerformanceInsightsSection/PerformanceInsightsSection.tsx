@@ -19,7 +19,7 @@ export default function PerformanceInsightsSection() {
                     subtitle="Monitor your website's speed, user engagement, and key metrics with real-time insights. Make data-driven decisions to boost performance."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/FP/f3.png"
                     imageAlt="Custom Web Design"
                 />
 

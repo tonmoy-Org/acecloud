@@ -32,7 +32,7 @@ export default function BrandingSection() {
                     subtitle="Build a strong and memorable brand identity. From logo design to brand strategy, our services ensure your business stands out in a competitive market."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/service/s3.png"
                     imageAlt="Custom Web Design"
                 />
             </Container>

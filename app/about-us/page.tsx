@@ -17,7 +17,6 @@ const AboutUs: React.FC = () => {
             <Box
                 sx={{
                     py: { xs: 4, md: 8 },
-                    px: { xs: 2, md: 4 },
                     mt: { xs: 6, md: 10 },
                 }}
             >
@@ -98,16 +97,16 @@ const AboutUs: React.FC = () => {
 
             </Box>
             {/* Other Sections */}
-            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
+            <Box sx={{ my: 2 }}>
                 <TeamSection />
             </Box>
-            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
+            <Box sx={{ my: 2 }}>
                 <OurApproach />
             </Box>
-            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
+            <Box sx={{ my: 2 }}>
                 <FAQSection />
             </Box>
-            <Box sx={{ my: 2, px: { xs: 2, md: 4 } }}>
+            <Box sx={{ my: 2 }}>
                 <GlowingSection />
             </Box>
         </Container>

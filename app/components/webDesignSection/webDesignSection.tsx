@@ -20,7 +20,7 @@ export default function WebDesignSection() {
                     subtitle="Transform your ideas into stunning digital experiences. Our expert design services focus on user-centric interfaces, responsive layouts, and seamless functionality to elevate your online presence."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/service/s1.png"
                     imageAlt="Custom Web Design"
                 />
             </Container>

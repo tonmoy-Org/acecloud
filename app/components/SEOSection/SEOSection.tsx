@@ -20,7 +20,7 @@ export default function SEOSection() {
                     subtitle="Maximize your online presence with our tailored SEO services. From keyword research to performance tracking, we ensure your website ranks high and drives organic traffic."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/service/s2.png"
                     imageAlt="Custom Web Design"
                 />
             </Container>

@@ -1,17 +1,8 @@
 import React from 'react';
-import { Box, styled, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-
-// Styled component for the hero image
-const HeroImage = styled("img")({
-    width: "100%",
-    maxWidth: "850px",
-    margin: "2rem auto",
-    display: "block",
-    borderRadius: "5px",
-    boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.5)",
-});
+import Image from 'next/image';
 
 // Define a TypeScript interface for props
 interface CustomHeroProps {
@@ -24,14 +15,22 @@ interface CustomHeroProps {
 }
 
 // Reusable Hero Component
-const CustomHero: React.FC<CustomHeroProps> = ({ title, subtitle, linkHref, linkText, imageSrc, imageAlt }) => {
+const CustomHero: React.FC<CustomHeroProps> = ({
+    title,
+    subtitle,
+    linkHref,
+    linkText,
+    imageSrc,
+    imageAlt,
+}) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
+            transition={{ duration: 0.7, ease: 'easeOut' }}
             viewport={{ once: true, amount: 0.4 }}
         >
+            {/* Button Section */}
             <Box textAlign="center" sx={{ my: 2 }}>
                 <div className="relative inline-flex h-8 overflow-hidden rounded-full p-[1.5px] focus:outline-none select-none">
                     <span className="absolute inset-[-1000%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#6d28d9_0%,#d8b4fe_50%,#6d28d9_100%)]"></span>
@@ -40,18 +39,50 @@ const CustomHero: React.FC<CustomHeroProps> = ({ title, subtitle, linkHref, link
                     </span>
                 </div>
             </Box>
-            <Box sx={{ width: { xs: 330, md: 700 }, mx: 'auto', mb: { xs: 4, md: 6} }}>
-                <p
-                    className="text-[2rem] md:text-[2.5rem] lg:!leading-snug font-semibold lg:mt-3 text-white text-center"
+
+            {/* Title and Subtitle */}
+            <Box sx={{ px: 2, mx: 'auto', mb: { xs: 4, md: 6 }, maxWidth: { xs: 330, sm: 500, md: 700 } }}>
+                <Typography
+                    variant="h2"
+                    sx={{
+                        fontSize: { xs: '1.5rem', md: '2.5rem' },
+                        fontWeight: 'bold',
+                        textAlign: 'center',
+                        color: 'white',
+                        lineHeight: { xs: '1.5', md: '1.8' },
+                    }}
                 >
                     {title}
-                </p>
-                <p className="text-[1rem] lg:text-[1.125rem] lg:!leading-snug lg:mt-3 text-[#BABABA] text-center">
+                </Typography>
+                <Typography
+                    variant="subtitle1"
+                    sx={{
+                        fontSize: { xs: '0.9rem', md: '1.125rem' },
+                        textAlign: 'center',
+                        color: '#BABABA',
+                        mt: 2,
+                    }}
+                >
                     {subtitle}
-                </p>
+                </Typography>
             </Box>
+
             {/* Hero Image */}
-            <HeroImage src={imageSrc} alt={imageAlt} />
+            <Box sx={{ maxWidth: 850, mx: 'auto', my: 4 }}>
+                <Image
+                    src={imageSrc}
+                    alt={imageAlt}
+                    width={850}
+                    height={500}
+                    style={{
+                        width: '100%',
+                        height: '550px',
+                        borderRadius: '5px',
+                        objectFit: 'cover',
+                        boxShadow: '0px 10px 30px rgba(0, 0, 0, 0.5)',
+                    }}
+                />
+            </Box>
         </motion.div>
     );
 };

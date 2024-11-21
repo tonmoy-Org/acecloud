@@ -18,7 +18,7 @@ export default function SecureHostingSection() {
                     subtitle="Keep your website and data safe with advanced encryption and reliable hosting solutions. Experience peace of mind with top-tier security."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/FP/f2.png"
                     imageAlt="Custom Web Design"
                 />
             </Container>

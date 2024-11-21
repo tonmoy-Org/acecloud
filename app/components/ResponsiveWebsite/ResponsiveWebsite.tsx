@@ -20,7 +20,7 @@ export default function ResponsiveWebsite() {
                     subtitle="Ensure a seamless user experience across all screen sizes. Create responsive layouts that adapt perfectly to any device."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/FP/f4.png"
                     imageAlt="Custom Web Design"
                 />
             </Container>

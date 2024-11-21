@@ -24,7 +24,7 @@ export default function BuildWebsitesPage() {
                     subtitle="Simplify your process with professional web design tools. Create websites, track progress, and achieve your goals with precision."
                     linkHref="/contact-us"
                     linkText="Start Building Now"
-                    imageSrc="/feature/Custom_Websites.svg"
+                    imageSrc="/FP/f1.png"
                     imageAlt="Custom Web Design"
                 />
             </Container>
