@@ -1,9 +1,10 @@
 'use client';
 
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useCallback, useState } from 'react';
-
+import logo from '@/public/logo/acecloud.png';
 
 function Footer() {
     const [glowPosition, setGlowPosition] = useState({ x: "50%", y: "50%" });
@@ -78,8 +79,7 @@ function Footer() {
                     <div className="text-gray-200 lg:flex items-start gap-20 ">
                         <div className="lg:w-[500px]">
                             <div className="mb-4">
-                                {/* <svg className="w-7 h-7 text-white"></svg> */}
-                                <h2 className="text-2xl font-bold text-white">AceCloud</h2>
+                                <Image src={logo} alt="Ace Cloud Logo" width={140} height={80} />
                             </div>
                             <p className="text-sm">
                                 With AceCloud <span className="text-white font-semibold">Design</span>, <span className="text-[#1D4ED8] font-semibold">Optimize</span>, <span className="text-white font-semibold">Transform</span>.

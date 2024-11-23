@@ -13,7 +13,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import logo from '@/public/logo/acecloud.png';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import LinkIcon from '@mui/icons-material/Link';

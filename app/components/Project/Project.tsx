@@ -101,6 +101,7 @@ const BlogSection: React.FC = () => {
                                     <Card
                                         sx={{
                                             width: '100%',
+                                            height: { xs: '100%', md: 510 },
                                             position: 'relative',
                                             color: 'white',
                                             backgroundColor: 'hsl(0, 0%, 3.9%)',
