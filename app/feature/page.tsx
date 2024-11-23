@@ -52,7 +52,7 @@ const Services: React.FC = () => {
                                 maxWidth: { md: 900 }
                             }}
                         >
-                            Why choose AceCloud.ca as the
+                            Why choose AceCloud as the
                             <span style={{ color: '#1D4ED8' }}> lead generation software </span>
                             for your agency?
                         </Typography>
@@ -68,7 +68,7 @@ const Services: React.FC = () => {
                                         Growth-friendly <span style={{ color: '#1D4ED8' }}>pricing</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        AceCloud.ca offers a flat-rate pricing model, unlike other platforms that charge per seat. With AceCloud.ca, you can manage unlimited clients, maximizing cost-efficiency for your agency’s needs.
+                                        AceCloud offers a flat-rate pricing model, unlike other platforms that charge per seat. With AceCloud, you can manage unlimited clients, maximizing cost-efficiency for your agency’s needs.
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -83,7 +83,7 @@ const Services: React.FC = () => {
                                         Access to millions of <span style={{ color: '#1D4ED8' }}>leads</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        AceCloud.ca offers a built-in database of verified leads, so you can find and connect with potential clients in any industry. You'll always have fresh prospects to reach out to - boosting your chances to win more deals.
+                                        AceCloud offers a built-in database of verified leads, so you can find and connect with potential clients in any industry. You'll always have fresh prospects to reach out to - boosting your chances to win more deals.
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -98,7 +98,7 @@ const Services: React.FC = () => {
                                         Unlimited <span style={{ color: '#1D4ED8' }}>data storage</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Never worry about running out of storage for your leads, contacts, or campaign data. AceCloud.ca offers unlimited data storage, so your agency can scale its operations as needed, without restrictions.
+                                        Never worry about running out of storage for your leads, contacts, or campaign data. AceCloud offers unlimited data storage, so your agency can scale its operations as needed, without restrictions.
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -128,7 +128,7 @@ const Services: React.FC = () => {
                                         Smart multichannel <span style={{ color: '#1D4ED8' }}>campaigns</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Engage leads via email and LinkedIn for maximum reply rates, guaranteeing effective B2B lead generation for your clients. Simply keep adding new prospects and AceCloud.ca will sort the hottest leads from the rest.
+                                        Engage leads via email and LinkedIn for maximum reply rates, guaranteeing effective B2B lead generation for your clients. Simply keep adding new prospects and AceCloud will sort the hottest leads from the rest.
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -143,7 +143,7 @@ const Services: React.FC = () => {
                                         Built-in <span style={{ color: '#1D4ED8' }}>deliverability control</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Test your email placement, warm-up new sender accounts and stay in control of your deliverability. You'll always land in the Inbox with AceCloud.ca.
+                                        Test your email placement, warm-up new sender accounts and stay in control of your deliverability. You'll always land in the Inbox with AceCloud.
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -173,7 +173,7 @@ const Services: React.FC = () => {
                                         5-star support and <span style={{ color: '#1D4ED8' }}>guidance</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        With AceCloud.ca, you're not just getting a tool — you're gaining a partner. Our dedicated team supports you from sign-up to performance analysis, ensuring you succeed every step of the way.
+                                        With AceCloud, you're not just getting a tool — you're gaining a partner. Our dedicated team supports you from sign-up to performance analysis, ensuring you succeed every step of the way.
                                     </Typography>
                                 </Box>
                             </Grid>

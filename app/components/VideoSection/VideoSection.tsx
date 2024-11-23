@@ -108,7 +108,7 @@ export default function VideoSection() {
                 willChange: "transform, opacity",
               }}
             >
-              <source src="/video/AceCloud (1).mp4" type="video/mp4" />
+              <source src="/video/AceCloud.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
