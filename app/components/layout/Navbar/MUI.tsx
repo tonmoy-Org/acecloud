@@ -25,7 +25,7 @@ import TravelExploreIcon from '@mui/icons-material/TravelExplore';
 import TvIcon from '@mui/icons-material/Tv';
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import feature from '@/public/feature/1661180166860.png';
+import feature from '@/public/feature/f1.jpg';
 import service from '@/public/feature/service.jpg';
 
 
@@ -336,11 +336,7 @@ const ResponsiveAppBar = () => {
     );
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-        >
+        <Box>
             <AppBar
                 position="fixed"
                 sx={{
@@ -371,7 +367,6 @@ const ResponsiveAppBar = () => {
                                     component={Link}
                                     prefetch={true}
                                     href="/feature"
-                                    className="hover:text-accent-foreground"
                                     sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
                                 >
                                     Features
@@ -384,15 +379,16 @@ const ResponsiveAppBar = () => {
                                     <div className="flex w-full gap-2">
                                         <div className="w-2/4 p-4 relative bg-[#262626] rounded-md"
                                         >
-                                            <div className='absolute bottom-3 left-4 right-0'>
-                                                <Image className='w-44 h-full mb-4' src={feature} alt="Feature" />
-                                                <h1 className="text-lg font-bold"><Link href='feature'>All Features</Link></h1>
-                                                <p className="text-sm text-[#A3A3A3]">
-                                                    Build dynamic websites, enhance performance, and scale effortlessly.
-                                                </p>
+                                            <div className='absolute bottom-5 left-5 right-0'>
+                                                <Link href='feature'>
+                                                    <Image className='w-44 h-full mb-4' src={feature} alt="Feature" />
+                                                    <h1 className="text-lg font-bold">All Features</h1>
+                                                    <p className="text-sm text-[#A3A3A3]">
+                                                        Build dynamic websites, enhance performance, and scale effortlessly.
+                                                    </p>
+                                                </Link>
                                             </div>
                                         </div>
-
                                         <div className="w-3/5">
                                             <ul className="flex flex-col space-y-1 p-2">
                                                 <li className='hover:bg-[#262626] p-1 rounded-md'>
@@ -454,7 +450,6 @@ const ResponsiveAppBar = () => {
                                     component={Link}
                                     prefetch={true}
                                     href="/services-us"
-                                    className="hover:text-accent-foreground"
                                     sx={{ my: 1, '&:hover': { color: 'white' }, textTransform: 'none !important', color: 'hsl(220 10% 54.4%)' }}
                                 >
                                     Service
@@ -507,13 +502,15 @@ const ResponsiveAppBar = () => {
                                         </div>
                                         <div className="w-2/4 p-4 relative bg-[#262626] rounded-md"
                                         >
-                                            <div className='absolute bottom-3 left-6 right-0'>
-                                                <Image className='w-52 h-full mb-4' src={service} alt="Service" />
-                                                <h1 className="text-lg font-bold"><Link href='services-us'>All Services</Link></h1>
-                                                <p className="text-sm text-[#A3A3A3]">
-                                                    We dont stop there, check out all
-                                                    the services we offer here at Shape
-                                                </p>
+                                            <div className='absolute bottom-2 left-6 right-0'>
+                                                <Link href='services-us'>
+                                                    <Image className='w-52 h-full mb-4' src={service} alt="Feature" />
+                                                    <h1 className="text-lg font-bold">All Services</h1>
+                                                    <p className="text-sm text-[#A3A3A3]">
+                                                        We dont stop there, check out all
+                                                        the services we offer here at Shape
+                                                    </p>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>
@@ -592,7 +589,7 @@ const ResponsiveAppBar = () => {
             >
                 {drawer}
             </Drawer>
-        </motion.div>
+        </Box>
     );
 };
 

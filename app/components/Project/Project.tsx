@@ -27,7 +27,7 @@ const cardData = [
         title: "Nova Ukraine is a nonprofit organization",
         description: "We are a nonprofit organization that provides support and resources to Ukrainian refugees and immigrants. Our mission is to help these individuals integrate into their new communities and contribute to society.",
         image: p1,
-        link: "#",
+        link: "https://novaukraine.org/",
     },
     {
         title: "Skintonia - Beauty and Wellness",

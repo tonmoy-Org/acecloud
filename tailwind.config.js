@@ -63,7 +63,8 @@ module.exports = {
   			'border-beam': 'border-beam calc(var(--duration)*1s) infinite linear',
   			'shimmer-slide': 'shimmer-slide var(--speed) ease-in-out infinite alternate',
   			'spin-around': 'spin-around calc(var(--speed) * 2) infinite linear',
-  			gradient: 'gradient 8s linear infinite'
+  			gradient: 'gradient 8s linear infinite',
+  			grid: 'grid 15s linear infinite'
   		},
   		keyframes: {
   			'border-beam': {
@@ -93,6 +94,14 @@ module.exports = {
   			gradient: {
   				to: {
   					backgroundPosition: 'var(--bg-size) 0'
+  				}
+  			},
+  			grid: {
+  				'0%': {
+  					transform: 'translateY(-50%)'
+  				},
+  				'100%': {
+  					transform: 'translateY(0)'
   				}
   			}
   		}
