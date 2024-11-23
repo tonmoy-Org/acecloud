@@ -36,8 +36,8 @@ export default function VideoSection() {
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.3, ease: "easeOut" }} // Reduce duration
+                viewport={{ once: true, amount: 0.5 }} // Slightly reduce amount              
               >
                 <Typography className="text-3xl md:text-[2.5rem] font-bold text-white leading-normal">
                   Build Websites Like a Pro
@@ -96,16 +96,19 @@ export default function VideoSection() {
               className="absolute inset-[0] rounded-[inherit] [border:calc(var(--border-width)*1px)_solid_transparent] ![mask-clip:padding-box,border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)] after:absolute after:aspect-square after:w-[calc(var(--size)*1px)] after:animate-border-beam after:[animation-delay:var(--delay)] after:[background:linear-gradient(to_left,var(--color-from),var(--color-to),transparent)] after:[offset-anchor:calc(var(--anchor)*1%)_50%] after:[offset-path:rect(0_auto_auto_0_round_calc(var(--size)*1px))]">
             </div>
             <video
-              className="h-auto rounded-lg shadow-[0_0_20px_rgba(156,64,255,0.6)]"
+              className="h-auto rounded-lg shadow-[0_0_20px_rgba(156,64,255,0.6)] border-2 border-[rgba(29,78,216,0.5)]"
               width="1200"
               height="1200"
               autoPlay
               muted
               loop
               playsInline
-              style={{ willChange: "opacity, transform" }} // Hardware acceleration
+              style={{
+                transform: "translate3d(0, 0, 0)",
+                willChange: "transform, opacity",
+              }}
             >
-              <source src="/video/AceCloud.mp4" type="video/mp4" />
+              <source src="/video/AceCloud (1).mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 
