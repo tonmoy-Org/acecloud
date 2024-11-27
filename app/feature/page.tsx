@@ -1,7 +1,7 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from 'react';
-import GlowingSection from '../components/GlowingSection/GlowingSection';
-import { AccessAlarm, Storage, AttachMoney, Campaign, Inbox, HelpOutline } from "@mui/icons-material";
+import React from "react";
+import GlowingSection from "../components/GlowingSection/GlowingSection";
+import { Brush, Code, Cloud, Analytics, MobileFriendly, Security } from "@mui/icons-material";
 
 const Services: React.FC = () => {
     return (
@@ -13,21 +13,22 @@ const Services: React.FC = () => {
                             <div className="inline-flex items-center space-x-2 w-auto mb-3 lg:absolute lg:top-3 lg:left-4">
                                 <div className="w-1.5 h-1.5 rounded-full bg-white"></div>
                                 <div className="font-light text-sm lg:text-base text-[#FFD700] dark:text-grayDark-100">
-                                    Feature
+                                    Services
                                 </div>
                             </div>
-                            <h1 className="
+                            <h1
+                                className="
                             text-2xl md:text-5xl
                             font-sans-primary tracking-tight
                             text-white dark:text-grayDark-100
                             leading-none lg:leading-snug text-balance
                             lg:indent-32
-                        ">
-                                Unleashing <br />
-                                Creativity
-                                and Innovation  <br />
-                                For Exceptional <br />
-                                Brand Growth
+                        "
+                            >
+                                Unlocking <br />
+                                Digital Potential <br />
+                                with Innovative <br />
+                                Solutions
                             </h1>
                         </div>
                     </div>
@@ -35,148 +36,147 @@ const Services: React.FC = () => {
                         <div className="px-2">
                             <div className="w-full relative max-w-xl pr-10 lg:pr-0 lg:max-w-2xl lg:pl-32">
                                 <h2 className="mb-3 text-lg md:text-2xl xl:text-2xl 4xl:text-4xl tracking-tight text-white dark:text-grayDark-100 leading-tight">
-                                    Our expertise in digital marketing empowers brands to grow, stand out, and make a lasting impact.
+                                    We deliver cutting-edge digital services to help brands grow, engage, and thrive in a fast-paced world. 
                                 </h2>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Box py={6} sx={{ color: 'white' }}>
+                <Box py={6} sx={{ color: "white" }}>
                     <Box>
                         <Typography
                             variant="h4"
                             sx={{
                                 fontSize: { xs: 20, md: 45 },
-                                fontWeight: 'bold',
+                                fontWeight: "bold",
                                 mb: 4,
-                                maxWidth: { md: 900 }
+                                maxWidth: { md: 900 },
                             }}
                         >
-                            Why choose AceCloud as the
-                            <span style={{ color: '#1D4ED8' }}> lead generation software </span>
-                            for your agency?
+                            Why choose us for your
+                            <span style={{ color: "#1D4ED8" }}> digital transformation </span> journey?
                         </Typography>
 
                         <Grid container spacing={4} justifyContent="center" sx={{ mt: { xs: 0, md: 8 } }}>
-                            {/* Item 1: Growth-friendly Pricing */}
+                            {/* Item 1: Creative Design */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <AttachMoney sx={{ fontSize: 32, color: "#1D4ED8" }} /> {/* Replacing SVG with MUI icon */}
+                                        <Brush sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Growth-friendly <span style={{ color: '#1D4ED8' }}>pricing</span>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                                        Creative <span style={{ color: "#1D4ED8" }}>Design</span>
                                     </Typography>
-                                    <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        AceCloud offers a flat-rate pricing model, unlike other platforms that charge per seat. With AceCloud, you can manage unlimited clients, maximizing cost-efficiency for your agency’s needs.
+                                    <Typography variant="body1" sx={{ color: "#BABABA" }}>
+                                        Our design team crafts visually stunning and functional interfaces that resonate with your audience and elevate your brand presence.   
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 2: Access to millions of leads */}
+                            {/* Item 2: Web Development */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <AccessAlarm sx={{ fontSize: 32, color: "#1D4ED8" }} /> {/* Replacing SVG with MUI icon */}
+                                        <Code sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Access to millions of <span style={{ color: '#1D4ED8' }}>leads</span>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                                        Scalable <span style={{ color: "#1D4ED8" }}>Web Development</span>
                                     </Typography>
-                                    <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        AceCloud offers a built-in database of verified leads, so you can find and connect with potential clients in any industry. You'll always have fresh prospects to reach out to - boosting your chances to win more deals.
+                                    <Typography variant="body1" sx={{ color: "#BABABA" }}>
+                                        Build robust and scalable websites tailored to your needs with the latest technology and frameworks.
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 3: Unlimited data storage */}
+                            {/* Item 3: Cloud Solutions */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <Storage sx={{ fontSize: 32, color: "#1D4ED8" }} /> {/* Replacing SVG with MUI icon */}
+                                        <Cloud sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Unlimited <span style={{ color: '#1D4ED8' }}>data storage</span>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                                        Cloud <span style={{ color: "#1D4ED8" }}>Solutions</span>
                                     </Typography>
-                                    <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Never worry about running out of storage for your leads, contacts, or campaign data. AceCloud offers unlimited data storage, so your agency can scale its operations as needed, without restrictions.
+                                    <Typography variant="body1" sx={{ color: "#BABABA" }}>
+                                        Leverage the power of cloud computing for seamless scalability, enhanced security, and improved operational efficiency. 
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 4: Scalable Outreach */}
+                            {/* Item 4: Data Analytics */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <Campaign sx={{ fontSize: 32, color: "#1D4ED8" }} />
+                                        <Analytics sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Scalable <span style={{ color: '#1D4ED8' }}>outreach</span>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                                        Advanced <span style={{ color: "#1D4ED8" }}>Analytics</span>
                                     </Typography>
-                                    <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Benefit from unlimited campaigns and follow-ups, enabling you to easily manage both small and large client bases. Save time and expand your reach with unlimited mailbox rotation and the ability to prioritize your campaigns.
+                                    <Typography variant="body1" sx={{ color: "#BABABA" }}>
+                                        Transform data into actionable insights to drive smarter decision-making and enhance business outcomes.
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 5: Smart multichannel campaigns */}
+                            {/* Item 5: Mobile Development */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <Inbox sx={{ fontSize: 32, color: "#1D4ED8" }} />
+                                        <MobileFriendly sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Smart multichannel <span style={{ color: '#1D4ED8' }}>campaigns</span>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                                        Mobile <span style={{ color: "#1D4ED8" }}>Development</span>
                                     </Typography>
-                                    <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Engage leads via email and LinkedIn for maximum reply rates, guaranteeing effective B2B lead generation for your clients. Simply keep adding new prospects and AceCloud will sort the hottest leads from the rest.
+                                    <Typography variant="body1" sx={{ color: "#BABABA" }}>
+                                        Design and develop mobile applications that provide seamless user experiences across all devices.
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 6: Built-in deliverability control */}
+                            {/* Item 6: Cybersecurity */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <HelpOutline sx={{ fontSize: 32, color: "#1D4ED8" }} />
+                                        <Security sx={{ fontSize: 32, color: "#1D4ED8" }} />
+                                    </Box>
+                                    <Typography variant="h6" sx={{ fontWeight: "bold", mb: 1 }}>
+                                        Robust <span style={{ color: "#1D4ED8" }}>Cybersecurity</span>
+                                    </Typography>
+                                    <Typography variant="body1" sx={{ color: "#BABABA" }}>
+                                        Protect your digital assets with our advanced security solutions, ensuring your business stays safe and resilient.
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            {/* Item 7: Custom Software Development */}
+                            <Grid item xs={12} md={4}>
+                                <Box display="flex" flexDirection="column">
+                                    <Box mb={2}>
+                                        <Code sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Built-in <span style={{ color: '#1D4ED8' }}>deliverability control</span>
+                                        Custom <span style={{ color: '#1D4ED8' }}>Software Development</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Test your email placement, warm-up new sender accounts and stay in control of your deliverability. You'll always land in the Inbox with AceCloud.
+                                        Tailored software solutions to meet your specific business needs. From web applications to mobile platforms, we deliver scalable and robust systems.
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 7: Advanced reports */}
+                            {/* Item 8: Cybersecurity Solutions */}
                             <Grid item xs={12} md={4}>
                                 <Box display="flex" flexDirection="column">
                                     <Box mb={2}>
-                                        <Storage sx={{ fontSize: 32, color: "#1D4ED8" }} />
+                                        <Security sx={{ fontSize: 32, color: "#1D4ED8" }} />
                                     </Box>
                                     <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        Advanced <span style={{ color: '#1D4ED8' }}>reports</span>
+                                        Cybersecurity <span style={{ color: '#1D4ED8' }}>Solutions</span>
                                     </Typography>
                                     <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        Follow each account's success across all of their campaigns. Identify engagement patterns to refine your strategies. Access a clear overview of outreach KPIs for detailed reporting.
+                                        Protect your digital assets with our cutting-edge cybersecurity services, including threat analysis, data encryption, and risk assessment.
                                     </Typography>
                                 </Box>
                             </Grid>
 
-                            {/* Item 8: 5-star support and guidance */}
-                            <Grid item xs={12} md={4}>
-                                <Box display="flex" flexDirection="column">
-                                    <Box mb={2}>
-                                        <HelpOutline sx={{ fontSize: 32, color: "#1D4ED8" }} />
-                                    </Box>
-                                    <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 1 }}>
-                                        5-star support and <span style={{ color: '#1D4ED8' }}>guidance</span>
-                                    </Typography>
-                                    <Typography variant="body1" sx={{ color: '#BABABA' }}>
-                                        With AceCloud, you're not just getting a tool — you're gaining a partner. Our dedicated team supports you from sign-up to performance analysis, ensuring you succeed every step of the way.
-                                    </Typography>
-                                </Box>
-                            </Grid>
                         </Grid>
                     </Box>
                 </Box>
